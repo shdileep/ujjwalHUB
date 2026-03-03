@@ -1,0 +1,7 @@
+Mambakkam: 15
+Melakottaiyur: 15
+Kandigai: 16
+Total Bins: 0
+Full: 22
+Half: 13
+Empty: 11

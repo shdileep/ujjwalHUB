@@ -1,0 +1,11 @@
+Total Adambakkam Bins in State: 43
+
+FOUND 2 BINS WITH ID 01/02:
+ID: 01
+  Area: Adambakkam
+  Location: ADAMBAKKAM
+  Coords: 12.9948, 80.205007
+ID: 02
+  Area: Adambakkam
+  Location: ADAMBAKKAM
+  Coords: 12.993467, 80.203151

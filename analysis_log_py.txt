@@ -1,0 +1,227 @@
+Starting Python analysis...
+Total Rows: 11058
+Unique AREA_NAMEs (207):
+ - KATHIVAKKAM
+ - ERNAVOOR
+ - ENNORE
+ - TIRUVOTTRIYUR
+ - AJAX
+ - WIMCO NAGAR
+ - KALADIPET
+ - THANGAL
+ - SATHANGADU
+ - RAJAKADAI
+ - EDYANCHAVADI
+ - SADAIYANKUPPAM
+ - KADAPAKKAM
+ - VADAPERUMBAKKAM
+ - THEEYAMBAKKAM
+ - MANALI
+ - MATHUR
+ - PUZHAL
+ - KAVANKARAI
+ - Soorapattu
+ - Puthagaram
+ - Soorapattu Puthagaram Link Road
+ - KATHIRVEDU
+ - MADURA METU PALAYAM -MADHAVARAM
+ - MADHAVARAM
+ - LAKSHMIPURAM - MADHAVARAM
+ - PONNIAMMANMEDU-MADHAVARAM
+ - VINAYAGAPURAM - MADHAVARAM
+ - MADHAVARAM MILK COLONY
+ - MADHAVARAM Milk Colony
+ - KK THAZHAI - MADHAVARAM
+ - MOOLACHATHIRAM - MADHAVARAM
+ - Chinnasekkadu
+ - Kodungaiyur
+ - Selavoyal
+ - Erukkencherry
+ - Vyasarpadi
+ - Tondiarpet
+ - New Washermen Pet
+ - Old Washermenpet
+ - Korukkupet
+ - Royapuram
+ - Perambur
+ - Korukupet
+ - Mint
+ - Old Washermenpt
+ - Kondithoppu
+ - Basin Bridge
+ - Sowcarpet
+ - George Town
+ - Broadway
+ - Vepery
+ - Periamet
+ - Choolai
+ - Purasaiwakkam
+ - Edapalayam
+ - Chepauk
+ - Anna Salai
+ - V.O.C Nagar
+ - Egmore
+ - Pudupet
+ - Chetpet
+ - Chindatripet
+ - Royapettah
+ - Komaleeswaranpet
+ - Kolathur
+ - Kunnur
+ - Peravallur
+ - Sembium
+ - Ayanavaram
+ - Jamaliya
+ - Pulianthope
+ - Otteri
+ - Nammalwarpet
+ - Kilpauk
+ - Kosapet
+ - Pattalam
+ - Perumalpet
+ - LENIN NAGAR
+ - ORAGADAM
+ - AMBATTUR
+ - S.V.NAGAR
+ - BANU NAGAR
+ - PUDUR
+ - VIJAYALAKSHMIPURAM
+ - AMBATTUR O.T
+ - KRISHNAPURAM
+ - VENKATAPURAM
+ - THIRUVENGADANAGAR
+ - M.T.H.ROAD
+ - Ambattur
+ - GANGAI NAGAR
+ - PATTARAVAKKAM
+ - MENAMBEDU
+ - Kallikuppam
+ - KORATTUR
+ - KAMARAJAPURAM
+ - VARADHARAJAPURAM
+ - DUNLOP GROUND
+ - RAMAPURAM
+ - MANGALAPURAM
+ - VANAGARAM ROAD
+ - MANNURPET
+ - ATHIPATTU
+ - OLD AMBATTUR
+ - AMBATTUR IND ESTATE
+ - Ambattur Estate
+ - PADI
+ - A.N.W.EXTN
+ - ANNA NAGAR
+ - Anna Nagar West Extn.,
+ - Padi
+ - MUGAPPAIR WEST
+ - Mogappair
+ - MUGAPPAIR EAST
+ - MUGAPPAIR
+ - 7H BUS STAND
+ - Villivakkam
+ - Anna Nagar West
+ - Anna Nagar West Extn.
+ - Thirumangalam
+ - Anna Nagar
+ - Shenoy Nagar
+ - Anna Nagar East
+ - Shenoy Nagar West
+ - Aminjikarai
+ - Arumbakkam
+ - M.M.D.A.Colony
+ - Choolaimedu
+ - Nungambakkam
+ - Thousand Lights
+ - Teynampet
+ - Gopalapuram
+ - Kodambakkam
+ - T.Nagar
+ - Triplicane
+ - Mylapore
+ - Alwarpet
+ - Raja Annamalai Puram
+ - R.A.Puram
+ - Mandavelipakkam
+ - Koyambedu
+ - Virugambakkam
+ - Saligramam
+ - Vadapalani
+ - K.K.Nagar
+ - Ashok Nagar
+ - West Mambalam
+ - Jafferkhanpet
+ - Saidapet West
+ - Saidapet
+ - Nandanam
+ - NOLAMBUR
+ - MADURAVOYAL
+ - NERKUNDRAM
+ - VALASARAVAKKAM
+ - KARAMBAKKAM
+ - PORUR
+ - MUGALIVAKKAM
+ - MANAPAKKAM
+ - NANDAMBAKKAM
+ - NANDAMPAKKAM
+ - ALANDUR
+ - ADAMBAKKAM
+ - NANGANALLUR
+ - THILLAI GANGANAGAR
+ - THILLAIGANGA NAGAR
+ - PALAVANTHANGAL
+ - Ullagaram
+ - Puzhuthivakkam
+ - PUZHUTHIVAKKAM
+ - Kottivakkam
+ - KOTTIVAKKAM
+ - Perungudi
+ - Palavakkam
+ - PALAVAKKAM
+ - MADIPAKKAM
+ - Madipakkam
+ - Pallikaranai
+ - PALLIKARANAI
+ - Jaladianpet
+ - Ekkattuthangal
+ - Guindy
+ - Kottur
+ - Kotturpuram
+ - Velachery
+ - R.K.Nagar
+ - Thiruvanmiyur
+ - Adyar
+ - Besant Nagar
+ - Adayar
+ - Urur
+ - Velachery West
+ - Velachery East
+ - 
+     Velachery East
+    
+ - 
+     Velachery West
+    
+ - 
+     Velachery
+    
+ - Gandhi Salai
+ - Taramani
+ - Tharamani
+ - NEELANGARAI
+ - THORAIPAKKAM
+ - INJAMBAKKAM
+ - KARAPAKKAM
+ - SHOLINGANALLUR
+ - UTHANDI
+ - SEMMANCHERI
+--------------------
+Rows with 'Alandur' in LOC_NAME: 60
+Rows with 'Guindy' in LOC_NAME: 8
+Rows with 'Ekkattu' in LOC_NAME: 19
+Sample Alandur Matches:
+     AREA_NAME LOC_NAME
+8376   ALANDUR  ALANDUR
+8377   ALANDUR  ALANDUR
+8378   ALANDUR  ALANDUR
+8379   ALANDUR  ALANDUR
+8380   ALANDUR  ALANDUR

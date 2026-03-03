@@ -1,0 +1,1036 @@
+OBJECTID,ZONE_CODE,DIV_CODE,AREA_NAME,LOC_NAME,STREET_NAM,BIN_NO,LATITUDE,LONGTITUDE,LONGITUDE_POINT,LATITUDE_POINT,BIN_STATUS
+1,W22,CG001,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10371,12.824569,80.146718,80.146718,12.824569,Full
+2,W27,CG001,Navlur,"Navlur Church Road, Navlur",Navlur Church Road,CHGL-10069,12.859436,80.238019,80.238019,12.859436,Half Full
+3,W5,CG003,Urapakkam,"Urapakkam Main Road, Urapakkam",Urapakkam Main Road,CHGL-10520,12.918342,80.096581,80.096581,12.918342,Full
+4,W34,CG001,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10173,12.758584,80.184586,80.184586,12.758584,Full
+5,W12,CG001,Padappai,"Padappai Junction, Padappai",Padappai Junction,CHGL-10749,12.952094,80.059814,80.059814,12.952094,Empty
+6,W6,CG001,Singaperumal Koil,"Singaperumal Koil Main Road, Singaperumal Koil",Singaperumal Koil Main Road,CHGL-10641,12.822669,80.109474,80.109474,12.822669,Empty
+7,W31,CG001,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10130,12.792593,80.220387,80.220387,12.792593,Full
+8,W17,CG001,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10579,12.856798,80.052733,80.052733,12.856798,Empty
+9,W47,CG001,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10162,12.758798,80.194052,80.194052,12.758798,Empty
+10,W21,CG001,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-10961,12.98467,80.145355,80.145355,12.98467,Empty
+11,W14,CG001,Kandigai,"Kandigai Main Road, Kandigai",Kandigai Main Road,CHGL-10359,12.824632,80.143158,80.143158,12.824632,Full
+12,W28,CG001,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10665,12.836351,80.101822,80.101822,12.836351,Half Full
+13,W21,CG001,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10869,12.966965,80.139686,80.139686,12.966965,Full
+14,W23,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10040,12.850575,80.227735,80.227735,12.850575,Empty
+15,W9,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10263,12.896709,80.083445,80.083445,12.896709,Empty
+16,W8,CG007,Perungalathur,"Market Road, Perungalathur",Market Road,CHGL-10835,12.911563,80.107989,80.107989,12.911563,Full
+17,W46,CG001,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10327,12.865506,80.106644,80.106644,12.865506,Full
+18,W11,CG001,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10143,12.788481,80.215419,80.215419,12.788481,Empty
+19,W21,CG001,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10341,12.867382,80.109279,80.109279,12.867382,Full
+20,W46,CG008,Tambaram,"Irumbuliyur Road, Tambaram",Irumbuliyur Road,CHGL-10415,12.922066,80.130304,80.130304,12.922066,Empty
+21,W2,CG001,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-10960,12.984905,80.1473,80.1473,12.984905,Half Full
+22,W38,CG001,Singaperumal Koil,"Singaperumal Koil Main Road, Singaperumal Koil",Singaperumal Koil Main Road,CHGL-10663,12.835377,80.100295,80.100295,12.835377,Full
+23,W30,CG001,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10876,12.955594,80.133536,80.133536,12.955594,Empty
+24,W11,CG001,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10939,12.962882,80.14043,80.14043,12.962882,Empty
+25,W31,CG003,Urapakkam,"GST Road Urapakkam, Urapakkam",GST Road Urapakkam,CHGL-10542,12.906118,80.107454,80.107454,12.906118,Full
+26,W26,CG001,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10392,12.822517,80.152619,80.152619,12.822517,Full
+27,W48,CG001,Navlur,"Navlur Church Road, Navlur",Navlur Church Road,CHGL-10025,12.853601,80.232445,80.232445,12.853601,Full
+28,W27,CG001,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-10957,12.977985,80.145541,80.145541,12.977985,Full
+29,W35,CG001,Padappai,"Padappai Main Road, Padappai",Padappai Main Road,CHGL-10771,12.949731,80.068741,80.068741,12.949731,Full
+30,W17,CG007,Perungalathur,"Station Road, Perungalathur",Station Road,CHGL-10831,12.924712,80.093745,80.093745,12.924712,Empty
+31,W30,CG001,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-11026,12.973208,80.156738,80.156738,12.973208,Half Full
+32,W7,CG001,Singaperumal Koil,"Market Road, Singaperumal Koil",Market Road,CHGL-10627,12.837971,80.090518,80.090518,12.837971,Full
+33,W10,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10734,12.79548,80.028597,80.028597,12.79548,Full
+34,W10,CG001,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10177,12.745346,80.189562,80.189562,12.745346,Full
+35,W2,CG001,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10983,12.970776,80.144273,80.144273,12.970776,Full
+36,W32,CG001,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10147,12.780303,80.212296,80.212296,12.780303,Full
+37,W50,CG001,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-11021,12.982341,80.150914,80.150914,12.982341,Half Full
+38,W50,CG001,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10575,12.8628,80.05941,80.05941,12.8628,Half Full
+39,W21,CG001,Padappai,"GST Road Padappai, Padappai",GST Road Padappai,CHGL-10743,12.952345,80.056361,80.056361,12.952345,Full
+40,W42,CG001,Padappai,"Padappai Main Road, Padappai",Padappai Main Road,CHGL-10780,12.942222,80.06495,80.06495,12.942222,Full
+41,W22,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10503,12.902963,80.106859,80.106859,12.902963,Half Full
+42,W16,CG001,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10907,12.956941,80.135958,80.135958,12.956941,Empty
+43,W22,CG007,Perungalathur,"Station Road, Perungalathur",Station Road,CHGL-10825,12.913139,80.10146,80.10146,12.913139,Full
+44,W19,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10836,12.92419,80.109424,80.109424,12.92419,Full
+45,W41,CG001,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10581,12.852623,80.052576,80.052576,12.852623,Empty
+46,W50,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10806,12.923127,80.100602,80.100602,12.923127,Half Full
+47,W42,CG001,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10928,12.959156,80.149432,80.149432,12.959156,Full
+48,W24,CG001,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-11020,12.988284,80.141779,80.141779,12.988284,Half Full
+49,W15,CG001,Mambakkam,"Mambakkam Bus Stop, Mambakkam",Mambakkam Bus Stop,CHGL-10296,12.869477,80.110263,80.110263,12.869477,Empty
+50,W21,CG001,Padappai,"GST Road Padappai, Padappai",GST Road Padappai,CHGL-10767,12.946811,80.054444,80.054444,12.946811,Half Full
+51,W18,CG003,Urapakkam,"GST Road Urapakkam, Urapakkam",GST Road Urapakkam,CHGL-10535,12.908458,80.092824,80.092824,12.908458,Full
+52,W5,CG001,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10391,12.822318,80.156165,80.156165,12.822318,Full
+53,W35,CG001,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10905,12.959286,80.142158,80.142158,12.959286,Half Full
+54,W19,CG001,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10640,12.838913,80.097402,80.097402,12.838913,Empty
+55,W8,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10485,12.938737,80.136196,80.136196,12.938737,Full
+56,W4,CG001,Padappai,"Padappai Junction, Padappai",Padappai Junction,CHGL-10741,12.941476,80.051916,80.051916,12.941476,Half Full
+57,W17,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10486,12.930644,80.124982,80.124982,12.930644,Half Full
+58,W28,CG001,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10794,12.955141,80.050174,80.050174,12.955141,Half Full
+59,W22,CG001,Singaperumal Koil,"Market Road, Singaperumal Koil",Market Road,CHGL-10650,12.83876,80.091142,80.091142,12.83876,Full
+60,W46,CG001,Mambakkam,"Mambakkam Bus Stop, Mambakkam",Mambakkam Bus Stop,CHGL-10334,12.875526,80.106558,80.106558,12.875526,Full
+61,W13,CG001,Guduvanchery,"Guduvanchery Junction, Guduvanchery",Guduvanchery Junction,CHGL-10566,12.864513,80.06579,80.06579,12.864513,Empty
+62,W41,CG001,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10666,12.839752,80.098514,80.098514,12.839752,Empty
+63,W7,CG001,Kelambakkam,"Vandalur-Kelambakkam Road, Kelambakkam",Vandalur-Kelambakkam Road,CHGL-10142,12.785898,80.225723,80.225723,12.785898,Empty
+64,W31,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10068,12.862157,80.225002,80.225002,12.862157,Half Full
+65,W33,CG005,Maraimalai Nagar,"Maraimalai Nagar Main Road, Maraimalai Nagar",Maraimalai Nagar Main Road,CHGL-10728,12.793287,80.034334,80.034334,12.793287,Half Full
+66,W34,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10280,12.905387,80.075829,80.075829,12.905387,Empty
+67,W48,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10477,12.92261,80.134389,80.134389,12.92261,Full
+68,W10,CG001,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10994,12.971332,80.145281,80.145281,12.971332,Half Full
+69,W40,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10465,12.930946,80.131783,80.131783,12.930946,Empty
+70,W24,CG001,Kandigai,"Kandigai Main Road, Kandigai",Kandigai Main Road,CHGL-10402,12.829195,80.154843,80.154843,12.829195,Half Full
+71,W31,CG001,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10937,12.968533,80.148395,80.148395,12.968533,Half Full
+72,W6,CG001,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-10979,12.97624,80.155337,80.155337,12.97624,Full
+73,W47,CG001,Singaperumal Koil,"Singaperumal Koil Main Road, Singaperumal Koil",Singaperumal Koil Main Road,CHGL-10668,12.831416,80.098765,80.098765,12.831416,Full
+74,W3,CG001,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10076,12.783178,80.220895,80.220895,12.783178,Half Full
+75,W47,CG003,Urapakkam,"Urapakkam Market, Urapakkam",Urapakkam Market,CHGL-10521,12.914342,80.090134,80.090134,12.914342,Full
+76,W48,CG001,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10305,12.864309,80.102567,80.102567,12.864309,Full
+77,W29,CG001,Singaperumal Koil,"Market Road, Singaperumal Koil",Market Road,CHGL-10625,12.83643,80.092151,80.092151,12.83643,Full
+78,W4,CG001,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10187,12.74283,80.194225,80.194225,12.74283,Full
+79,W10,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10676,12.781501,80.033039,80.033039,12.781501,Half Full
+80,W33,CG001,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10351,12.831896,80.155693,80.155693,12.831896,Full
+81,W29,CG005,Maraimalai Nagar,"Maraimalai Nagar Main Road, Maraimalai Nagar",Maraimalai Nagar Main Road,CHGL-10707,12.795479,80.032021,80.032021,12.795479,Full
+82,W6,CG001,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10170,12.741973,80.192876,80.192876,12.741973,Empty
+83,W35,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10702,12.786038,80.031786,80.031786,12.786038,Full
+84,W29,CG001,Padappai,"Padappai Main Road, Padappai",Padappai Main Road,CHGL-10783,12.957213,80.064887,80.064887,12.957213,Half Full
+85,W19,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10849,12.912497,80.102355,80.102355,12.912497,Half Full
+86,W38,CG001,Guduvanchery,"Guduvanchery Bus Stand, Guduvanchery",Guduvanchery Bus Stand,CHGL-10589,12.861622,80.063378,80.063378,12.861622,Full
+87,W11,CG001,Padappai,"Padappai Main Road, Padappai",Padappai Main Road,CHGL-10761,12.944395,80.068436,80.068436,12.944395,Full
+88,W8,CG001,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-10952,12.978122,80.146864,80.146864,12.978122,Full
+89,W42,CG001,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10340,12.863067,80.117165,80.117165,12.863067,Half Full
+90,W30,CG001,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10140,12.784982,80.215462,80.215462,12.784982,Full
+91,W34,CG001,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10921,12.952379,80.13764,80.13764,12.952379,Empty
+92,W9,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10796,12.922978,80.108319,80.108319,12.922978,Full
+93,W20,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10438,12.923182,80.124569,80.124569,12.923182,Half Full
+94,W2,CG001,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10165,12.746761,80.194415,80.194415,12.746761,Empty
+95,W8,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10532,12.917332,80.097934,80.097934,12.917332,Half Full
+96,W36,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10797,12.919627,80.090342,80.090342,12.919627,Full
+97,W41,CG001,Guduvanchery,"Guduvanchery Bus Stand, Guduvanchery",Guduvanchery Bus Stand,CHGL-10599,12.850004,80.060055,80.060055,12.850004,Half Full
+98,W8,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10514,12.907736,80.091987,80.091987,12.907736,Full
+99,W21,CG001,Padappai,"GST Road Padappai, Padappai",GST Road Padappai,CHGL-10760,12.9422,80.062453,80.062453,12.9422,Full
+100,W18,CG001,Padappai,"Village Road, Padappai",Village Road,CHGL-10776,12.941215,80.055595,80.055595,12.941215,Empty
+101,W50,CG003,Urapakkam,"GST Road Urapakkam, Urapakkam",GST Road Urapakkam,CHGL-10522,12.900359,80.108408,80.108408,12.900359,Empty
+102,W45,CG003,Urapakkam,"Urapakkam Market, Urapakkam",Urapakkam Market,CHGL-10511,12.919067,80.094087,80.094087,12.919067,Empty
+103,W33,CG002,Kandigai,"Kandigai Main Road, Kandigai",Kandigai Main Road,CHGL-10400,12.833344,80.152032,80.152032,12.833344,Full
+104,W14,CG002,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10861,12.950665,80.140875,80.140875,12.950665,Full
+105,W49,CG002,Kandigai,"Kandigai Lake Road, Kandigai",Kandigai Lake Road,CHGL-10394,12.822601,80.158134,80.158134,12.822601,Full
+106,W14,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10536,12.905414,80.104296,80.104296,12.905414,Full
+107,W6,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10216,12.897607,80.076297,80.076297,12.897607,Half Full
+108,W47,CG002,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10896,12.958026,80.142114,80.142114,12.958026,Empty
+109,W34,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10041,12.846673,80.226213,80.226213,12.846673,Empty
+110,W13,CG002,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10648,12.829361,80.097791,80.097791,12.829361,Half Full
+111,W17,CG002,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10635,12.829507,80.098011,80.098011,12.829507,Full
+112,W32,CG002,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10654,12.834646,80.106697,80.106697,12.834646,Empty
+113,W27,CG002,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10292,12.864477,80.117275,80.117275,12.864477,Half Full
+114,W16,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10495,12.930035,80.131947,80.131947,12.930035,Full
+115,W45,CG002,Padappai,"Padappai Junction, Padappai",Padappai Junction,CHGL-10738,12.951115,80.055484,80.055484,12.951115,Half Full
+116,W5,CG002,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10289,12.879286,80.100349,80.100349,12.879286,Full
+117,W11,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10713,12.796381,80.030004,80.030004,12.796381,Full
+118,W6,CG002,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10306,12.869759,80.115841,80.115841,12.869759,Full
+119,W6,CG002,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10888,12.967324,80.149402,80.149402,12.967324,Half Full
+120,W23,CG002,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10607,12.849722,80.06667,80.06667,12.849722,Empty
+121,W7,CG002,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10135,12.781387,80.22893,80.22893,12.781387,Full
+122,W32,CG002,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10859,12.967271,80.142156,80.142156,12.967271,Full
+123,W31,CG002,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10335,12.865042,80.110286,80.110286,12.865042,Full
+124,W10,CG008,Tambaram,"Selaiyur Main Road, Tambaram",Selaiyur Main Road,CHGL-10424,12.928811,80.124417,80.124417,12.928811,Full
+125,W12,CG002,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10093,12.797012,80.223164,80.223164,12.797012,Full
+126,W44,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10545,12.901964,80.10206,80.10206,12.901964,Full
+127,W24,CG002,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10106,12.790541,80.225329,80.225329,12.790541,Full
+128,W24,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10423,12.927808,80.126348,80.126348,12.927808,Full
+129,W34,CG002,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10083,12.796273,80.227683,80.227683,12.796273,Empty
+130,W4,CG002,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10883,12.968835,80.135656,80.135656,12.968835,Full
+131,W33,CG002,Mambakkam,"Mambakkam Main Road, Mambakkam",Mambakkam Main Road,CHGL-10297,12.873086,80.116485,80.116485,12.873086,Half Full
+132,W11,CG002,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10619,12.837614,80.092992,80.092992,12.837614,Half Full
+133,W16,CG002,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10926,12.953919,80.143086,80.143086,12.953919,Empty
+134,W26,CG003,Urapakkam,"Urapakkam Main Road, Urapakkam",Urapakkam Main Road,CHGL-10496,12.912365,80.090746,80.090746,12.912365,Half Full
+135,W47,CG002,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10100,12.793919,80.212445,80.212445,12.793919,Full
+136,W4,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10450,12.936174,80.12878,80.12878,12.936174,Empty
+137,W17,CG005,Maraimalai Nagar,"Bus Stand Road, Maraimalai Nagar",Bus Stand Road,CHGL-10680,12.78894,80.028578,80.028578,12.78894,Half Full
+138,W45,CG002,Padappai,"Padappai Junction, Padappai",Padappai Junction,CHGL-10769,12.950415,80.054298,80.054298,12.950415,Half Full
+139,W38,CG003,Urapakkam,"Urapakkam Market, Urapakkam",Urapakkam Market,CHGL-10554,12.904085,80.093858,80.093858,12.904085,Empty
+140,W9,CG003,Urapakkam,"Urapakkam Market, Urapakkam",Urapakkam Market,CHGL-10518,12.904322,80.101161,80.101161,12.904322,Half Full
+141,W50,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10451,12.924778,80.139252,80.139252,12.924778,Full
+142,W20,CG007,Perungalathur,"Market Road, Perungalathur",Market Road,CHGL-10852,12.92385,80.097668,80.097668,12.92385,Half Full
+143,W14,CG002,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10895,12.967077,80.130381,80.130381,12.967077,Full
+144,W23,CG002,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10301,12.867186,80.112643,80.112643,12.867186,Empty
+145,W43,CG002,Kandigai,"Kandigai Main Road, Kandigai",Kandigai Main Road,CHGL-10397,12.827356,80.145439,80.145439,12.827356,Empty
+146,W6,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10546,12.905632,80.097084,80.097084,12.905632,Full
+147,W47,CG002,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10108,12.785031,80.218358,80.218358,12.785031,Empty
+148,W33,CG002,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10385,12.839478,80.144411,80.144411,12.839478,Full
+149,W18,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10553,12.91899,80.091899,80.091899,12.91899,Half Full
+150,W48,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10046,12.848057,80.229992,80.229992,12.848057,Empty
+151,W4,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10717,12.780144,80.031373,80.031373,12.780144,Empty
+152,W9,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10009,12.846379,80.233016,80.233016,12.846379,Full
+153,W42,CG002,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10150,12.783202,80.214859,80.214859,12.783202,Full
+154,W25,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10270,12.89318,80.072201,80.072201,12.89318,Full
+155,W44,CG007,Perungalathur,"Market Road, Perungalathur",Market Road,CHGL-10839,12.910665,80.103726,80.103726,12.910665,Half Full
+156,W17,CG002,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10186,12.744047,80.192147,80.192147,12.744047,Full
+157,W41,CG008,Tambaram,"Irumbuliyur Road, Tambaram",Irumbuliyur Road,CHGL-10435,12.929733,80.132641,80.132641,12.929733,Half Full
+158,W20,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10042,12.853655,80.239363,80.239363,12.853655,Full
+159,W5,CG002,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10962,12.98071,80.141482,80.141482,12.98071,Empty
+160,W13,CG002,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10189,12.759579,80.193049,80.193049,12.759579,Empty
+161,W18,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10548,12.912632,80.093905,80.093905,12.912632,Empty
+162,W11,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10449,12.928061,80.122798,80.122798,12.928061,Full
+163,W43,CG002,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10932,12.965114,80.140418,80.140418,12.965114,Empty
+164,W1,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10410,12.936295,80.122235,80.122235,12.936295,Half Full
+165,W9,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10841,12.920817,80.092987,80.092987,12.920817,Full
+166,W17,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10471,12.935771,80.137065,80.137065,12.935771,Half Full
+167,W20,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10798,12.912459,80.106546,80.106546,12.912459,Full
+168,W35,CG002,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10128,12.791073,80.224514,80.224514,12.791073,Full
+169,W7,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10031,12.856645,80.233576,80.233576,12.856645,Half Full
+170,W48,CG002,Thiruporur,"Thiruporur Main Road, Thiruporur",Thiruporur Main Road,CHGL-10181,12.744695,80.189758,80.189758,12.744695,Half Full
+171,W26,CG002,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10393,12.821083,80.152967,80.152967,12.821083,Half Full
+172,W18,CG002,Kandigai,"Kandigai Lake Road, Kandigai",Kandigai Lake Road,CHGL-10365,12.826401,80.146548,80.146548,12.826401,Full
+173,W4,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10812,12.918443,80.107999,80.107999,12.918443,Full
+174,W46,CG002,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10115,12.799898,80.21277,80.21277,12.799898,Empty
+175,W39,CG002,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10610,12.864752,80.066353,80.066353,12.864752,Half Full
+176,W50,CG002,Guduvanchery,"Guduvanchery Junction, Guduvanchery",Guduvanchery Junction,CHGL-10571,12.860802,80.057764,80.057764,12.860802,Empty
+177,W11,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10508,12.902877,80.103735,80.103735,12.902877,Full
+178,W42,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10044,12.857149,80.226685,80.226685,12.857149,Full
+179,W7,CG002,Mambakkam,"Mambakkam Bus Stop, Mambakkam",Mambakkam Bus Stop,CHGL-10333,12.864906,80.104359,80.104359,12.864906,Half Full
+180,W19,CG002,Thiruporur,"Thiruporur Main Road, Thiruporur",Thiruporur Main Road,CHGL-10205,12.755739,80.191211,80.191211,12.755739,Full
+181,W45,CG002,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10363,12.828103,80.14415,80.14415,12.828103,Full
+182,W46,CG007,Perungalathur,"Station Road, Perungalathur",Station Road,CHGL-10816,12.920191,80.101962,80.101962,12.920191,Half Full
+183,W12,CG002,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-10955,12.970486,80.14829,80.14829,12.970486,Full
+184,W26,CG002,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10858,12.967682,80.141925,80.141925,12.967682,Full
+185,W40,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10820,12.920382,80.098466,80.098466,12.920382,Half Full
+186,W1,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10062,12.862478,80.234361,80.234361,12.862478,Empty
+187,W46,CG003,Urapakkam,"Urapakkam Main Road, Urapakkam",Urapakkam Main Road,CHGL-10501,12.900693,80.099149,80.099149,12.900693,Full
+188,W44,CG002,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10948,12.979205,80.15254,80.15254,12.979205,Half Full
+189,W38,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10693,12.792505,80.037882,80.037882,12.792505,Empty
+190,W38,CG002,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10604,12.849207,80.056112,80.056112,12.849207,Empty
+191,W41,CG002,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-10997,12.982574,80.143465,80.143465,12.982574,Full
+192,W49,CG007,Perungalathur,"Market Road, Perungalathur",Market Road,CHGL-10837,12.913906,80.096274,80.096274,12.913906,Half Full
+193,W14,CG002,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-11027,12.986591,80.149039,80.149039,12.986591,Full
+194,W42,CG002,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10204,12.756772,80.185043,80.185043,12.756772,Empty
+195,W20,CG007,Perungalathur,"Station Road, Perungalathur",Station Road,CHGL-10853,12.923672,80.095879,80.095879,12.923672,Empty
+196,W26,CG002,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-11029,12.98937,80.141125,80.141125,12.98937,Half Full
+197,W6,CG005,Maraimalai Nagar,"Bus Stand Road, Maraimalai Nagar",Bus Stand Road,CHGL-10684,12.783814,80.033036,80.033036,12.783814,Full
+198,W25,CG002,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10403,12.825747,80.152383,80.152383,12.825747,Half Full
+199,W44,CG002,Padappai,"Village Road, Padappai",Village Road,CHGL-10768,12.946489,80.063028,80.063028,12.946489,Full
+200,W30,CG002,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10636,12.832996,80.106451,80.106451,12.832996,Full
+201,W40,CG003,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-10953,12.98447,80.148372,80.148372,12.98447,Full
+202,W26,CG003,Singaperumal Koil,"Market Road, Singaperumal Koil",Market Road,CHGL-10642,12.820282,80.099854,80.099854,12.820282,Full
+203,W14,CG003,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10326,12.877567,80.11674,80.11674,12.877567,Empty
+204,W40,CG003,Padappai,"Village Road, Padappai",Village Road,CHGL-10754,12.95521,80.061824,80.061824,12.95521,Half Full
+205,W3,CG001,Navlur,"Navlur Church Road, Navlur",Navlur Church Road,CHGL-10034,12.850434,80.225888,80.225888,12.850434,Empty
+206,W43,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10060,12.849622,80.223123,80.223123,12.849622,Half Full
+207,W28,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10533,12.910954,80.099514,80.099514,12.910954,Full
+208,W2,CG003,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10885,12.965739,80.144393,80.144393,12.965739,Half Full
+209,W20,CG003,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10347,12.832531,80.157427,80.157427,12.832531,Half Full
+210,W13,CG003,Thiruporur,"GST Road Thiruporur, Thiruporur",GST Road Thiruporur,CHGL-10157,12.752627,80.184701,80.184701,12.752627,Full
+211,W31,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10832,12.910186,80.095437,80.095437,12.910186,Full
+212,W44,CG003,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10875,12.954034,80.138643,80.138643,12.954034,Full
+213,W43,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10826,12.925334,80.101037,80.101037,12.925334,Empty
+214,W44,CG005,Maraimalai Nagar,"Maraimalai Nagar Main Road, Maraimalai Nagar",Maraimalai Nagar Main Road,CHGL-10709,12.795187,80.03353,80.03353,12.795187,Empty
+215,W44,CG003,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10370,12.829344,80.157474,80.157474,12.829344,Full
+216,W8,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10057,12.851558,80.2379,80.2379,12.851558,Full
+217,W45,CG003,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10968,12.979411,80.147799,80.147799,12.979411,Empty
+218,W18,CG003,Padappai,"Village Road, Padappai",Village Road,CHGL-10764,12.944807,80.060476,80.060476,12.944807,Full
+219,W6,CG003,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10086,12.780619,80.215579,80.215579,12.780619,Full
+220,W17,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10027,12.858749,80.227927,80.227927,12.858749,Half Full
+221,W14,CG003,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10133,12.799074,80.21572,80.21572,12.799074,Empty
+222,W32,CG008,Tambaram,"Irumbuliyur Road, Tambaram",Irumbuliyur Road,CHGL-10417,12.923869,80.13078,80.13078,12.923869,Full
+223,W22,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10726,12.791958,80.028256,80.028256,12.791958,Full
+224,W5,CG003,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10795,12.944351,80.064786,80.064786,12.944351,Empty
+225,W32,CG003,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10602,12.845069,80.050418,80.050418,12.845069,Empty
+226,W22,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10454,12.92727,80.124149,80.124149,12.92727,Full
+227,W45,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10512,12.90055,80.099915,80.099915,12.90055,Full
+228,W44,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10507,12.918372,80.092216,80.092216,12.918372,Half Full
+229,W20,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10030,12.859655,80.238301,80.238301,12.859655,Empty
+230,W1,CG003,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10352,12.830975,80.148613,80.148613,12.830975,Empty
+231,W35,CG003,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10881,12.956715,80.145439,80.145439,12.956715,Half Full
+232,W18,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10215,12.909925,80.077003,80.077003,12.909925,Empty
+233,W9,CG003,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10672,12.831601,80.092936,80.092936,12.831601,Empty
+234,W42,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10506,12.917798,80.097747,80.097747,12.917798,Half Full
+235,W39,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10230,12.900105,80.077145,80.077145,12.900105,Half Full
+236,W10,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10052,12.85888,80.223282,80.223282,12.85888,Full
+237,W30,CG003,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10629,12.827291,80.097776,80.097776,12.827291,Full
+238,W12,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10276,12.898145,80.082767,80.082767,12.898145,Half Full
+239,W20,CG003,Guduvanchery,"Guduvanchery Bus Stand, Guduvanchery",Guduvanchery Bus Stand,CHGL-10609,12.852488,80.068696,80.068696,12.852488,Full
+240,W29,CG007,Perungalathur,"Market Road, Perungalathur",Market Road,CHGL-10840,12.911245,80.090965,80.090965,12.911245,Full
+241,W49,CG003,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10584,12.849445,80.06251,80.06251,12.849445,Half Full
+242,W25,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10419,12.922252,80.131772,80.131772,12.922252,Empty
+243,W39,CG003,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10993,12.985377,80.146963,80.146963,12.985377,Half Full
+244,W13,CG003,Urapakkam,"Urapakkam Main Road, Urapakkam",Urapakkam Main Road,CHGL-10517,12.902137,80.103916,80.103916,12.902137,Half Full
+245,W14,CG003,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10671,12.839545,80.108977,80.108977,12.839545,Full
+246,W35,CG003,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10163,12.759981,80.187515,80.187515,12.759981,Half Full
+247,W29,CG003,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10600,12.86031,80.051821,80.051821,12.86031,Half Full
+248,W40,CG003,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10198,12.747803,80.186504,80.186504,12.747803,Empty
+249,W30,CG003,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10927,12.967623,80.132771,80.132771,12.967623,Full
+250,W7,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10033,12.860469,80.226092,80.226092,12.860469,Empty
+251,W12,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10014,12.85715,80.227234,80.227234,12.85715,Half Full
+252,W48,CG003,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10613,12.855868,80.055455,80.055455,12.855868,Full
+253,W42,CG003,Thiruporur,"Thiruporur Main Road, Thiruporur",Thiruporur Main Road,CHGL-10209,12.755937,80.193146,80.193146,12.755937,Full
+254,W22,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10524,12.901283,80.103489,80.103489,12.901283,Half Full
+255,W28,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10697,12.794964,80.025052,80.025052,12.794964,Half Full
+256,W12,CG003,Padappai,"Padappai Main Road, Padappai",Padappai Main Road,CHGL-10751,12.959673,80.065251,80.065251,12.959673,Half Full
+257,W27,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10493,12.931647,80.139513,80.139513,12.931647,Half Full
+258,W37,CG003,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10570,12.857948,80.064982,80.064982,12.857948,Full
+259,W2,CG003,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10612,12.846918,80.055313,80.055313,12.846918,Full
+260,W3,CG003,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10919,12.961299,80.130109,80.130109,12.961299,Empty
+261,W40,CG003,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10089,12.786185,80.229646,80.229646,12.786185,Empty
+262,W2,CG003,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10079,12.782783,80.221393,80.221393,12.782783,Empty
+263,W39,CG001,Navlur,"Navlur Church Road, Navlur",Navlur Church Road,CHGL-10073,12.854837,80.239659,80.239659,12.854837,Half Full
+264,W9,CG003,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10763,12.959101,80.06796,80.06796,12.959101,Empty
+265,W1,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10231,12.89871,80.086928,80.086928,12.89871,Half Full
+266,W29,CG003,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10090,12.789392,80.217547,80.217547,12.789392,Empty
+267,W23,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10464,12.936034,80.137507,80.137507,12.936034,Half Full
+268,W28,CG003,Padappai,"Village Road, Padappai",Village Road,CHGL-10772,12.940504,80.05957,80.05957,12.940504,Half Full
+269,W49,CG001,Navlur,"Navlur Church Road, Navlur",Navlur Church Road,CHGL-10026,12.861785,80.233891,80.233891,12.861785,Empty
+270,W14,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10002,12.857284,80.228563,80.228563,12.857284,Empty
+271,W25,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10701,12.796721,80.033649,80.033649,12.796721,Full
+272,W36,CG003,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10916,12.951882,80.145017,80.145017,12.951882,Empty
+273,W40,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10827,12.921285,80.10073,80.10073,12.921285,Half Full
+274,W50,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10260,12.899183,80.086094,80.086094,12.899183,Full
+275,W49,CG003,Mambakkam,"Mambakkam Village Road, Mambakkam",Mambakkam Village Road,CHGL-10344,12.872359,80.119006,80.119006,12.872359,Full
+276,W17,CG003,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10860,12.95883,80.134513,80.134513,12.95883,Half Full
+277,W42,CG003,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10752,12.944232,80.056215,80.056215,12.944232,Empty
+278,W42,CG003,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-10982,12.984064,80.149002,80.149002,12.984064,Full
+279,W2,CG003,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10873,12.959452,80.138198,80.138198,12.959452,Empty
+280,W35,CG003,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10098,12.787435,80.22178,80.22178,12.787435,Half Full
+281,W7,CG003,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10287,12.876357,80.113086,80.113086,12.876357,Empty
+282,W14,CG003,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10395,12.838929,80.142933,80.142933,12.838929,Full
+283,W35,CG003,Mambakkam,"Mambakkam Village Road, Mambakkam",Mambakkam Village Road,CHGL-10320,12.879928,80.106532,80.106532,12.879928,Half Full
+284,W26,CG003,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10110,12.799783,80.227624,80.227624,12.799783,Full
+285,W42,CG003,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10871,12.951068,80.135623,80.135623,12.951068,Empty
+286,W41,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10067,12.847561,80.237623,80.237623,12.847561,Full
+287,W38,CG003,Kandigai,"Kandigai Lake Road, Kandigai",Kandigai Lake Road,CHGL-10356,12.821212,80.154807,80.154807,12.821212,Empty
+288,W45,CG003,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-10946,12.984454,80.140602,80.140602,12.984454,Full
+289,W30,CG003,Mambakkam,"Mambakkam Main Road, Mambakkam",Mambakkam Main Road,CHGL-10324,12.870187,80.1134,80.1134,12.870187,Half Full
+290,W29,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10491,12.931932,80.139719,80.139719,12.931932,Half Full
+291,W16,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10212,12.906058,80.076077,80.076077,12.906058,Full
+292,W37,CG003,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10857,12.968028,80.149037,80.149037,12.968028,Half Full
+293,W1,CG003,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10902,12.950687,80.133731,80.133731,12.950687,Full
+294,W14,CG003,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-11028,12.973894,80.143859,80.143859,12.973894,Empty
+295,W34,CG003,Padappai,"Padappai Main Road, Padappai",Padappai Main Road,CHGL-10762,12.955174,80.051979,80.051979,12.955174,Full
+296,W35,CG003,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10942,12.957157,80.133726,80.133726,12.957157,Full
+297,W46,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10267,12.905684,80.084761,80.084761,12.905684,Full
+298,W50,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10056,12.858712,80.23262,80.23262,12.858712,Full
+299,W50,CG003,Kandigai,"Kandigai Village Road, Kandigai",Kandigai Village Road,CHGL-10396,12.827955,80.152005,80.152005,12.827955,Full
+300,W15,CG003,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10882,12.964401,80.138987,80.138987,12.964401,Full
+301,W41,CG003,Urapakkam,"Urapakkam Main Road, Urapakkam",Urapakkam Main Road,CHGL-10537,12.907394,80.10433,80.10433,12.907394,Full
+302,W40,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10421,12.934602,80.121105,80.121105,12.934602,Full
+303,W1,CG004,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10095,12.785779,80.217674,80.217674,12.785779,Full
+304,W15,CG004,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10863,12.963416,80.144336,80.144336,12.963416,Empty
+305,W29,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10214,12.891818,80.078886,80.078886,12.891818,Empty
+306,W3,CG004,Mambakkam,"Mambakkam Bus Stop, Mambakkam",Mambakkam Bus Stop,CHGL-10308,12.862612,80.108464,80.108464,12.862612,Half Full
+307,W35,CG004,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10862,12.967118,80.138254,80.138254,12.967118,Half Full
+308,W38,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10239,12.894112,80.075406,80.075406,12.894112,Empty
+309,W6,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10039,12.862306,80.223504,80.223504,12.862306,Empty
+310,W7,CG008,Tambaram,"East Tambaram, Tambaram",East Tambaram,CHGL-10483,12.934243,80.125097,80.125097,12.934243,Half Full
+311,W8,CG004,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10924,12.953778,80.140718,80.140718,12.953778,Empty
+312,W15,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10272,12.896443,80.088108,80.088108,12.896443,Half Full
+313,W18,CG005,Maraimalai Nagar,"Bus Stand Road, Maraimalai Nagar",Bus Stand Road,CHGL-10682,12.798213,80.033158,80.033158,12.798213,Empty
+314,W23,CG004,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10897,12.963882,80.138034,80.138034,12.963882,Full
+315,W26,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10457,12.927281,80.132027,80.132027,12.927281,Full
+316,W44,CG004,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10149,12.793676,80.217443,80.217443,12.793676,Half Full
+317,W12,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10851,12.912054,80.100602,80.100602,12.912054,Empty
+318,W18,CG004,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-11000,12.983108,80.157027,80.157027,12.983108,Empty
+319,W18,CG004,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-11030,12.989277,80.158334,80.158334,12.989277,Half Full
+320,W21,CG004,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-11017,12.974721,80.152126,80.152126,12.974721,Empty
+321,W15,CG004,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10121,12.794398,80.210351,80.210351,12.794398,Half Full
+322,W32,CG004,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10126,12.789435,80.221943,80.221943,12.789435,Full
+323,W1,CG004,Guduvanchery,"Guduvanchery Junction, Guduvanchery",Guduvanchery Junction,CHGL-10574,12.856276,80.06191,80.06191,12.856276,Half Full
+324,W25,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10823,12.913877,80.104442,80.104442,12.913877,Half Full
+325,W39,CG004,Kelambakkam,"Vandalur-Kelambakkam Road, Kelambakkam",Vandalur-Kelambakkam Road,CHGL-10081,12.795981,80.228267,80.228267,12.795981,Full
+326,W21,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10265,12.902031,80.074393,80.074393,12.902031,Empty
+327,W27,CG004,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10779,12.9523,80.064349,80.064349,12.9523,Half Full
+328,W7,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10846,12.926719,80.107883,80.107883,12.926719,Half Full
+329,W1,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10051,12.847216,80.239674,80.239674,12.847216,Half Full
+330,W15,CG004,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10378,12.831284,80.142047,80.142047,12.831284,Full
+331,W25,CG004,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10637,12.822879,80.090591,80.090591,12.822879,Full
+332,W35,CG004,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10137,12.780328,80.223006,80.223006,12.780328,Empty
+333,W18,CG007,Perungalathur,"Station Road, Perungalathur",Station Road,CHGL-10843,12.922588,80.091524,80.091524,12.922588,Half Full
+334,W22,CG004,Mambakkam,"Mambakkam Bus Stop, Mambakkam",Mambakkam Bus Stop,CHGL-10325,12.876765,80.105986,80.105986,12.876765,Empty
+335,W13,CG004,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-11025,12.983755,80.151889,80.151889,12.983755,Full
+336,W42,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10805,12.917759,80.109584,80.109584,12.917759,Empty
+337,W27,CG004,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10317,12.866738,80.107454,80.107454,12.866738,Full
+338,W36,CG005,Maraimalai Nagar,"Bus Stand Road, Maraimalai Nagar",Bus Stand Road,CHGL-10700,12.793136,80.035957,80.035957,12.793136,Empty
+339,W1,CG008,Tambaram,"East Tambaram, Tambaram",East Tambaram,CHGL-10416,12.92165,80.138113,80.138113,12.92165,Half Full
+340,W14,CG004,Mambakkam,"Mambakkam Village Road, Mambakkam",Mambakkam Village Road,CHGL-10336,12.866122,80.112251,80.112251,12.866122,Full
+341,W28,CG004,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10131,12.78212,80.210733,80.210733,12.78212,Full
+342,W20,CG004,Mambakkam,"Mambakkam Village Road, Mambakkam",Mambakkam Village Road,CHGL-10290,12.874058,80.107724,80.107724,12.874058,Half Full
+343,W23,CG004,Padappai,"Padappai Main Road, Padappai",Padappai Main Road,CHGL-10742,12.952518,80.067847,80.067847,12.952518,Half Full
+344,W33,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10814,12.927188,80.104922,80.104922,12.927188,Full
+345,W16,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10019,12.861033,80.239902,80.239902,12.861033,Full
+346,W22,CG004,Kandigai,"Kandigai Lake Road, Kandigai",Kandigai Lake Road,CHGL-10372,12.823793,80.155561,80.155561,12.823793,Half Full
+347,W41,CG004,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-10987,12.982234,80.149006,80.149006,12.982234,Half Full
+348,W34,CG004,Singaperumal Koil,"Singaperumal Koil Main Road, Singaperumal Koil",Singaperumal Koil Main Road,CHGL-10662,12.839876,80.091444,80.091444,12.839876,Half Full
+349,W40,CG004,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10127,12.786949,80.219874,80.219874,12.786949,Full
+350,W10,CG004,Thiruporur,"GST Road Thiruporur, Thiruporur",GST Road Thiruporur,CHGL-10185,12.749185,80.194379,80.194379,12.749185,Half Full
+351,W15,CG004,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10146,12.788303,80.214348,80.214348,12.788303,Full
+352,W42,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10418,12.928414,80.134395,80.134395,12.928414,Half Full
+353,W22,CG004,Kandigai,"Kandigai Main Road, Kandigai",Kandigai Main Road,CHGL-10382,12.825159,80.141003,80.141003,12.825159,Full
+354,W7,CG004,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10913,12.968415,80.144588,80.144588,12.968415,Half Full
+355,W47,CG004,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10201,12.759761,80.191976,80.191976,12.759761,Full
+356,W37,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10061,12.856304,80.232328,80.232328,12.856304,Empty
+357,W39,CG004,Mambakkam,"Mambakkam Bus Stop, Mambakkam",Mambakkam Bus Stop,CHGL-10330,12.874535,80.10631,80.10631,12.874535,Full
+358,W39,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10687,12.796053,80.039166,80.039166,12.796053,Half Full
+359,W32,CG004,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-10964,12.976608,80.144013,80.144013,12.976608,Empty
+360,W45,CG004,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-10950,12.98591,80.153048,80.153048,12.98591,Full
+361,W15,CG004,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10337,12.876988,80.119074,80.119074,12.876988,Empty
+362,W27,CG006,Vandalur,"Urapakkam-Vandalur Road, Vandalur",Urapakkam-Vandalur Road,CHGL-10220,12.901721,80.075533,80.075533,12.901721,Empty
+363,W35,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10442,12.922168,80.135135,80.135135,12.922168,Full
+364,W35,CG004,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10879,12.958396,80.134316,80.134316,12.958396,Empty
+365,W21,CG004,Mambakkam,"Mambakkam Village Road, Mambakkam",Mambakkam Village Road,CHGL-10316,12.879001,80.116567,80.116567,12.879001,Half Full
+366,W7,CG004,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10103,12.791922,80.21398,80.21398,12.791922,Half Full
+367,W8,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10829,12.926367,80.099779,80.099779,12.926367,Full
+368,W31,CG006,Vandalur,"Urapakkam-Vandalur Road, Vandalur",Urapakkam-Vandalur Road,CHGL-10238,12.90962,80.0762,80.0762,12.90962,Half Full
+369,W37,CG004,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-10980,12.986795,80.144179,80.144179,12.986795,Full
+370,W29,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10409,12.935324,80.131611,80.131611,12.935324,Half Full
+371,W23,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10064,12.849152,80.227464,80.227464,12.849152,Full
+372,W14,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10724,12.795362,80.034347,80.034347,12.795362,Full
+373,W40,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10692,12.796147,80.038983,80.038983,12.796147,Empty
+374,W44,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10259,12.897473,80.084533,80.084533,12.897473,Full
+375,W9,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10005,12.85933,80.231278,80.231278,12.85933,Empty
+376,W19,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10036,12.855464,80.22839,80.22839,12.855464,Full
+377,W13,CG004,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10166,12.759504,80.191764,80.191764,12.759504,Full
+378,W9,CG004,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10174,12.742165,80.191256,80.191256,12.742165,Full
+379,W45,CG004,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-11015,12.982889,80.150375,80.150375,12.982889,Half Full
+380,W49,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10467,12.923842,80.128361,80.128361,12.923842,Half Full
+381,W37,CG004,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10866,12.957334,80.134629,80.134629,12.957334,Half Full
+382,W14,CG004,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10134,12.785455,80.220764,80.220764,12.785455,Half Full
+383,W14,CG004,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10312,12.863081,80.118902,80.118902,12.863081,Empty
+384,W27,CG004,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10638,12.835452,80.10444,80.10444,12.835452,Empty
+385,W27,CG004,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10138,12.780242,80.211058,80.211058,12.780242,Half Full
+386,W2,CG004,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10119,12.797163,80.210383,80.210383,12.797163,Full
+387,W30,CG004,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10737,12.959441,80.065253,80.065253,12.959441,Full
+388,W5,CG003,Urapakkam,"Urapakkam Market, Urapakkam",Urapakkam Market,CHGL-10497,12.914138,80.10167,80.10167,12.914138,Full
+389,W43,CG004,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10114,12.789253,80.218772,80.218772,12.789253,Full
+390,W42,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10213,12.895905,80.071158,80.071158,12.895905,Full
+391,W3,CG004,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10144,12.789248,80.216525,80.216525,12.789248,Half Full
+392,W8,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10001,12.857492,80.220881,80.220881,12.857492,Full
+393,W48,CG004,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10956,12.974191,80.144179,80.144179,12.974191,Full
+394,W25,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10029,12.861219,80.238967,80.238967,12.861219,Full
+395,W21,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10803,12.927152,80.096523,80.096523,12.927152,Half Full
+396,W18,CG004,Mambakkam,"Mambakkam Bus Stop, Mambakkam",Mambakkam Bus Stop,CHGL-10321,12.868688,80.116175,80.116175,12.868688,Empty
+397,W42,CG007,Perungalathur,"Station Road, Perungalathur",Station Road,CHGL-10799,12.91784,80.101174,80.101174,12.91784,Half Full
+398,W24,CG004,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10894,12.953302,80.134215,80.134215,12.953302,Full
+399,W26,CG004,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10967,12.973738,80.140874,80.140874,12.973738,Empty
+400,W49,CG007,Perungalathur,"Market Road, Perungalathur",Market Road,CHGL-10802,12.91072,80.10562,80.10562,12.91072,Empty
+401,W37,CG005,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-11002,12.978854,80.141698,80.141698,12.978854,Empty
+402,W37,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10408,12.937168,80.126936,80.126936,12.937168,Full
+403,W27,CG005,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10951,12.980022,80.142872,80.142872,12.980022,Full
+404,W11,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10833,12.919983,80.096506,80.096506,12.919983,Half Full
+405,W42,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10515,12.910151,80.09513,80.09513,12.910151,Full
+406,W49,CG005,Mambakkam,"Mambakkam Bus Stop, Mambakkam",Mambakkam Bus Stop,CHGL-10288,12.875381,80.113412,80.113412,12.875381,Empty
+407,W5,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10721,12.796776,80.025658,80.025658,12.796776,Empty
+408,W44,CG005,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10626,12.832648,80.090948,80.090948,12.832648,Half Full
+409,W13,CG008,Tambaram,"Selaiyur Main Road, Tambaram",Selaiyur Main Road,CHGL-10420,12.935818,80.122123,80.122123,12.935818,Full
+410,W39,CG005,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-11001,12.972969,80.145172,80.145172,12.972969,Full
+411,W14,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10480,12.938289,80.134493,80.134493,12.938289,Full
+412,W3,CG005,Singaperumal Koil,"Market Road, Singaperumal Koil",Market Road,CHGL-10645,12.831908,80.093589,80.093589,12.831908,Full
+413,W4,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10277,12.902939,80.07231,80.07231,12.902939,Empty
+414,W6,CG005,Kelambakkam,"Vandalur-Kelambakkam Road, Kelambakkam",Vandalur-Kelambakkam Road,CHGL-10117,12.781975,80.228981,80.228981,12.781975,Full
+415,W46,CG005,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10369,12.828873,80.158208,80.158208,12.828873,Half Full
+416,W40,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10282,12.894689,80.086554,80.086554,12.894689,Half Full
+417,W28,CG005,Thiruporur,"Thiruporur Main Road, Thiruporur",Thiruporur Main Road,CHGL-10155,12.745036,80.180059,80.180059,12.745036,Empty
+418,W26,CG003,Urapakkam,"Urapakkam Market, Urapakkam",Urapakkam Market,CHGL-10525,12.902066,80.097045,80.097045,12.902066,Full
+419,W3,CG005,Kandigai,"Kandigai Main Road, Kandigai",Kandigai Main Road,CHGL-10380,12.823909,80.159081,80.159081,12.823909,Half Full
+420,W29,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10426,12.922653,80.129893,80.129893,12.922653,Half Full
+421,W37,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10681,12.794978,80.038362,80.038362,12.794978,Empty
+422,W17,CG005,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-10996,12.981292,80.140758,80.140758,12.981292,Full
+423,W1,CG005,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10291,12.860037,80.107689,80.107689,12.860037,Half Full
+424,W5,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10688,12.789409,80.038778,80.038778,12.789409,Full
+425,W24,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10678,12.786102,80.031192,80.031192,12.786102,Full
+426,W6,CG005,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10585,12.856265,80.053929,80.053929,12.856265,Empty
+427,W43,CG005,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-11032,12.986141,80.152411,80.152411,12.986141,Half Full
+428,W45,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10284,12.902369,80.071502,80.071502,12.902369,Empty
+429,W34,CG005,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10658,12.834807,80.106612,80.106612,12.834807,Full
+430,W37,CG005,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10560,12.845903,80.064557,80.064557,12.845903,Full
+431,W18,CG005,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10865,12.951663,80.143528,80.143528,12.951663,Full
+432,W42,CG005,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10766,12.941888,80.065939,80.065939,12.941888,Empty
+433,W14,CG007,Perungalathur,"Station Road, Perungalathur",Station Road,CHGL-10810,12.924068,80.097817,80.097817,12.924068,Half Full
+434,W40,CG008,Tambaram,"Selaiyur Main Road, Tambaram",Selaiyur Main Road,CHGL-10443,12.93047,80.122055,80.122055,12.93047,Empty
+435,W8,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10012,12.847944,80.226663,80.226663,12.847944,Full
+436,W36,CG005,Padappai,"Padappai Main Road, Padappai",Padappai Main Road,CHGL-10786,12.945784,80.056878,80.056878,12.945784,Empty
+437,W30,CG003,Urapakkam,"Urapakkam Market, Urapakkam",Urapakkam Market,CHGL-10549,12.902539,80.091168,80.091168,12.902539,Half Full
+438,W11,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10018,12.862448,80.232964,80.232964,12.862448,Full
+439,W26,CG005,Kandigai,"Kandigai Village Road, Kandigai",Kandigai Village Road,CHGL-10401,12.830019,80.15177,80.15177,12.830019,Full
+440,W49,CG005,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-11014,12.987541,80.150675,80.150675,12.987541,Full
+441,W38,CG005,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10773,12.952658,80.051291,80.051291,12.952658,Full
+442,W43,CG005,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10085,12.781911,80.225019,80.225019,12.781911,Full
+443,W35,CG005,Maraimalai Nagar,"Maraimalai Nagar Main Road, Maraimalai Nagar",Maraimalai Nagar Main Road,CHGL-10704,12.783466,80.026403,80.026403,12.783466,Half Full
+444,W10,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10529,12.904958,80.105504,80.105504,12.904958,Half Full
+445,W6,CG005,Padappai,"Padappai Junction, Padappai",Padappai Junction,CHGL-10788,12.94295,80.050603,80.050603,12.94295,Empty
+446,W13,CG005,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10940,12.969013,80.139246,80.139246,12.969013,Full
+447,W4,CG005,Kandigai,"Kandigai Village Road, Kandigai",Kandigai Village Road,CHGL-10367,12.824525,80.143016,80.143016,12.824525,Empty
+448,W27,CG005,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10398,12.820133,80.142577,80.142577,12.820133,Full
+449,W47,CG005,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10660,12.826513,80.092275,80.092275,12.826513,Full
+450,W23,CG005,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10080,12.794181,80.228901,80.228901,12.794181,Full
+451,W23,CG005,Guduvanchery,"Guduvanchery Junction, Guduvanchery",Guduvanchery Junction,CHGL-10558,12.846908,80.052762,80.052762,12.846908,Full
+452,W4,CG005,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-11019,12.980581,80.153202,80.153202,12.980581,Half Full
+453,W41,CG005,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-11024,12.988857,80.147714,80.147714,12.988857,Empty
+454,W40,CG005,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10615,12.863952,80.056976,80.056976,12.863952,Half Full
+455,W40,CG008,Tambaram,"Irumbuliyur Road, Tambaram",Irumbuliyur Road,CHGL-10444,12.922571,80.131803,80.131803,12.922571,Empty
+456,W30,CG005,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10168,12.747319,80.184675,80.184675,12.747319,Half Full
+457,W9,CG005,Thiruporur,"GST Road Thiruporur, Thiruporur",GST Road Thiruporur,CHGL-10180,12.745254,80.199709,80.199709,12.745254,Empty
+458,W32,CG005,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10992,12.974558,80.150823,80.150823,12.974558,Half Full
+459,W39,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10262,12.902481,80.088301,80.088301,12.902481,Empty
+460,W10,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10255,12.906808,80.075964,80.075964,12.906808,Half Full
+461,W23,CG005,Singaperumal Koil,"Market Road, Singaperumal Koil",Market Road,CHGL-10670,12.838289,80.100669,80.100669,12.838289,Full
+462,W10,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10502,12.910748,80.093373,80.093373,12.910748,Full
+463,W45,CG006,Vandalur,"Urapakkam-Vandalur Road, Vandalur",Urapakkam-Vandalur Road,CHGL-10283,12.894044,80.087125,80.087125,12.894044,Full
+464,W28,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10479,12.927824,80.137103,80.137103,12.927824,Empty
+465,W35,CG005,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10949,12.970023,80.146292,80.146292,12.970023,Full
+466,W7,CG005,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10981,12.98446,80.158056,80.158056,12.98446,Empty
+467,W33,CG008,Tambaram,"Selaiyur Main Road, Tambaram",Selaiyur Main Road,CHGL-10407,12.93915,80.12808,80.12808,12.93915,Full
+468,W47,CG005,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10113,12.782579,80.21305,80.21305,12.782579,Full
+469,W34,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10222,12.907817,80.070128,80.070128,12.907817,Full
+470,W47,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10516,12.910472,80.093284,80.093284,12.910472,Full
+471,W23,CG005,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-11004,12.973522,80.150441,80.150441,12.973522,Full
+472,W13,CG005,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10756,12.959593,80.065485,80.065485,12.959593,Full
+473,W29,CG006,Vandalur,"Urapakkam-Vandalur Road, Vandalur",Urapakkam-Vandalur Road,CHGL-10250,12.908514,80.074749,80.074749,12.908514,Half Full
+474,W44,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10245,12.898402,80.077878,80.077878,12.898402,Full
+475,W8,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10008,12.860907,80.238795,80.238795,12.860907,Full
+476,W22,CG005,Mambakkam,"Mambakkam Main Road, Mambakkam",Mambakkam Main Road,CHGL-10329,12.865553,80.100044,80.100044,12.865553,Full
+477,W46,CG005,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10178,12.741411,80.196569,80.196569,12.741411,Full
+478,W33,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10241,12.904782,80.071832,80.071832,12.904782,Empty
+479,W20,CG005,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10582,12.857543,80.051962,80.051962,12.857543,Half Full
+480,W28,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10221,12.903745,80.082365,80.082365,12.903745,Half Full
+481,W45,CG005,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10746,12.955442,80.056156,80.056156,12.955442,Half Full
+482,W15,CG005,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10318,12.864152,80.113004,80.113004,12.864152,Half Full
+483,W34,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10232,12.909339,80.087854,80.087854,12.909339,Full
+484,W47,CG005,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10123,12.784084,80.22403,80.22403,12.784084,Half Full
+485,W18,CG005,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10628,12.821485,80.09442,80.09442,12.821485,Half Full
+486,W26,CG008,Tambaram,"Irumbuliyur Road, Tambaram",Irumbuliyur Road,CHGL-10474,12.921882,80.123964,80.123964,12.921882,Half Full
+487,W16,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10811,12.926186,80.091541,80.091541,12.926186,Full
+488,W36,CG005,Guduvanchery,"Guduvanchery Junction, Guduvanchery",Guduvanchery Junction,CHGL-10587,12.859756,80.061288,80.061288,12.859756,Half Full
+489,W41,CG006,Vandalur,"Urapakkam-Vandalur Road, Vandalur",Urapakkam-Vandalur Road,CHGL-10243,12.893707,80.072458,80.072458,12.893707,Empty
+490,W50,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10053,12.85822,80.230466,80.230466,12.85822,Half Full
+491,W27,CG005,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10171,12.740376,80.181671,80.181671,12.740376,Full
+492,W7,CG005,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10158,12.754917,80.194225,80.194225,12.754917,Half Full
+493,W11,CG005,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10659,12.839599,80.094728,80.094728,12.839599,Half Full
+494,W24,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10007,12.851326,80.239645,80.239645,12.851326,Full
+495,W25,CG005,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10918,12.965758,80.146841,80.146841,12.965758,Full
+496,W11,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10224,12.907764,80.089771,80.089771,12.907764,Full
+497,W34,CG005,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10286,12.861282,80.109589,80.109589,12.861282,Empty
+498,W50,CG005,Guduvanchery,"Guduvanchery Junction, Guduvanchery",Guduvanchery Junction,CHGL-10596,12.84996,80.062943,80.062943,12.84996,Full
+499,W50,CG005,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10164,12.751033,80.195002,80.195002,12.751033,Half Full
+500,W32,CG008,Tambaram,"East Tambaram, Tambaram",East Tambaram,CHGL-10413,12.930387,80.12781,80.12781,12.930387,Full
+501,W49,CG006,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10867,12.965127,80.137828,80.137828,12.965127,Half Full
+502,W21,CG006,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10129,12.790274,80.214819,80.214819,12.790274,Full
+503,W17,CG006,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10644,12.83991,80.09229,80.09229,12.83991,Empty
+504,W40,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10543,12.913562,80.096642,80.096642,12.913562,Empty
+505,W18,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10252,12.895356,80.080929,80.080929,12.895356,Empty
+506,W33,CG003,Urapakkam,"Urapakkam Main Road, Urapakkam",Urapakkam Main Road,CHGL-10527,12.910789,80.101268,80.101268,12.910789,Half Full
+507,W33,CG006,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10082,12.792054,80.221493,80.221493,12.792054,Half Full
+508,W12,CG006,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10152,12.758181,80.183339,80.183339,12.758181,Half Full
+509,W28,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10817,12.922245,80.091585,80.091585,12.922245,Half Full
+510,W29,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10691,12.795571,80.036129,80.036129,12.795571,Empty
+511,W10,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10848,12.9292,80.106695,80.106695,12.9292,Half Full
+512,W26,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10498,12.914518,80.093292,80.093292,12.914518,Empty
+513,W24,CG006,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10323,12.860281,80.11975,80.11975,12.860281,Full
+514,W20,CG006,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10856,12.958014,80.141136,80.141136,12.958014,Empty
+515,W4,CG008,Tambaram,"East Tambaram, Tambaram",East Tambaram,CHGL-10412,12.930669,80.135891,80.135891,12.930669,Empty
+516,W22,CG006,Singaperumal Koil,"Market Road, Singaperumal Koil",Market Road,CHGL-10621,12.834612,80.093593,80.093593,12.834612,Full
+517,W4,CG006,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10148,12.799435,80.225021,80.225021,12.799435,Full
+518,W18,CG007,Perungalathur,"Market Road, Perungalathur",Market Road,CHGL-10830,12.928947,80.091185,80.091185,12.928947,Full
+519,W36,CG006,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10077,12.790939,80.227989,80.227989,12.790939,Half Full
+520,W12,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10509,12.902173,80.104696,80.104696,12.902173,Half Full
+521,W50,CG006,Vandalur,"Urapakkam-Vandalur Road, Vandalur",Urapakkam-Vandalur Road,CHGL-10246,12.890683,80.070461,80.070461,12.890683,Empty
+522,W46,CG005,Maraimalai Nagar,"Maraimalai Nagar Main Road, Maraimalai Nagar",Maraimalai Nagar Main Road,CHGL-10696,12.781318,80.030189,80.030189,12.781318,Half Full
+523,W16,CG006,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10904,12.961771,80.132196,80.132196,12.961771,Empty
+524,W34,CG006,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10966,12.972832,80.150845,80.150845,12.972832,Empty
+525,W11,CG006,Singaperumal Koil,"Market Road, Singaperumal Koil",Market Road,CHGL-10646,12.831032,80.091573,80.091573,12.831032,Half Full
+526,W27,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10731,12.780899,80.020229,80.020229,12.780899,Full
+527,W47,CG003,Urapakkam,"GST Road Urapakkam, Urapakkam",GST Road Urapakkam,CHGL-10538,12.918922,80.104341,80.104341,12.918922,Full
+528,W3,CG006,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10557,12.845256,80.056305,80.056305,12.845256,Full
+529,W39,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10248,12.906183,80.079887,80.079887,12.906183,Full
+530,W24,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10066,12.863734,80.230028,80.230028,12.863734,Half Full
+531,W25,CG008,Tambaram,"East Tambaram, Tambaram",East Tambaram,CHGL-10459,12.932639,80.137678,80.137678,12.932639,Half Full
+532,W49,CG006,Padappai,"Padappai Junction, Padappai",Padappai Junction,CHGL-10787,12.943287,80.050926,80.050926,12.943287,Empty
+533,W11,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10690,12.79325,80.028468,80.028468,12.79325,Full
+534,W41,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10011,12.861091,80.224741,80.224741,12.861091,Empty
+535,W24,CG005,Maraimalai Nagar,"Maraimalai Nagar Main Road, Maraimalai Nagar",Maraimalai Nagar Main Road,CHGL-10732,12.794735,80.035646,80.035646,12.794735,Full
+536,W31,CG006,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10774,12.953672,80.069517,80.069517,12.953672,Full
+537,W48,CG006,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10675,12.829422,80.108948,80.108948,12.829422,Empty
+538,W16,CG005,Maraimalai Nagar,"Maraimalai Nagar Main Road, Maraimalai Nagar",Maraimalai Nagar Main Road,CHGL-10706,12.795692,80.029864,80.029864,12.795692,Full
+539,W19,CG006,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10748,12.940734,80.064873,80.064873,12.940734,Empty
+540,W24,CG006,Thiruporur,"Thiruporur Main Road, Thiruporur",Thiruporur Main Road,CHGL-10179,12.748792,80.188408,80.188408,12.748792,Half Full
+541,W33,CG006,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10789,12.957289,80.051361,80.051361,12.957289,Empty
+542,W17,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10842,12.923566,80.10779,80.10779,12.923566,Half Full
+543,W6,CG007,Perungalathur,"Station Road, Perungalathur",Station Road,CHGL-10828,12.916319,80.104159,80.104159,12.916319,Half Full
+544,W30,CG006,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10373,12.826685,80.144866,80.144866,12.826685,Empty
+545,W18,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10855,12.911003,80.106041,80.106041,12.911003,Empty
+546,W11,CG006,Padappai,"GST Road Padappai, Padappai",GST Road Padappai,CHGL-10759,12.946355,80.062493,80.062493,12.946355,Empty
+547,W16,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10048,12.845444,80.235693,80.235693,12.845444,Empty
+548,W32,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10074,12.84971,80.233494,80.233494,12.84971,Empty
+549,W33,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10006,12.855057,80.221102,80.221102,12.855057,Full
+550,W25,CG005,Maraimalai Nagar,"Bus Stand Road, Maraimalai Nagar",Bus Stand Road,CHGL-10703,12.780796,80.024406,80.024406,12.780796,Empty
+551,W44,CG006,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10118,12.780658,80.215184,80.215184,12.780658,Full
+552,W14,CG006,Kandigai,"Kandigai Lake Road, Kandigai",Kandigai Lake Road,CHGL-10348,12.82712,80.148854,80.148854,12.82712,Full
+553,W18,CG006,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10930,12.950418,80.140531,80.140531,12.950418,Empty
+554,W43,CG006,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10917,12.968107,80.132004,80.132004,12.968107,Empty
+555,W30,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10063,12.864308,80.222938,80.222938,12.864308,Half Full
+556,W10,CG006,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10938,12.969034,80.134,80.134,12.969034,Full
+557,W32,CG006,Thiruporur,"Thiruporur Main Road, Thiruporur",Thiruporur Main Road,CHGL-10199,12.753884,80.191572,80.191572,12.753884,Full
+558,W46,CG006,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10920,12.963618,80.144294,80.144294,12.963618,Empty
+559,W7,CG006,Thiruporur,"GST Road Thiruporur, Thiruporur",GST Road Thiruporur,CHGL-10195,12.756732,80.194032,80.194032,12.756732,Empty
+560,W33,CG006,Mambakkam,"Mambakkam Main Road, Mambakkam",Mambakkam Main Road,CHGL-10293,12.868807,80.113315,80.113315,12.868807,Full
+561,W45,CG006,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10872,12.968852,80.137301,80.137301,12.968852,Half Full
+562,W45,CG006,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-10972,12.983525,80.146147,80.146147,12.983525,Full
+563,W4,CG006,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10109,12.787129,80.224405,80.224405,12.787129,Full
+564,W43,CG006,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-11008,12.988223,80.154046,80.154046,12.988223,Half Full
+565,W45,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10229,12.90484,80.073591,80.073591,12.90484,Half Full
+566,W32,CG006,Padappai,"GST Road Padappai, Padappai",GST Road Padappai,CHGL-10739,12.952015,80.051596,80.051596,12.952015,Half Full
+567,W15,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10441,12.93578,80.1366,80.1366,12.93578,Half Full
+568,W12,CG006,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10322,12.874092,80.118814,80.118814,12.874092,Empty
+569,W42,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10013,12.855787,80.225024,80.225024,12.855787,Half Full
+570,W47,CG008,Tambaram,"Selaiyur Main Road, Tambaram",Selaiyur Main Road,CHGL-10436,12.925687,80.138776,80.138776,12.925687,Full
+571,W9,CG006,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10667,12.826998,80.102179,80.102179,12.826998,Full
+572,W32,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10043,12.845587,80.22324,80.22324,12.845587,Half Full
+573,W43,CG006,Singaperumal Koil,"Singaperumal Koil Main Road, Singaperumal Koil",Singaperumal Koil Main Road,CHGL-10656,12.822841,80.099628,80.099628,12.822841,Full
+574,W9,CG006,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-11010,12.970832,80.156539,80.156539,12.970832,Empty
+575,W31,CG006,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10132,12.798402,80.228187,80.228187,12.798402,Half Full
+576,W29,CG006,Mambakkam,"Mambakkam Main Road, Mambakkam",Mambakkam Main Road,CHGL-10309,12.869946,80.106988,80.106988,12.869946,Half Full
+577,W18,CG006,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10101,12.783376,80.217512,80.217512,12.783376,Half Full
+578,W46,CG006,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10576,12.847376,80.052826,80.052826,12.847376,Half Full
+579,W8,CG006,Vandalur,"Urapakkam-Vandalur Road, Vandalur",Urapakkam-Vandalur Road,CHGL-10219,12.891095,80.077135,80.077135,12.891095,Full
+580,W24,CG006,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10864,12.963535,80.142047,80.142047,12.963535,Empty
+581,W33,CG006,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10669,12.828412,80.091507,80.091507,12.828412,Empty
+582,W36,CG006,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10107,12.78176,80.211296,80.211296,12.78176,Full
+583,W44,CG006,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10986,12.989125,80.145522,80.145522,12.989125,Full
+584,W7,CG006,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10617,12.831521,80.09375,80.09375,12.831521,Full
+585,W5,CG006,Padappai,"Village Road, Padappai",Village Road,CHGL-10757,12.959737,80.065333,80.065333,12.959737,Full
+586,W38,CG006,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-11003,12.97086,80.152955,80.152955,12.97086,Empty
+587,W6,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10242,12.893654,80.072567,80.072567,12.893654,Full
+588,W15,CG006,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10088,12.794312,80.222996,80.222996,12.794312,Empty
+589,W17,CG007,Perungalathur,"Market Road, Perungalathur",Market Road,CHGL-10824,12.922885,80.094169,80.094169,12.922885,Half Full
+590,W42,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10711,12.791725,80.025097,80.025097,12.791725,Full
+591,W32,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10433,12.93326,80.139138,80.139138,12.93326,Half Full
+592,W14,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10004,12.855305,80.229953,80.229953,12.855305,Full
+593,W24,CG006,Kandigai,"Kandigai Village Road, Kandigai",Kandigai Village Road,CHGL-10364,12.823248,80.14615,80.14615,12.823248,Full
+594,W31,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10727,12.794296,80.029281,80.029281,12.794296,Empty
+595,W34,CG006,Padappai,"Padappai Main Road, Padappai",Padappai Main Road,CHGL-10765,12.946469,80.064,80.064,12.946469,Full
+596,W42,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10809,12.928854,80.103706,80.103706,12.928854,Half Full
+597,W7,CG006,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10601,12.861561,80.062551,80.062551,12.861561,Empty
+598,W44,CG006,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10624,12.830845,80.094653,80.094653,12.830845,Full
+599,W41,CG006,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10995,12.971902,80.155861,80.155861,12.971902,Full
+600,W36,CG008,Tambaram,"Selaiyur Main Road, Tambaram",Selaiyur Main Road,CHGL-10484,12.928981,80.134082,80.134082,12.928981,Full
+601,W33,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10065,12.859996,80.223059,80.223059,12.859996,Half Full
+602,W18,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10254,12.905104,80.080258,80.080258,12.905104,Half Full
+603,W13,CG007,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-10999,12.970394,80.14354,80.14354,12.970394,Full
+604,W39,CG007,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10176,12.743115,80.190119,80.190119,12.743115,Half Full
+605,W37,CG007,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10878,12.95989,80.146793,80.146793,12.95989,Half Full
+606,W34,CG007,Kandigai,"Kandigai Lake Road, Kandigai",Kandigai Lake Road,CHGL-10387,12.828235,80.142979,80.142979,12.828235,Full
+607,W27,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10045,12.856857,80.223046,80.223046,12.856857,Full
+608,W22,CG007,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10200,12.755017,80.182449,80.182449,12.755017,Full
+609,W28,CG007,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10404,12.83618,80.144984,80.144984,12.83618,Empty
+610,W49,CG007,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10884,12.959654,80.130398,80.130398,12.959654,Full
+611,W45,CG007,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10632,12.839587,80.107747,80.107747,12.839587,Half Full
+612,W38,CG007,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10592,12.851425,80.069955,80.069955,12.851425,Half Full
+613,W17,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10035,12.860486,80.220727,80.220727,12.860486,Full
+614,W48,CG006,Vandalur,"Urapakkam-Vandalur Road, Vandalur",Urapakkam-Vandalur Road,CHGL-10235,12.901041,80.071317,80.071317,12.901041,Full
+615,W39,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10534,12.916947,80.096937,80.096937,12.916947,Full
+616,W47,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10722,12.789822,80.03611,80.03611,12.789822,Full
+617,W42,CG007,Kandigai,"Kandigai Lake Road, Kandigai",Kandigai Lake Road,CHGL-10383,12.826128,80.156023,80.156023,12.826128,Full
+618,W42,CG007,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10160,12.75282,80.186969,80.186969,12.75282,Half Full
+619,W26,CG007,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10893,12.963248,80.134893,80.134893,12.963248,Empty
+620,W44,CG007,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-11009,12.973085,80.145235,80.145235,12.973085,Half Full
+621,W7,CG007,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10877,12.968977,80.132251,80.132251,12.968977,Empty
+622,W38,CG007,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-11013,12.98569,80.145428,80.145428,12.98569,Full
+623,W23,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10228,12.895912,80.084502,80.084502,12.895912,Empty
+624,W47,CG007,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10299,12.869413,80.10324,80.10324,12.869413,Half Full
+625,W5,CG007,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10898,12.959738,80.131831,80.131831,12.959738,Full
+626,W38,CG007,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10782,12.954492,80.060296,80.060296,12.954492,Half Full
+627,W28,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10257,12.908737,80.076291,80.076291,12.908737,Full
+628,W28,CG007,Singaperumal Koil,"Singaperumal Koil Main Road, Singaperumal Koil",Singaperumal Koil Main Road,CHGL-10673,12.821043,80.10403,80.10403,12.821043,Half Full
+629,W43,CG007,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10634,12.831328,80.102505,80.102505,12.831328,Half Full
+630,W2,CG003,Urapakkam,"GST Road Urapakkam, Urapakkam",GST Road Urapakkam,CHGL-10528,12.9152,80.099551,80.099551,12.9152,Full
+631,W10,CG007,Padappai,"Padappai Main Road, Padappai",Padappai Main Road,CHGL-10747,12.959236,80.060244,80.060244,12.959236,Half Full
+632,W1,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10705,12.789028,80.036842,80.036842,12.789028,Full
+633,W6,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10489,12.935976,80.135778,80.135778,12.935976,Half Full
+634,W18,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10055,12.850881,80.22975,80.22975,12.850881,Full
+635,W5,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10003,12.862481,80.236165,80.236165,12.862481,Full
+636,W33,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10425,12.928666,80.124603,80.124603,12.928666,Full
+637,W30,CG007,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10102,12.784604,80.22056,80.22056,12.784604,Half Full
+638,W44,CG007,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10935,12.96378,80.140821,80.140821,12.96378,Empty
+639,W40,CG007,Singaperumal Koil,"Singaperumal Koil Main Road, Singaperumal Koil",Singaperumal Koil Main Road,CHGL-10643,12.823286,80.098432,80.098432,12.823286,Full
+640,W17,CG007,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10354,12.820074,80.145985,80.145985,12.820074,Full
+641,W39,CG007,Mambakkam,"Mambakkam Main Road, Mambakkam",Mambakkam Main Road,CHGL-10319,12.864921,80.106269,80.106269,12.864921,Full
+642,W34,CG007,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10923,12.968234,80.133575,80.133575,12.968234,Half Full
+643,W21,CG006,Vandalur,"Urapakkam-Vandalur Road, Vandalur",Urapakkam-Vandalur Road,CHGL-10237,12.905051,80.082964,80.082964,12.905051,Full
+644,W18,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10411,12.922193,80.13202,80.13202,12.922193,Half Full
+645,W7,CG008,Tambaram,"East Tambaram, Tambaram",East Tambaram,CHGL-10428,12.934268,80.121292,80.121292,12.934268,Empty
+646,W8,CG007,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10172,12.743506,80.182742,80.182742,12.743506,Full
+647,W8,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10847,12.928494,80.093227,80.093227,12.928494,Full
+648,W12,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10236,12.894738,80.082409,80.082409,12.894738,Half Full
+649,W29,CG007,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10775,12.946756,80.054269,80.054269,12.946756,Full
+650,W9,CG007,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10870,12.956667,80.147811,80.147811,12.956667,Half Full
+651,W15,CG007,Mambakkam,"Mambakkam Village Road, Mambakkam",Mambakkam Village Road,CHGL-10342,12.875715,80.11305,80.11305,12.875715,Half Full
+652,W35,CG007,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10116,12.795957,80.217098,80.217098,12.795957,Full
+653,W31,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10854,12.92621,80.10831,80.10831,12.92621,Half Full
+654,W23,CG007,Kandigai,"Kandigai Lake Road, Kandigai",Kandigai Lake Road,CHGL-10390,12.838365,80.143813,80.143813,12.838365,Full
+655,W41,CG007,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10778,12.952053,80.065954,80.065954,12.952053,Full
+656,W2,CG007,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10965,12.971038,80.146153,80.146153,12.971038,Empty
+657,W40,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10716,12.785076,80.029842,80.029842,12.785076,Empty
+658,W33,CG007,Mambakkam,"Mambakkam Main Road, Mambakkam",Mambakkam Main Road,CHGL-10331,12.872404,80.110156,80.110156,12.872404,Full
+659,W16,CG007,Guduvanchery,"Guduvanchery Junction, Guduvanchery",Guduvanchery Junction,CHGL-10572,12.849821,80.052322,80.052322,12.849821,Half Full
+660,W14,CG007,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10605,12.854333,80.061104,80.061104,12.854333,Half Full
+661,W33,CG007,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10793,12.941895,80.055401,80.055401,12.941895,Empty
+662,W32,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10017,12.846042,80.223442,80.223442,12.846042,Full
+663,W6,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10453,12.920048,80.126352,80.126352,12.920048,Empty
+664,W4,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10481,12.928823,80.124034,80.124034,12.928823,Empty
+665,W24,CG001,Navlur,"Navlur Church Road, Navlur",Navlur Church Road,CHGL-10070,12.854848,80.232274,80.232274,12.854848,Half Full
+666,W10,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10281,12.894186,80.078908,80.078908,12.894186,Half Full
+667,W1,CG007,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10353,12.83048,80.141568,80.141568,12.83048,Half Full
+668,W18,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10226,12.908972,80.084982,80.084982,12.908972,Full
+669,W19,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10268,12.896932,80.085439,80.085439,12.896932,Half Full
+670,W16,CG007,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10314,12.875312,80.10054,80.10054,12.875312,Full
+671,W23,CG007,Kelambakkam,"Vandalur-Kelambakkam Road, Kelambakkam",Vandalur-Kelambakkam Road,CHGL-10139,12.799956,80.217664,80.217664,12.799956,Half Full
+672,W46,CG007,Singaperumal Koil,"Market Road, Singaperumal Koil",Market Road,CHGL-10651,12.82138,80.094495,80.094495,12.82138,Empty
+673,W47,CG007,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-10954,12.988859,80.150381,80.150381,12.988859,Half Full
+674,W21,CG007,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10736,12.940577,80.050787,80.050787,12.940577,Half Full
+675,W19,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10452,12.93927,80.124929,80.124929,12.93927,Empty
+676,W11,CG007,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10929,12.960239,80.133464,80.133464,12.960239,Full
+677,W29,CG007,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10630,12.827696,80.098732,80.098732,12.827696,Empty
+678,W33,CG007,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10901,12.961318,80.145579,80.145579,12.961318,Full
+679,W18,CG007,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10622,12.830353,80.092698,80.092698,12.830353,Full
+680,W29,CG007,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10944,12.961485,80.132955,80.132955,12.961485,Full
+681,W39,CG007,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10899,12.964269,80.143443,80.143443,12.964269,Half Full
+682,W25,CG001,Navlur,"Navlur Church Road, Navlur",Navlur Church Road,CHGL-10015,12.862422,80.233176,80.233176,12.862422,Empty
+683,W32,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10683,12.792324,80.030391,80.030391,12.792324,Empty
+684,W20,CG003,Urapakkam,"Urapakkam Main Road, Urapakkam",Urapakkam Main Road,CHGL-10552,12.90306,80.106113,80.106113,12.90306,Half Full
+685,W27,CG007,Padappai,"Padappai Main Road, Padappai",Padappai Main Road,CHGL-10753,12.949324,80.052087,80.052087,12.949324,Half Full
+686,W11,CG007,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10190,12.745446,80.197267,80.197267,12.745446,Empty
+687,W17,CG007,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10151,12.759966,80.193043,80.193043,12.759966,Full
+688,W6,CG007,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10302,12.870996,80.112091,80.112091,12.870996,Empty
+689,W13,CG007,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10360,12.836004,80.141178,80.141178,12.836004,Empty
+690,W28,CG007,Perungalathur,"Station Road, Perungalathur",Station Road,CHGL-10804,12.919969,80.102059,80.102059,12.919969,Full
+691,W36,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10695,12.786729,80.024934,80.024934,12.786729,Full
+692,W33,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10689,12.782675,80.022618,80.022618,12.782675,Full
+693,W19,CG007,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10167,12.745926,80.188885,80.188885,12.745926,Empty
+694,W10,CG007,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10580,12.86167,80.052079,80.052079,12.86167,Full
+695,W30,CG007,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-10973,12.971203,80.142086,80.142086,12.971203,Full
+696,W28,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10256,12.890064,80.074613,80.074613,12.890064,Empty
+697,W35,CG003,Urapakkam,"GST Road Urapakkam, Urapakkam",GST Road Urapakkam,CHGL-10540,12.91701,80.103103,80.103103,12.91701,Empty
+698,W38,CG007,Kelambakkam,"Vandalur-Kelambakkam Road, Kelambakkam",Vandalur-Kelambakkam Road,CHGL-10087,12.787207,80.217563,80.217563,12.787207,Empty
+699,W34,CG007,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10925,12.964058,80.149809,80.149809,12.964058,Half Full
+700,W24,CG007,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10908,12.961313,80.143891,80.143891,12.961313,Full
+701,W19,CG008,Tambaram,"East Tambaram, Tambaram",East Tambaram,CHGL-10447,12.939132,80.134395,80.134395,12.939132,Full
+702,W46,CG008,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10647,12.828444,80.095905,80.095905,12.828444,Empty
+703,W17,CG008,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10125,12.785574,80.213673,80.213673,12.785574,Half Full
+704,W6,CG008,Padappai,"Padappai Junction, Padappai",Padappai Junction,CHGL-10740,12.952128,80.058738,80.058738,12.952128,Half Full
+705,W30,CG008,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10562,12.85307,80.053739,80.053739,12.85307,Half Full
+706,W42,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10261,12.903905,80.080954,80.080954,12.903905,Empty
+707,W16,CG008,Mambakkam,"Mambakkam Village Road, Mambakkam",Mambakkam Village Road,CHGL-10310,12.869368,80.118967,80.118967,12.869368,Full
+708,W19,CG008,Mambakkam,"Mambakkam Main Road, Mambakkam",Mambakkam Main Road,CHGL-10295,12.878153,80.104198,80.104198,12.878153,Full
+709,W15,CG008,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10208,12.744264,80.194921,80.194921,12.744264,Empty
+710,W34,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10550,12.913197,80.102923,80.102923,12.913197,Empty
+711,W43,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10275,12.892177,80.085708,80.085708,12.892177,Full
+712,W5,CG008,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10568,12.860089,80.054767,80.054767,12.860089,Full
+713,W37,CG008,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10375,12.836389,80.141233,80.141233,12.836389,Full
+714,W8,CG008,Guduvanchery,"Guduvanchery Junction, Guduvanchery",Guduvanchery Junction,CHGL-10611,12.848603,80.054298,80.054298,12.848603,Full
+715,W45,CG008,Thiruporur,"GST Road Thiruporur, Thiruporur",GST Road Thiruporur,CHGL-10153,12.753196,80.185209,80.185209,12.753196,Empty
+716,W48,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10037,12.846053,80.220228,80.220228,12.846053,Empty
+717,W36,CG008,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10096,12.785624,80.217949,80.217949,12.785624,Full
+718,W4,CG008,Kandigai,"Kandigai Village Road, Kandigai",Kandigai Village Road,CHGL-10346,12.827945,80.140089,80.140089,12.827945,Empty
+719,W2,CG006,Vandalur,"Urapakkam-Vandalur Road, Vandalur",Urapakkam-Vandalur Road,CHGL-10225,12.901361,80.078224,80.078224,12.901361,Empty
+720,W39,CG008,Kandigai,"Kandigai Lake Road, Kandigai",Kandigai Lake Road,CHGL-10349,12.829682,80.159802,80.159802,12.829682,Full
+721,W27,CG008,Tambaram,"Selaiyur Main Road, Tambaram",Selaiyur Main Road,CHGL-10461,12.938824,80.132152,80.132152,12.938824,Half Full
+722,W47,CG008,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10091,12.780927,80.21223,80.21223,12.780927,Empty
+723,W23,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10440,12.933111,80.124022,80.124022,12.933111,Empty
+724,W35,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10475,12.937855,80.123888,80.123888,12.937855,Empty
+725,W45,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10544,12.903908,80.093604,80.093604,12.903908,Full
+726,W22,CG008,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-10989,12.98122,80.159162,80.159162,12.98122,Half Full
+727,W16,CG008,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10388,12.823365,80.152707,80.152707,12.823365,Empty
+728,W5,CG008,Thiruporur,"Thiruporur Main Road, Thiruporur",Thiruporur Main Road,CHGL-10182,12.74031,80.189849,80.189849,12.74031,Empty
+729,W28,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10223,12.900407,80.077315,80.077315,12.900407,Full
+730,W16,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10050,12.851441,80.22436,80.22436,12.851441,Empty
+731,W11,CG008,Tambaram,"Irumbuliyur Road, Tambaram",Irumbuliyur Road,CHGL-10463,12.926175,80.12828,80.12828,12.926175,Full
+732,W26,CG008,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10910,12.960742,80.145539,80.145539,12.960742,Full
+733,W47,CG008,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10595,12.855232,80.059188,80.059188,12.855232,Full
+734,W41,CG008,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10405,12.826646,80.147021,80.147021,12.826646,Half Full
+735,W36,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10227,12.903164,80.084422,80.084422,12.903164,Full
+736,W48,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10800,12.91217,80.106747,80.106747,12.91217,Half Full
+737,W8,CG008,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10141,12.791926,80.225109,80.225109,12.791926,Full
+738,W34,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10694,12.799271,80.02664,80.02664,12.799271,Half Full
+739,W12,CG008,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10111,12.788089,80.225439,80.225439,12.788089,Full
+740,W22,CG008,Kandigai,"Kandigai Village Road, Kandigai",Kandigai Village Road,CHGL-10374,12.834854,80.148931,80.148931,12.834854,Empty
+741,W37,CG008,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10594,12.847188,80.052943,80.052943,12.847188,Full
+742,W28,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10469,12.937195,80.124415,80.124415,12.937195,Full
+743,W8,CG008,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10943,12.953161,80.138369,80.138369,12.953161,Half Full
+744,W13,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10253,12.893557,80.075341,80.075341,12.893557,Full
+745,W39,CG008,Padappai,"Padappai Junction, Padappai",Padappai Junction,CHGL-10791,12.958488,80.068325,80.068325,12.958488,Empty
+746,W14,CG008,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10674,12.839345,80.097709,80.097709,12.839345,Half Full
+747,W48,CG008,Guduvanchery,"Guduvanchery Junction, Guduvanchery",Guduvanchery Junction,CHGL-10577,12.845731,80.063175,80.063175,12.845731,Half Full
+748,W8,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10431,12.930124,80.128538,80.128538,12.930124,Empty
+749,W30,CG008,Tambaram,"East Tambaram, Tambaram",East Tambaram,CHGL-10429,12.921626,80.12899,80.12899,12.921626,Half Full
+750,W43,CG008,Tambaram,"East Tambaram, Tambaram",East Tambaram,CHGL-10455,12.939336,80.126875,80.126875,12.939336,Half Full
+751,W4,CG008,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10350,12.82871,80.15723,80.15723,12.82871,Empty
+752,W31,CG008,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-11033,12.975667,80.144599,80.144599,12.975667,Empty
+753,W19,CG008,Singaperumal Koil,"Singaperumal Koil Main Road, Singaperumal Koil",Singaperumal Koil Main Road,CHGL-10664,12.829035,80.097069,80.097069,12.829035,Half Full
+754,W49,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10278,12.894184,80.082367,80.082367,12.894184,Half Full
+755,W7,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10807,12.929131,80.104087,80.104087,12.929131,Half Full
+756,W40,CG008,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10112,12.793905,80.221982,80.221982,12.793905,Half Full
+757,W40,CG008,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10623,12.837736,80.102887,80.102887,12.837736,Empty
+758,W20,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10551,12.910948,80.096145,80.096145,12.910948,Full
+759,W6,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10677,12.795232,80.036838,80.036838,12.795232,Full
+760,W30,CG008,Padappai,"Padappai Junction, Padappai",Padappai Junction,CHGL-10758,12.958821,80.05619,80.05619,12.958821,Full
+761,W43,CG008,Thiruporur,"GST Road Thiruporur, Thiruporur",GST Road Thiruporur,CHGL-10154,12.754891,80.18349,80.18349,12.754891,Empty
+762,W27,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10274,12.902328,80.073661,80.073661,12.902328,Empty
+763,W19,CG008,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10906,12.953917,80.133188,80.133188,12.953917,Half Full
+764,W20,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10448,12.932525,80.121378,80.121378,12.932525,Full
+765,W46,CG005,Maraimalai Nagar,"Bus Stand Road, Maraimalai Nagar",Bus Stand Road,CHGL-10679,12.782355,80.02309,80.02309,12.782355,Full
+766,W25,CG008,Singaperumal Koil,"Market Road, Singaperumal Koil",Market Road,CHGL-10620,12.83338,80.098613,80.098613,12.83338,Empty
+767,W6,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10047,12.847293,80.239754,80.239754,12.847293,Full
+768,W13,CG008,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10744,12.958187,80.058644,80.058644,12.958187,Full
+769,W27,CG008,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10122,12.785426,80.220376,80.220376,12.785426,Full
+770,W36,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10473,12.934076,80.130031,80.130031,12.934076,Half Full
+771,W2,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10022,12.845097,80.227431,80.227431,12.845097,Empty
+772,W35,CG008,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10345,12.878708,80.116615,80.116615,12.878708,Full
+773,W17,CG008,Mambakkam,"Mambakkam Main Road, Mambakkam",Mambakkam Main Road,CHGL-10298,12.873077,80.110309,80.110309,12.873077,Half Full
+774,W22,CG003,Urapakkam,"Urapakkam Main Road, Urapakkam",Urapakkam Main Road,CHGL-10539,12.919508,80.101992,80.101992,12.919508,Half Full
+775,W14,CG008,Mambakkam,"Mambakkam Bus Stop, Mambakkam",Mambakkam Bus Stop,CHGL-10343,12.871597,80.112817,80.112817,12.871597,Half Full
+776,W1,CG008,Padappai,"GST Road Padappai, Padappai",GST Road Padappai,CHGL-10784,12.94353,80.068125,80.068125,12.94353,Full
+777,W26,CG008,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10159,12.746552,80.193784,80.193784,12.746552,Half Full
+778,W24,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10822,12.91146,80.095201,80.095201,12.91146,Full
+779,W36,CG008,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10887,12.952395,80.135993,80.135993,12.952395,Full
+780,W49,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10269,12.902575,80.088002,80.088002,12.902575,Empty
+781,W14,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10218,12.909079,80.070428,80.070428,12.909079,Full
+782,W6,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10430,12.935049,80.134889,80.134889,12.935049,Full
+783,W16,CG008,Mambakkam,"Mambakkam Village Road, Mambakkam",Mambakkam Village Road,CHGL-10307,12.879312,80.105559,80.105559,12.879312,Empty
+784,W18,CG008,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10911,12.969572,80.147453,80.147453,12.969572,Empty
+785,W16,CG008,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10124,12.799673,80.223579,80.223579,12.799673,Empty
+786,W39,CG003,Urapakkam,"GST Road Urapakkam, Urapakkam",GST Road Urapakkam,CHGL-10555,12.917355,80.104452,80.104452,12.917355,Full
+787,W23,CG008,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10890,12.9612,80.138762,80.138762,12.9612,Half Full
+788,W22,CG005,Maraimalai Nagar,"Bus Stand Road, Maraimalai Nagar",Bus Stand Road,CHGL-10686,12.795185,80.036709,80.036709,12.795185,Empty
+789,W1,CG008,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10556,12.853537,80.0648,80.0648,12.853537,Full
+790,W11,CG008,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-11023,12.980877,80.143563,80.143563,12.980877,Empty
+791,W33,CG005,Maraimalai Nagar,"Bus Stand Road, Maraimalai Nagar",Bus Stand Road,CHGL-10725,12.78629,80.021359,80.021359,12.78629,Half Full
+792,W29,CG008,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-11006,12.976241,80.151982,80.151982,12.976241,Full
+793,W26,CG008,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10915,12.955708,80.133555,80.133555,12.955708,Half Full
+794,W11,CG008,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10655,12.829084,80.107027,80.107027,12.829084,Empty
+795,W43,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10071,12.856892,80.236234,80.236234,12.856892,Half Full
+796,W2,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10821,12.929225,80.101104,80.101104,12.929225,Full
+797,W27,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10482,12.929957,80.121575,80.121575,12.929957,Full
+798,W20,CG003,Urapakkam,"Urapakkam Main Road, Urapakkam",Urapakkam Main Road,CHGL-10526,12.919814,80.095611,80.095611,12.919814,Full
+799,W21,CG008,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10614,12.855556,80.068678,80.068678,12.855556,Half Full
+800,W3,CG008,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10874,12.960261,80.135965,80.135965,12.960261,Empty
+801,W10,CG009,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10936,12.966195,80.13839,80.13839,12.966195,Empty
+802,W4,CG009,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10591,12.854769,80.06455,80.06455,12.854769,Empty
+803,W6,CG009,Pallavaram,"Pallavaram Main Road, Pallavaram",Pallavaram Main Road,CHGL-10977,12.977122,80.148839,80.148839,12.977122,Full
+804,W49,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10075,12.849363,80.232113,80.232113,12.849363,Half Full
+805,W6,CG009,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10606,12.850912,80.06991,80.06991,12.850912,Half Full
+806,W2,CG009,Mambakkam,"Mambakkam Junction, Mambakkam",Mambakkam Junction,CHGL-10304,12.871957,80.106634,80.106634,12.871957,Full
+807,W12,CG009,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10639,12.83237,80.094191,80.094191,12.83237,Empty
+808,W41,CG009,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10355,12.821535,80.154643,80.154643,12.821535,Half Full
+809,W35,CG009,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10084,12.790963,80.229822,80.229822,12.790963,Empty
+810,W33,CG009,Padappai,"Padappai Junction, Padappai",Padappai Junction,CHGL-10745,12.946684,80.05561,80.05561,12.946684,Full
+811,W48,CG009,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-11034,12.979513,80.152426,80.152426,12.979513,Empty
+812,W49,CG009,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10559,12.85886,80.05948,80.05948,12.85886,Full
+813,W9,CG009,Thiruporur,"Thiruporur Main Road, Thiruporur",Thiruporur Main Road,CHGL-10194,12.753832,80.183817,80.183817,12.753832,Half Full
+814,W12,CG009,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-11016,12.981689,80.159763,80.159763,12.981689,Full
+815,W16,CG009,Mambakkam,"Mambakkam Village Road, Mambakkam",Mambakkam Village Road,CHGL-10313,12.860576,80.114851,80.114851,12.860576,Empty
+816,W21,CG009,Padappai,"Village Road, Padappai",Village Road,CHGL-10770,12.940444,80.051382,80.051382,12.940444,Full
+817,W3,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10719,12.79225,80.039574,80.039574,12.79225,Half Full
+818,W37,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10240,12.90607,80.089471,80.089471,12.90607,Full
+819,W39,CG009,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10578,12.858368,80.066826,80.066826,12.858368,Empty
+820,W7,CG009,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10588,12.852659,80.052351,80.052351,12.852659,Empty
+821,W18,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10059,12.862754,80.231423,80.231423,12.862754,Half Full
+822,W42,CG009,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10586,12.853844,80.06455,80.06455,12.853844,Full
+823,W47,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10505,12.9133,80.101964,80.101964,12.9133,Half Full
+824,W26,CG009,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10094,12.782899,80.219459,80.219459,12.782899,Half Full
+825,W6,CG009,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10377,12.833451,80.150915,80.150915,12.833451,Half Full
+826,W44,CG009,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10381,12.825175,80.150155,80.150155,12.825175,Full
+827,W17,CG009,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10657,12.839654,80.104053,80.104053,12.839654,Full
+828,W25,CG009,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10206,12.756126,80.19793,80.19793,12.756126,Full
+829,W19,CG009,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10357,12.837943,80.142742,80.142742,12.837943,Empty
+830,W41,CG009,Kelambakkam,"Vandalur-Kelambakkam Road, Kelambakkam",Vandalur-Kelambakkam Road,CHGL-10105,12.793942,80.220749,80.220749,12.793942,Full
+831,W47,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10020,12.853632,80.22954,80.22954,12.853632,Full
+832,W3,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10016,12.845642,80.23603,80.23603,12.845642,Empty
+833,W44,CG008,Tambaram,"Irumbuliyur Road, Tambaram",Irumbuliyur Road,CHGL-10468,12.931261,80.136031,80.136031,12.931261,Full
+834,W39,CG009,Guduvanchery,"Guduvanchery Bus Stand, Guduvanchery",Guduvanchery Bus Stand,CHGL-10603,12.850186,80.059371,80.059371,12.850186,Full
+835,W41,CG009,Mambakkam,"Mambakkam Bus Stop, Mambakkam",Mambakkam Bus Stop,CHGL-10311,12.868146,80.119496,80.119496,12.868146,Half Full
+836,W12,CG003,Urapakkam,"GST Road Urapakkam, Urapakkam",GST Road Urapakkam,CHGL-10510,12.913654,80.107159,80.107159,12.913654,Full
+837,W22,CG003,Urapakkam,"Urapakkam Main Road, Urapakkam",Urapakkam Main Road,CHGL-10513,12.912479,80.092284,80.092284,12.912479,Full
+838,W46,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10499,12.914126,80.090564,80.090564,12.914126,Full
+839,W15,CG009,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10652,12.833032,80.098496,80.098496,12.833032,Half Full
+840,W42,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10439,12.922474,80.120589,80.120589,12.922474,Empty
+841,W47,CG009,Mambakkam,"Mambakkam Main Road, Mambakkam",Mambakkam Main Road,CHGL-10294,12.878837,80.113875,80.113875,12.878837,Half Full
+842,W46,CG009,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10892,12.968699,80.132725,80.132725,12.968699,Half Full
+843,W2,CG009,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10590,12.858143,80.061561,80.061561,12.858143,Empty
+844,W41,CG009,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-10976,12.973239,80.157984,80.157984,12.973239,Half Full
+845,W10,CG009,Mambakkam,"Mambakkam Main Road, Mambakkam",Mambakkam Main Road,CHGL-10303,12.864881,80.119982,80.119982,12.864881,Full
+846,W22,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10010,12.859123,80.22806,80.22806,12.859123,Half Full
+847,W14,CG009,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-10988,12.978059,80.14247,80.14247,12.978059,Full
+848,W20,CG009,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10903,12.950295,80.133014,80.133014,12.950295,Full
+849,W37,CG009,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10933,12.95593,80.13223,80.13223,12.95593,Half Full
+850,W8,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10456,12.930502,80.138792,80.138792,12.930502,Empty
+851,W12,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10710,12.798559,80.038777,80.038777,12.798559,Full
+852,W28,CG007,Perungalathur,"Station Road, Perungalathur",Station Road,CHGL-10801,12.920846,80.106853,80.106853,12.920846,Half Full
+853,W50,CG009,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10092,12.78134,80.211747,80.211747,12.78134,Full
+854,W21,CG001,Navlur,"Navlur Church Road, Navlur",Navlur Church Road,CHGL-10038,12.845924,80.223064,80.223064,12.845924,Half Full
+855,W39,CG009,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10573,12.849954,80.068931,80.068931,12.849954,Full
+856,W36,CG009,Thiruporur,"GST Road Thiruporur, Thiruporur",GST Road Thiruporur,CHGL-10161,12.743093,80.190539,80.190539,12.743093,Empty
+857,W6,CG009,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10563,12.849823,80.054506,80.054506,12.849823,Full
+858,W44,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10211,12.90528,80.088162,80.088162,12.90528,Half Full
+859,W50,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10247,12.894086,80.076817,80.076817,12.894086,Empty
+860,W46,CG009,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10210,12.746195,80.183866,80.183866,12.746195,Full
+861,W2,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10819,12.927592,80.104613,80.104613,12.927592,Full
+862,W46,CG009,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10120,12.79683,80.210961,80.210961,12.79683,Full
+863,W3,CG009,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10909,12.961039,80.140406,80.140406,12.961039,Full
+864,W37,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10271,12.905885,80.081583,80.081583,12.905885,Half Full
+865,W26,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10714,12.792749,80.036437,80.036437,12.792749,Empty
+866,W50,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10258,12.903541,80.078112,80.078112,12.903541,Full
+867,W20,CG009,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-10947,12.986882,80.14092,80.14092,12.986882,Full
+868,W32,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10490,12.920787,80.135805,80.135805,12.920787,Full
+869,W15,CG009,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10175,12.746003,80.185591,80.185591,12.746003,Empty
+870,W1,CG009,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10184,12.759006,80.181534,80.181534,12.759006,Empty
+871,W3,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10813,12.928523,80.100181,80.100181,12.928523,Full
+872,W9,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10476,12.92078,80.132871,80.132871,12.92078,Half Full
+873,W20,CG009,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10598,12.847179,80.067495,80.067495,12.847179,Empty
+874,W45,CG009,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10564,12.858217,80.058948,80.058948,12.858217,Half Full
+875,W13,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10720,12.781405,80.027133,80.027133,12.781405,Full
+876,W37,CG009,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10338,12.863846,80.118266,80.118266,12.863846,Half Full
+877,W48,CG009,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10193,12.749763,80.18341,80.18341,12.749763,Full
+878,W46,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10838,12.919052,80.095484,80.095484,12.919052,Full
+879,W12,CG009,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10931,12.951693,80.138903,80.138903,12.951693,Full
+880,W17,CG009,Kelambakkam,"Kelambakkam Bus Stand, Kelambakkam",Kelambakkam Bus Stand,CHGL-10099,12.785197,80.211164,80.211164,12.785197,Full
+881,W26,CG009,Padappai,"Village Road, Padappai",Village Road,CHGL-10755,12.946902,80.0536,80.0536,12.946902,Half Full
+882,W24,CG009,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10597,12.856647,80.051346,80.051346,12.856647,Empty
+883,W39,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10492,12.930112,80.137572,80.137572,12.930112,Full
+884,W13,CG009,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10386,12.837033,80.15988,80.15988,12.837033,Full
+885,W48,CG008,Tambaram,"Irumbuliyur Road, Tambaram",Irumbuliyur Road,CHGL-10487,12.92426,80.124859,80.124859,12.92426,Full
+886,W38,CG009,Padappai,"Village Road, Padappai",Village Road,CHGL-10781,12.957067,80.057792,80.057792,12.957067,Empty
+887,W27,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10698,12.792499,80.03141,80.03141,12.792499,Full
+888,W23,CG009,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10880,12.962166,80.132495,80.132495,12.962166,Full
+889,W28,CG007,Perungalathur,"Market Road, Perungalathur",Market Road,CHGL-10815,12.914161,80.103717,80.103717,12.914161,Full
+890,W11,CG009,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10963,12.985868,80.145709,80.145709,12.985868,Full
+891,W27,CG009,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10399,12.826642,80.151528,80.151528,12.826642,Full
+892,W7,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10445,12.930971,80.128347,80.128347,12.930971,Full
+893,W9,CG009,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-11035,12.986213,80.146744,80.146744,12.986213,Empty
+894,W16,CG009,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10361,12.836827,80.157248,80.157248,12.836827,Full
+895,W3,CG008,Tambaram,"Irumbuliyur Road, Tambaram",Irumbuliyur Road,CHGL-10478,12.924439,80.137765,80.137765,12.924439,Full
+896,W19,CG009,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10984,12.981606,80.156968,80.156968,12.981606,Full
+897,W5,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10519,12.900411,80.101878,80.101878,12.900411,Full
+898,W31,CG009,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10618,12.828159,80.092359,80.092359,12.828159,Half Full
+899,W15,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10845,12.912524,80.096019,80.096019,12.912524,Half Full
+900,W1,CG009,Padappai,"Village Road, Padappai",Village Road,CHGL-10785,12.942795,80.063666,80.063666,12.942795,Full
+901,W47,CG010,Thiruporur,"GST Road Thiruporur, Thiruporur",GST Road Thiruporur,CHGL-10207,12.758654,80.193716,80.193716,12.758654,Full
+902,W46,CG010,Kelambakkam,"Vandalur-Kelambakkam Road, Kelambakkam",Vandalur-Kelambakkam Road,CHGL-10078,12.791836,80.216251,80.216251,12.791836,Full
+903,W4,CG006,Vandalur,"Urapakkam-Vandalur Road, Vandalur",Urapakkam-Vandalur Road,CHGL-10234,12.893948,80.075375,80.075375,12.893948,Half Full
+904,W3,CG010,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10188,12.749887,80.194838,80.194838,12.749887,Half Full
+905,W6,CG010,Chromepet,"Chromepet Industrial Area, Chromepet",Chromepet Industrial Area,CHGL-10934,12.966804,80.14812,80.14812,12.966804,Empty
+906,W27,CG010,Kandigai,"Kandigai Main Road, Kandigai",Kandigai Main Road,CHGL-10366,12.837378,80.151838,80.151838,12.837378,Full
+907,W43,CG010,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10891,12.956733,80.130928,80.130928,12.956733,Half Full
+908,W36,CG010,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10156,12.745659,80.192014,80.192014,12.745659,Half Full
+909,W36,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10217,12.898616,80.070966,80.070966,12.898616,Empty
+910,W26,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10808,12.922977,80.106184,80.106184,12.922977,Full
+911,W21,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10264,12.896576,80.08076,80.08076,12.896576,Full
+912,W50,CG010,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-10958,12.982643,80.145784,80.145784,12.982643,Half Full
+913,W8,CG010,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10971,12.984406,80.144855,80.144855,12.984406,Full
+914,W44,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10531,12.909025,80.100253,80.100253,12.909025,Half Full
+915,W45,CG010,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10970,12.976011,80.15949,80.15949,12.976011,Empty
+916,W43,CG008,Tambaram,"East Tambaram, Tambaram",East Tambaram,CHGL-10422,12.936848,80.122901,80.122901,12.936848,Full
+917,W44,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10458,12.920687,80.128641,80.128641,12.920687,Half Full
+918,W29,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10472,12.935829,80.124138,80.124138,12.935829,Empty
+919,W8,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10834,12.925246,80.103897,80.103897,12.925246,Full
+920,W1,CG010,Singaperumal Koil,"Bus Stand Road, Singaperumal Koil",Bus Stand Road,CHGL-10631,12.836246,80.10663,80.10663,12.836246,Empty
+921,W27,CG005,Maraimalai Nagar,"Bus Stand Road, Maraimalai Nagar",Bus Stand Road,CHGL-10735,12.783866,80.023741,80.023741,12.783866,Full
+922,W32,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10723,12.798595,80.033497,80.033497,12.798595,Empty
+923,W36,CG010,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10889,12.96716,80.1491,80.1491,12.96716,Full
+924,W23,CG010,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10868,12.960983,80.134239,80.134239,12.960983,Full
+925,W21,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10406,12.938717,80.120678,80.120678,12.938717,Full
+926,W14,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10032,12.858119,80.238323,80.238323,12.858119,Half Full
+927,W32,CG010,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-11018,12.980457,80.152867,80.152867,12.980457,Full
+928,W5,CG005,Maraimalai Nagar,"Maraimalai Nagar Main Road, Maraimalai Nagar",Maraimalai Nagar Main Road,CHGL-10712,12.790424,80.039635,80.039635,12.790424,Full
+929,W41,CG010,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10192,12.750888,80.198118,80.198118,12.750888,Full
+930,W23,CG010,Mambakkam,"Mambakkam Bus Stop, Mambakkam",Mambakkam Bus Stop,CHGL-10339,12.86752,80.117957,80.117957,12.86752,Full
+931,W1,CG010,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-10974,12.976273,80.148834,80.148834,12.976273,Half Full
+932,W14,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10058,12.853414,80.228961,80.228961,12.853414,Full
+933,W43,CG010,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10368,12.834053,80.151021,80.151021,12.834053,Empty
+934,W12,CG010,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10985,12.972086,80.1575,80.1575,12.972086,Full
+935,W29,CG010,Thiruporur,"Thiruporur Main Road, Thiruporur",Thiruporur Main Road,CHGL-10196,12.741714,80.187695,80.187695,12.741714,Full
+936,W16,CG003,Urapakkam,"Urapakkam Market, Urapakkam",Urapakkam Market,CHGL-10500,12.901854,80.101114,80.101114,12.901854,Half Full
+937,W36,CG003,Urapakkam,"Urapakkam Bus Stand, Urapakkam",Urapakkam Bus Stand,CHGL-10530,12.919274,80.091925,80.091925,12.919274,Half Full
+938,W48,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10432,12.927933,80.134329,80.134329,12.927933,Empty
+939,W31,CG001,Navlur,"Navlur Lake Road, Navlur",Navlur Lake Road,CHGL-10028,12.853474,80.221324,80.221324,12.853474,Full
+940,W28,CG010,Padappai,"Village Road, Padappai",Village Road,CHGL-10750,12.954239,80.053384,80.053384,12.954239,Empty
+941,W31,CG010,Singaperumal Koil,"Market Road, Singaperumal Koil",Market Road,CHGL-10616,12.820224,80.105058,80.105058,12.820224,Full
+942,W46,CG010,Thiruporur,"GST Road Thiruporur, Thiruporur",GST Road Thiruporur,CHGL-10202,12.758135,80.19681,80.19681,12.758135,Full
+943,W34,CG010,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-11005,12.972456,80.153627,80.153627,12.972456,Half Full
+944,W3,CG005,Maraimalai Nagar,"Market Area, Maraimalai Nagar",Market Area,CHGL-10685,12.785149,80.025341,80.025341,12.785149,Full
+945,W5,CG010,Mambakkam,"Mambakkam Village Road, Mambakkam",Mambakkam Village Road,CHGL-10328,12.864663,80.117624,80.117624,12.864663,Empty
+946,W35,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10434,12.927014,80.129441,80.129441,12.927014,Half Full
+947,W7,CG010,Guduvanchery,"Guduvanchery Main Road, Guduvanchery",Guduvanchery Main Road,CHGL-10583,12.859422,80.069249,80.069249,12.859422,Full
+948,W29,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10273,12.899061,80.073319,80.073319,12.899061,Full
+949,W37,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10460,12.934574,80.133726,80.133726,12.934574,Full
+950,W21,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10446,12.93289,80.128113,80.128113,12.93289,Full
+951,W3,CG010,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10384,12.838544,80.153794,80.153794,12.838544,Empty
+952,W22,CG008,Tambaram,"GST Road Tambaram, Tambaram",GST Road Tambaram,CHGL-10414,12.921202,80.12499,80.12499,12.921202,Half Full
+953,W22,CG010,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10969,12.985319,80.142352,80.142352,12.985319,Half Full
+954,W6,CG010,Thiruporur,"Mamallapuram Road, Thiruporur",Mamallapuram Road,CHGL-10203,12.751275,80.192688,80.192688,12.751275,Half Full
+955,W31,CG010,Thiruporur,"Thiruporur Main Road, Thiruporur",Thiruporur Main Road,CHGL-10197,12.749032,80.184524,80.184524,12.749032,Empty
+956,W21,CG007,Perungalathur,"GST Road Perungalathur, Perungalathur",GST Road Perungalathur,CHGL-10818,12.915829,80.091478,80.091478,12.915829,Empty
+957,W10,CG003,Urapakkam,"Urapakkam Junction, Urapakkam",Urapakkam Junction,CHGL-10547,12.919142,80.096693,80.096693,12.919142,Half Full
+958,W30,CG010,Kelambakkam,"Kelambakkam Main Road, Kelambakkam",Kelambakkam Main Road,CHGL-10145,12.781566,80.214716,80.214716,12.781566,Full
+959,W50,CG007,Perungalathur,"Perungalathur Main Road, Perungalathur",Perungalathur Main Road,CHGL-10850,12.92642,80.102162,80.102162,12.92642,Half Full
+960,W33,CG010,Kandigai,"Kandigai Village Road, Kandigai",Kandigai Village Road,CHGL-10358,12.838932,80.141902,80.141902,12.838932,Full
+961,W8,CG010,Kandigai,"Kandigai Lake Road, Kandigai",Kandigai Lake Road,CHGL-10379,12.832949,80.140557,80.140557,12.832949,Half Full
+962,W47,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10470,12.935368,80.128819,80.128819,12.935368,Empty
+963,W45,CG010,Guduvanchery,"Guduvanchery Junction, Guduvanchery",Guduvanchery Junction,CHGL-10608,12.856244,80.062759,80.062759,12.856244,Empty
+964,W25,CG008,Tambaram,"East Tambaram, Tambaram",East Tambaram,CHGL-10494,12.927193,80.12023,80.12023,12.927193,Full
+965,W29,CG010,Padappai,"Village Road, Padappai",Village Road,CHGL-10777,12.958945,80.063513,80.063513,12.958945,Half Full
+966,W23,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10049,12.864896,80.229592,80.229592,12.864896,Half Full
+967,W43,CG010,Guduvanchery,"GST Road Guduvanchery, Guduvanchery",GST Road Guduvanchery,CHGL-10567,12.846054,80.057188,80.057188,12.846054,Full
+968,W38,CG010,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10649,12.83536,80.096493,80.096493,12.83536,Full
+969,W1,CG010,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10991,12.985078,80.155885,80.155885,12.985078,Empty
+970,W10,CG010,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10959,12.978527,80.143909,80.143909,12.978527,Full
+971,W43,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10023,12.863676,80.231004,80.231004,12.863676,Empty
+972,W41,CG010,Pallavaram,"GST Road Pallavaram, Pallavaram",GST Road Pallavaram,CHGL-11031,12.98908,80.146197,80.146197,12.98908,Half Full
+973,W27,CG010,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10886,12.96038,80.132504,80.132504,12.96038,Half Full
+974,W47,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10244,12.89771,80.077426,80.077426,12.89771,Full
+975,W31,CG005,Maraimalai Nagar,"Maraimalai Nagar Main Road, Maraimalai Nagar",Maraimalai Nagar Main Road,CHGL-10729,12.790331,80.02288,80.02288,12.790331,Full
+976,W26,CG010,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-10975,12.97473,80.152602,80.152602,12.97473,Full
+977,W22,CG010,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-10978,12.976645,80.141259,80.141259,12.976645,Empty
+978,W35,CG010,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10900,12.954147,80.146815,80.146815,12.954147,Half Full
+979,W19,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10718,12.78521,80.021133,80.021133,12.78521,Full
+980,W18,CG010,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10922,12.955001,80.133934,80.133934,12.955001,Half Full
+981,W15,CG010,Thiruporur,"Thiruporur Bazaar, Thiruporur",Thiruporur Bazaar,CHGL-10191,12.759927,80.184795,80.184795,12.759927,Full
+982,W9,CG010,Pallavaram,"Pallavaram Junction, Pallavaram",Pallavaram Junction,CHGL-11007,12.981053,80.154457,80.154457,12.981053,Full
+983,W30,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10266,12.895694,80.086808,80.086808,12.895694,Half Full
+984,W4,CG003,Urapakkam,"Urapakkam Market, Urapakkam",Urapakkam Market,CHGL-10504,12.900863,80.103446,80.103446,12.900863,Full
+985,W15,CG005,Maraimalai Nagar,"Maraimalai Nagar Main Road, Maraimalai Nagar",Maraimalai Nagar Main Road,CHGL-10715,12.793664,80.023893,80.023893,12.793664,Empty
+986,W12,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10708,12.780724,80.024235,80.024235,12.780724,Full
+987,W5,CG010,Thiruporur,"Thiruporur Main Road, Thiruporur",Thiruporur Main Road,CHGL-10169,12.747347,80.183928,80.183928,12.747347,Half Full
+988,W30,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10699,12.785168,80.033049,80.033049,12.785168,Empty
+989,W39,CG010,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10633,12.820292,80.104145,80.104145,12.820292,Full
+990,W1,CG007,Perungalathur,"Perungalathur Junction, Perungalathur",Perungalathur Junction,CHGL-10844,12.922701,80.103443,80.103443,12.922701,Empty
+991,W9,CG010,Guduvanchery,"Guduvanchery Junction, Guduvanchery",Guduvanchery Junction,CHGL-10569,12.860791,80.052275,80.052275,12.860791,Full
+992,W28,CG010,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-11011,12.984342,80.148653,80.148653,12.984342,Half Full
+993,W29,CG003,Urapakkam,"GST Road Urapakkam, Urapakkam",GST Road Urapakkam,CHGL-10541,12.912434,80.097094,80.097094,12.912434,Half Full
+994,W4,CG010,Mambakkam,"Mambakkam Village Road, Mambakkam",Mambakkam Village Road,CHGL-10300,12.872221,80.112728,80.112728,12.872221,Empty
+995,W4,CG006,Vandalur,"Vandalur Lake Road, Vandalur",Vandalur Lake Road,CHGL-10279,12.89803,80.077664,80.077664,12.89803,Full
+996,W5,CG010,Chromepet,"GST Road Chromepet, Chromepet",GST Road Chromepet,CHGL-10945,12.968356,80.134288,80.134288,12.968356,Full
+997,W17,CG010,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10315,12.861389,80.115647,80.115647,12.861389,Full
+998,W7,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10466,12.924934,80.123585,80.123585,12.924934,Full
+999,W50,CG010,Guduvanchery,"Guduvanchery Bus Stand, Guduvanchery",Guduvanchery Bus Stand,CHGL-10561,12.862409,80.067167,80.067167,12.862409,Half Full
+1000,W37,CG008,Tambaram,"Selaiyur Main Road, Tambaram",Selaiyur Main Road,CHGL-10488,12.920761,80.134209,80.134209,12.920761,Full
+1001,W3,CG011,Guduvanchery,"Guduvanchery Bus Stand, Guduvanchery",Guduvanchery Bus Stand,CHGL-10565,12.863313,80.055183,80.055183,12.863313,Empty
+1002,W42,CG011,Mambakkam,"GST Road Mambakkam, Mambakkam",GST Road Mambakkam,CHGL-10332,12.869569,80.115329,80.115329,12.869569,Full
+1003,W32,CG011,Kandigai,"Kandigai Junction, Kandigai",Kandigai Junction,CHGL-10389,12.839108,80.140202,80.140202,12.839108,Half Full
+1004,W5,CG011,Chromepet,"Chromepet Main Road, Chromepet",Chromepet Main Road,CHGL-10912,12.958968,80.147609,80.147609,12.958968,Half Full
+1005,W11,CG001,Navlur,"Navlur Junction, Navlur",Navlur Junction,CHGL-10024,12.864871,80.22556,80.22556,12.864871,Full
+1006,W40,CG011,Kandigai,"Kandigai Market Street, Kandigai",Kandigai Market Street,CHGL-10362,12.838988,80.149361,80.149361,12.838988,Empty
+1007,W3,CG011,Chromepet,"Bus Depot Road, Chromepet",Bus Depot Road,CHGL-10914,12.950509,80.142964,80.142964,12.950509,Half Full
+1008,W48,CG011,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10104,12.785802,80.229311,80.229311,12.785802,Half Full
+1009,W42,CG011,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10990,12.988465,80.158648,80.158648,12.988465,Full
+1010,W14,CG001,Navlur,"Navlur Main Road, Navlur",Navlur Main Road,CHGL-10021,12.859422,80.23096,80.23096,12.859422,Full
+1011,W20,CG011,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10790,12.944259,80.06575,80.06575,12.944259,Empty
+1012,W44,CG011,Guduvanchery,"Guduvanchery Market, Guduvanchery",Guduvanchery Market,CHGL-10593,12.856312,80.053853,80.053853,12.856312,Empty
+1013,W26,CG011,Kelambakkam,"Kelambakkam Market Area, Kelambakkam",Kelambakkam Market Area,CHGL-10136,12.784077,80.227042,80.227042,12.784077,Half Full
+1014,W27,CG011,Chromepet,"Chromepet Market, Chromepet",Chromepet Market,CHGL-10941,12.95179,80.145032,80.145032,12.95179,Half Full
+1015,W26,CG011,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-11012,12.972065,80.140832,80.140832,12.972065,Full
+1016,W13,CG011,Kandigai,"Kandigai Lake Road, Kandigai",Kandigai Lake Road,CHGL-10376,12.827694,80.145296,80.145296,12.827694,Full
+1017,W9,CG011,Pallavaram,"Chromepet-Pallavaram Road, Pallavaram",Chromepet-Pallavaram Road,CHGL-10998,12.981069,80.156736,80.156736,12.981069,Empty
+1018,W14,CG011,Padappai,"Padappai Market, Padappai",Padappai Market,CHGL-10792,12.949177,80.055139,80.055139,12.949177,Full
+1019,W39,CG005,Maraimalai Nagar,"GST Road Maraimalai Nagar, Maraimalai Nagar",GST Road Maraimalai Nagar,CHGL-10733,12.786079,80.032421,80.032421,12.786079,Half Full
+1020,W34,CG001,Navlur,"OMR Service Road, Navlur",OMR Service Road,CHGL-10054,12.846138,80.236088,80.236088,12.846138,Empty
+1021,W48,CG008,Tambaram,"Tambaram Sanatorium, Tambaram",Tambaram Sanatorium,CHGL-10462,12.939134,80.127458,80.127458,12.939134,Half Full
+1022,W25,CG008,Tambaram,"Tambaram Main Road, Tambaram",Tambaram Main Road,CHGL-10427,12.92696,80.134752,80.134752,12.92696,Full
+1023,W16,CG011,Kelambakkam,"OMR Kelambakkam, Kelambakkam",OMR Kelambakkam,CHGL-10097,12.794447,80.211638,80.211638,12.794447,Full
+1024,W39,CG011,Singaperumal Koil,"GST Road SP Koil, Singaperumal Koil",GST Road SP Koil,CHGL-10661,12.828494,80.106156,80.106156,12.828494,Half Full
+1025,W4,CG003,Urapakkam,"GST Road Urapakkam, Urapakkam",GST Road Urapakkam,CHGL-10523,12.909688,80.092461,80.092461,12.909688,Half Full
+1026,W2,CG006,Vandalur,"Vandalur Zoo Road, Vandalur",Vandalur Zoo Road,CHGL-10285,12.900274,80.081426,80.081426,12.900274,Empty
+1027,W23,CG005,Maraimalai Nagar,"Railway Station Road, Maraimalai Nagar",Railway Station Road,CHGL-10730,12.793883,80.036533,80.036533,12.793883,Full
+1028,W24,CG006,Vandalur,"GST Road Vandalur, Vandalur",GST Road Vandalur,CHGL-10233,12.892846,80.088293,80.088293,12.892846,Empty
+1029,W49,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10251,12.897226,80.075209,80.075209,12.897226,Full
+1030,W18,CG011,Singaperumal Koil,"Temple Street, Singaperumal Koil",Temple Street,CHGL-10653,12.828148,80.105504,80.105504,12.828148,Full
+1031,W45,CG006,Vandalur,"Vandalur Main Road, Vandalur",Vandalur Main Road,CHGL-10249,12.906241,80.087742,80.087742,12.906241,Half Full
+1032,W16,CG001,Navlur,"Navlur Church Road, Navlur",Navlur Church Road,CHGL-10072,12.861157,80.228445,80.228445,12.861157,Empty
+1033,W30,CG008,Tambaram,"West Tambaram, Tambaram",West Tambaram,CHGL-10437,12.927028,80.133091,80.133091,12.927028,Full
+1034,W17,CG011,Thiruporur,"Thiruporur Temple Street, Thiruporur",Thiruporur Temple Street,CHGL-10183,12.744703,80.180791,80.180791,12.744703,Empty
+1035,W35,CG011,Pallavaram,"Pallavaram Market, Pallavaram",Pallavaram Market,CHGL-11022,12.975685,80.15121,80.15121,12.975685,Full

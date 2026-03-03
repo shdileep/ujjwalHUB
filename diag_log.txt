@@ -1,0 +1,5 @@
+--- Firebase Diagnostics ---
+Diagnostic error: Error: Permission denied
+    at file:///C:/ujjwal/node_modules/@firebase/database/dist/node-esm/index.node.esm.js:11075:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async diagnose (file:///C:/ujjwal/diagnose_drivers.js:22:26)

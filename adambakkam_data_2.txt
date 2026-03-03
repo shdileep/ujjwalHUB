@@ -1,0 +1,475 @@
+[
+  {
+    "id": "S_W161_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Officers Colony Middle Street",
+    "coordinates": {
+      "lat": 12.9948,
+      "lng": 80.205007
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W161_002",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Officers Colony Middle Street",
+    "coordinates": {
+      "lat": 12.993467,
+      "lng": 80.203151
+    },
+    "status": "Empty"
+  },
+  {
+    "id": "S_W161_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "City Link Road",
+    "coordinates": {
+      "lat": 12.996584,
+      "lng": 80.206937
+    },
+    "status": "Half Full"
+  },
+  {
+    "id": "S_W161_002",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "City Link Road",
+    "coordinates": {
+      "lat": 12.996591,
+      "lng": 80.206939
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W161_003",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "City Link Road",
+    "coordinates": {
+      "lat": 12.996587,
+      "lng": 80.20694
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W161_004",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "City Link Road",
+    "coordinates": {
+      "lat": 12.997101,
+      "lng": 80.2071
+    },
+    "status": "Empty"
+  },
+  {
+    "id": "S_W161_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "West Karikalan 2Nd Street",
+    "coordinates": {
+      "lat": 12.993773,
+      "lng": 80.199987
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W161_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Officers Colony 3Rd Street",
+    "coordinates": {
+      "lat": 12.995485,
+      "lng": 80.206653
+    },
+    "status": "Half Full"
+  },
+  {
+    "id": "S_W161_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Officers Colony 2Nd Street",
+    "coordinates": {
+      "lat": 12.995809,
+      "lng": 80.204811
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W161_002",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Officers Colony 2Nd Street",
+    "coordinates": {
+      "lat": 12.995838,
+      "lng": 80.204817
+    },
+    "status": "Empty"
+  },
+  {
+    "id": "S_W161_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Good Shed Road",
+    "coordinates": {
+      "lat": 12.994365,
+      "lng": 80.199069
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W161_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "West Karikalan Street",
+    "coordinates": {
+      "lat": 12.993577,
+      "lng": 80.199438
+    },
+    "status": "Half Full"
+  },
+  {
+    "id": "S_W161_003",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "West Karikalan Street",
+    "coordinates": {
+      "lat": 12.992202,
+      "lng": 80.198895
+    },
+    "status": "Empty"
+  },
+  {
+    "id": "S_W163_004",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Karneegar Street",
+    "coordinates": {
+      "lat": 12.992156,
+      "lng": 80.201268
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_005",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Karneegar Street",
+    "coordinates": {
+      "lat": 12.990883,
+      "lng": 80.201183
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Ramakrishnapuram 2Nd Street",
+    "coordinates": {
+      "lat": 12.989755,
+      "lng": 80.203444
+    },
+    "status": "Half Full"
+  },
+  {
+    "id": "S_W163_002",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Ramakrishnapuram 2Nd Street",
+    "coordinates": {
+      "lat": 12.989704,
+      "lng": 80.203415
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Ramakrishnapuram 1St Street",
+    "coordinates": {
+      "lat": 12.990393,
+      "lng": 80.203564
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Parthasarathi Nagar 7Th Street",
+    "coordinates": {
+      "lat": 12.987599,
+      "lng": 80.200963
+    },
+    "status": "Empty"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Neruppu Medai",
+    "coordinates": {
+      "lat": 12.995639,
+      "lng": 80.202498
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Shanthi Nagar 9Th Street",
+    "coordinates": {
+      "lat": 12.986529,
+      "lng": 80.199819
+    },
+    "status": "Half Full"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Shanthi Nagar 7Th Street",
+    "coordinates": {
+      "lat": 12.985073,
+      "lng": 80.199015
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Balakrishnapuram Main Road",
+    "coordinates": {
+      "lat": 12.992821,
+      "lng": 80.204686
+    },
+    "status": "Empty"
+  },
+  {
+    "id": "S_W163_002",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Balakrishnapuram Main Road",
+    "coordinates": {
+      "lat": 12.992885,
+      "lng": 80.204632
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Medavakkam Main Road",
+    "coordinates": {
+      "lat": 12.983848,
+      "lng": 80.197
+    },
+    "status": "Half Full"
+  },
+  {
+    "id": "S_W163_002",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Medavakkam Main Road",
+    "coordinates": {
+      "lat": 12.987962,
+      "lng": 80.197609
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_003",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Medavakkam Main Road",
+    "coordinates": {
+      "lat": 12.990564,
+      "lng": 80.198419
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "East Karikalan 1St Street",
+    "coordinates": {
+      "lat": 12.993531,
+      "lng": 80.200761
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_002",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "East Karikalan 1St Street",
+    "coordinates": {
+      "lat": 12.993553,
+      "lng": 80.200682
+    },
+    "status": "Empty"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Pazhandiamman Koil Street",
+    "coordinates": {
+      "lat": 12.995099,
+      "lng": 80.202487
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Shanthi Nagar Main Road",
+    "coordinates": {
+      "lat": 12.988276,
+      "lng": 80.199287
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_003",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Shanthi Nagar Main Road",
+    "coordinates": {
+      "lat": 12.988206,
+      "lng": 80.199299
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_003",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Shanthi Nagar Main Road",
+    "coordinates": {
+      "lat": 12.988418,
+      "lng": 80.198113
+    },
+    "status": "Empty"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Balakrishnapuram 1St Street",
+    "coordinates": {
+      "lat": 12.992862,
+      "lng": 80.205218
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Yadhaval Street",
+    "coordinates": {
+      "lat": 12.99426,
+      "lng": 80.203482
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W163_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Mastan Gori Street",
+    "coordinates": {
+      "lat": 12.989959,
+      "lng": 80.20246
+    },
+    "status": "Half Full"
+  },
+  {
+    "id": "S_W161_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Mastan Gori Street",
+    "coordinates": {
+      "lat": 12.993761,
+      "lng": 80.200069
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W161_002",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Mastan Gori Street",
+    "coordinates": {
+      "lat": 12.993225,
+      "lng": 80.202772
+    },
+    "status": "Empty"
+  },
+  {
+    "id": "S_W161_003",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Mastan Gori Street",
+    "coordinates": {
+      "lat": 12.994397,
+      "lng": 80.203167
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W161_004",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Mastan Gori Street",
+    "coordinates": {
+      "lat": 12.99439,
+      "lng": 80.203185
+    },
+    "status": "Half Full"
+  },
+  {
+    "id": "S_W161_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Officers Colony 1St Street",
+    "coordinates": {
+      "lat": 12.995778,
+      "lng": 80.204768
+    },
+    "status": "Full"
+  },
+  {
+    "id": "S_W161_001",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Thiruvalluvar Main Road",
+    "coordinates": {
+      "lat": 12.994954,
+      "lng": 80.203767
+    },
+    "status": "Empty"
+  },
+  {
+    "id": "S_W161_002",
+    "locationName": "Adambakkam",
+    "areaName": "Adambakkam",
+    "streetName": "Thiruvalluvar Main Road",
+    "coordinates": {
+      "lat": 12.994995,
+      "lng": 80.203814
+    },
+    "status": "Full"
+  }
+]

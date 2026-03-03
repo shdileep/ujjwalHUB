@@ -1,0 +1,7 @@
+Fetching database root...
+--- ROOT KEYS ---
+error
+
+--- SEARCHING FOR UHD94797 & phone num ---
+
+No matching data found in the entire database.

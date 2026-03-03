@@ -1,0 +1,8 @@
+{
+  "name": "Copy of UjjwalHub- capstone final project ",
+  "description": "A smart waste management system for city-wide garbage truck tracking and bin management.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ]
+}

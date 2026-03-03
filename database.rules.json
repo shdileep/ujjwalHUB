@@ -1,0 +1,66 @@
+{
+    "rules": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "users": {
+            "$uid": {
+                ".read": "auth != null",
+                ".write": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('role').val() === 'admin')"
+            }
+        },
+        "drivers": {
+            ".read": "auth != null",
+            ".indexOn": [
+                "status",
+                "email"
+            ],
+            "$driverId": {
+                ".write": "auth != null && (root.child('users').child(auth.uid).child('role').val() === 'admin' || root.child('users').child(auth.uid).child('employeeId').val() === $driverId)"
+            }
+        },
+        "DriversHub": {
+            ".read": "auth != null",
+            ".write": "auth != null && (root.child('users').child(auth.uid).child('role').val() === 'admin' || root.child('users').child(auth.uid).child('role').val() === 'driver')"
+        },
+        "LiveDriverStatus": {
+            ".read": "auth != null",
+            ".write": "auth != null && (root.child('users').child(auth.uid).child('role').val() === 'admin' || root.child('users').child(auth.uid).child('role').val() === 'driver')"
+        },
+        "TaskPro": {
+            ".read": "auth != null",
+            ".write": "auth != null && (root.child('users').child(auth.uid).child('role').val() === 'admin' || root.child('users').child(auth.uid).child('role').val() === 'driver')"
+        },
+        "bins": {
+            ".read": "auth != null",
+            ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+        },
+        "complaints": {
+            ".read": "auth != null",
+            ".write": "auth != null"
+        },
+        "leaves": {
+            ".read": "auth != null",
+            ".write": "auth != null"
+        },
+        "notifications": {
+            ".read": "auth != null",
+            ".write": "auth != null"
+        },
+        "admins": {
+            ".read": "auth != null",
+            ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+        },
+        "admin": {
+            ".read": "auth != null",
+            ".write": "auth != null && (root.child('users').child(auth.uid).child('role').val() === 'admin' || auth.uid === $adminId || root.child('users').child(auth.uid).child('employeeId').val() === $adminId)"
+        },
+        "driver": {
+            ".read": "auth != null",
+            ".write": "auth != null && (root.child('users').child(auth.uid).child('role').val() === 'admin' || root.child('users').child(auth.uid).child('employeeId').val() === $driverId || auth.uid === $driverId)"
+        },
+        "signup": {
+            ".read": "auth != null",
+            ".write": "auth != null"
+        }
+    }
+}

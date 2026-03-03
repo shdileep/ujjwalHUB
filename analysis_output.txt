@@ -1,0 +1,26 @@
+
+--- Chennai Areas Columns ---
+['S.No', 'Ujjwal Area Name', 'Total Bins', 'Component Areas']
+
+--- Chengalpattu Areas Columns ---
+['S.No', 'Ujjwal Area Name', 'Total Bins', 'Component Areas']
+
+--- Chennai Bins Sample ---
+[{'OBJECTID': 1, 'ZONE_CODE': 'N01', 'DIV_CODE': 'N001', 'AREA_NAME': 'KATHIVAKKAM', 'LOC_NAME': 'MUGATHUVARAKUPPAM', 'STREET_NAM': 'MUGATHUVARAKUPPAM 1 ST', 'BIN_NO': 'S_W001_001', 'LATITUDE': 13.227447, 'LONGTITUDE': 80.326402, 'LONGITUDE_POINT': 80.3264017, 'LATITUDE_POINT': 13.2274466, 'BIN_STATUS': 'Full'}, {'OBJECTID': 2, 'ZONE_CODE': 'N01', 'DIV_CODE': 'N001', 'AREA_NAME': 'KATHIVAKKAM', 'LOC_NAME': 'KAMARAJ NAGAR', 'STREET_NAM': 'KAMARAJ NAGAR IX ST', 'BIN_NO': 'S_W001_001', 'LATITUDE': 13.224189, 'LONGTITUDE': 80.320426, 'LONGITUDE_POINT': 80.3204261, 'LATITUDE_POINT': 13.2241891, 'BIN_STATUS': 'Empty'}]
+
+--- Chengalpattu Bins Sample ---
+[{'OBJECTID': 1, 'ZONE_CODE': 'W22', 'DIV_CODE': 'CG001', 'AREA_NAME': 'Kandigai', 'LOC_NAME': 'Kandigai Junction, Kandigai', 'STREET_NAM': 'Kandigai Junction', 'BIN_NO': 'CHGL-10371', 'LATITUDE': 12.824569, 'LONGTITUDE': 80.146718, 'LONGITUDE_POINT': 80.146718, 'LATITUDE_POINT': 12.824569, 'BIN_STATUS': 'Full'}, {'OBJECTID': 2, 'ZONE_CODE': 'W27', 'DIV_CODE': 'CG001', 'AREA_NAME': 'Navlur', 'LOC_NAME': 'Navlur Church Road, Navlur', 'STREET_NAM': 'Navlur Church Road', 'BIN_NO': 'CHGL-10069', 'LATITUDE': 12.859436, 'LONGTITUDE': 80.238019, 'LONGITUDE_POINT': 80.238019, 'LATITUDE_POINT': 12.859436, 'BIN_STATUS': 'Half Full'}]
+
+--- Processing Chennai Areas ---
+S.No                                                    1.0
+Ujjwal Area Name                                 Adambakkam
+Total Bins                                              138
+Component Areas     ADAMBAKKAM, Erukkencherry, GANGAI NAGAR
+Name: 0, dtype: object
+
+--- Processing Chengalpattu Areas ---
+S.No                                              1.0
+Ujjwal Area Name                    GST Road Corridor
+Total Bins                                        195
+Component Areas     Guduvanchery, Urapakkam, Vandalur
+Name: 0, dtype: object

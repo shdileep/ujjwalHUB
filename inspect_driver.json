@@ -1,0 +1,28 @@
+{
+  "LiveDriverStatus/UHD86418": {
+    "driverId": "UHD86418",
+    "driverName": "Anwar S",
+    "lastActive": "2026-02-24T17:40:30.012Z",
+    "location": "Kandigai - Zone 2",
+    "status": "offline"
+  },
+  "drivers/UHD86418": {
+    "assignedZone": "Kandigai - Zone 2",
+    "createdAt": "2026-02-24T17:40:29.373Z",
+    "driverId": "UHD86418",
+    "email": "war@gmail.com",
+    "location": "Kandigai",
+    "phone": "7329828222",
+    "status": "offline",
+    "username": "Anwar S"
+  },
+  "driver/UHD86418": "MISSING",
+  "signup/UHD86418": {
+    "driverId": "UHD86418",
+    "email": "war@gmail.com",
+    "password": "",
+    "phone num": "7329828222",
+    "selected area": "Kandigai",
+    "username": "Anwar S"
+  }
+}

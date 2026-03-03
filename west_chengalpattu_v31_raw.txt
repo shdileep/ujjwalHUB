@@ -1,0 +1,47 @@
+S. No.	Area	Street / Road Location	Latitude	Longitude	Bin Status
+1	Nallambakkam	Vengadamangalam Road, Near Bus Terminus South Side	12.865700	80.157200	Empty
+2	Nallambakkam	Nallambakkam Road, Near Mambakkam Lake Road Junction	12.832935	80.151000	Half-Full
+3	Nallambakkam	Nallambakkam Temple Road, Near Arulmigu Swarna Lingeshwarar Temple	12.848174	80.123521	Empty
+4	Kandigai	Vengadamangalam Road, Near Park Avenue Vijayshanthi Gate	12.852604	80.141219	Half-Full
+5	Melakottaiyur	Melakottaiyur Lake Street, Near Kelambakkam–Vandalur Road Junction	12.838285	80.142208	Empty
+6	Melakottaiyur	Bajanai Kovil Street (Nellikuppam Road), Near AG Church	12.849049	80.150194	Full
+7	Nallambakkam	Vengadamangalam Main Road, Near Rehoboth Stores	12.865075	80.148700	Half-Full
+8	Melakottaiyur	Kelambakkam–Vandalur Road, Near Krishna Hotel & Tea Shop (Keelakottaiyur)	12.837544	80.155060	Empty
+9	Kandigai	Kelambakkam–Vandalur Road, Near Hi-Way Snacks	12.850165	80.141085	Half-Full
+10	Melakottaiyur	Vengadamangalam Road, 5th Street, Near New Madha Provision Store	12.865948	80.151745	Empty
+11	Melakottaiyur	Nellikuppam Road, Near Tamil Nadu Police Residential Quarters	12.835302	80.139942	Full
+12	Kandigai	Vengadamangalam Road, Near N Trendz / Dhanishkha Gardens	12.857610	80.143278	Full
+13	Kandigai	Vengadamangalam Road, Near KA.TEX (No.1/1)	12.852330	80.141075	Full
+14	Kandigai	Vengadamangalam Road, Near Latha Store (No.32)	12.857204	80.143371	Empty
+15	Nallambakkam	Nallambakkam–Kelambakkam Road Intersection (Village Entry)	12.851268	80.147045	Half-Full
+16	Kandigai	Vengadamangalam Road, Near AMODINI Kurtis Shop	12.856988	80.143134	Full
+17	Kandigai	Kelambakkam–Vandalur Road, Kandigai Bus Stop	12.851005	80.140648	Empty
+18	Nallambakkam	Vengadamangalam Road, Nallambakkam Mid-Village	12.856800	80.146500	Half-Full
+19	Kandigai	Kelambakkam–Vandalur Road, Near Melakottaiyur Sub-Post Office	12.851015	80.140156	Full
+20	Melakottaiyur	Kelambakkam–Vandalur Road, Near Chai Drips Cafe (No.27)	12.835225	80.156229	Half-Full
+21	Melakottaiyur	Kelambakkam–Vandalur Road, Melakottaiyur Bus Stop (South Side)	12.845650	80.148817	Half-Full
+22	Kandigai	Vengadamangalam Road, Near Thamizh Vegetable Shop (1/151)	12.857255	80.143422	Empty
+23	Melakottaiyur	Kelambakkam–Vandalur Road, Near Krishna Super Market (No.398)	12.849590	80.141623	Full
+24	Melakottaiyur	Nellikuppam Road, Near MAS Pharmacy (No.318)	12.848691	80.141858	Half-Full
+25	Melakottaiyur	Kelambakkam–Vandalur Road, Near SRS Avenue	12.848659	80.150373	Empty
+26	Kandigai	Kelambakkam–Vandalur Road, Near Ambika Super Market (No.187)	12.849929	80.141250	Half-Full
+27	Kandigai	Kelambakkam–Vandalur Road, Near DJ Store Kandigai (R Complex)	12.850881	80.140316	Full
+28	Kandigai	Vengadamangalam Road, Near Pawar Electricals & Hardware (No.30)	12.857117	80.143370	Empty
+29	Nallambakkam	Nallambakkam Village Main Road (Village Centre)	12.855117	80.144675	Half-Full
+30	Melakottaiyur	Kelambakkam–Vandalur Road, Near Sri Meghanatheswarar Temple (opp VIT)	12.841841	80.147608	Half-Full
+31	Nallambakkam	Vengadamangalam Road, Near Nallambakkam North Entry	12.858500	80.144000	Half-Full
+32	Melakottaiyur	Kelambakkam–Vandalur Road, Melakottaiyur Bus Stop	12.845610	80.149037	Half-Full
+33	Melakottaiyur	Vengadamangalam Road, Near Vegai Vanam Forest Area (V45X+7GQ)	12.858713	80.149253	Half-Full
+34	Nallambakkam	Nallambakkam Village Road, Near Govt. Village School	12.843000	80.125500	Half-Full
+35	Nallambakkam	Rattinamangalam–Nallambakkam Road, Near Unihomes 2 Apartments	12.836687	80.128190	Full
+36	Melakottaiyur	Kelambakkam–Vandalur Road, Near Rialto Enterprises (Survey No.100/2)	12.843166	80.150520	Half-Full
+37	Nallambakkam	Vengadamangalam Road, Near Vengadamangalam Bus Terminus	12.866330	80.159041	Half-Full
+38	Kandigai	Kelambakkam–Vandalur Road, Near Theneer Break Cafe	12.852278	80.139369	Full
+39	Nallambakkam	Krishna Nagar Street, Near Vengadamangalam Perumal Temple	12.864300	80.154794	Half-Full
+40	Nallambakkam	Vengadamangalam Road, Kandigai–Nallambakkam Segment (North)	12.855877	80.142918	Full
+41	Melakottaiyur	Vengadamangalam Road, Near Ramdev Electricals	12.865558	80.150285	Full
+42	Melakottaiyur	Nellikuppam Road, Near Melakottaiyur Masjid (No.84)	12.847452	80.141223	Full
+43	Kandigai	Kelambakkam–Vandalur Road, Near Sivagangai Fancy & Footwear	12.850454	80.140614	Half-Full
+44	Nallambakkam	Vengadamangalam Road, South of Perumal Temple Junction	12.863000	80.152500	Half-Full
+45	Kandigai	Kelambakkam–Vandalur Road, Near Joy Shoppe (V42R+J6H)	12.851571	80.140614	Half-Full
+46	Nallambakkam	Pillayar Kovil Street, Nallambakkam	12.841787	80.123203	Empty

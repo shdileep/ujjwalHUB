@@ -1,0 +1,41 @@
+Serial No,Area Name,Street Name,Latitude,Longitude,Bin Status
+1,Kelambakkam,Keliamman Kovil Street,12.78671,80.22857,full
+2,Kelambakkam,Pillaiyar Koil 2nd Street,12.78809,80.22028,full
+3,Kelambakkam,Vinayakar Koil Street,12.78699,80.21996,full
+4,Kelambakkam,Sai Baba Street,12.79164,80.2235,half-full
+5,Kelambakkam,Parameshwari Amman Koil Street,12.77872,80.20631,half-full
+6,Kelambakkam,Pattataiaman Koil Street,12.78479,80.2087,full
+7,Kelambakkam,Renugambal Nagar 1st Street,12.7921,80.2229,full
+8,Kelambakkam,Renugambal Nagar 2nd Street,12.7925,80.2241,full
+9,Kelambakkam,Kittu Nagar Cross Street,12.78901,80.22122,full
+10,Kelambakkam,Krishna Nagar 1st Street,12.79435,80.20893,empty
+11,Kelambakkam,Krishna Nagar 2nd Street,12.7948,80.2095,half-full
+12,Kelambakkam,Sathankuppam Colony Street,12.7883,80.2215,half-full
+13,Kelambakkam,Alageeshwarar Nagar Street,12.78472,80.20962,half-full
+14,Kelambakkam,Thaiyur Village Cross Street,12.7838,80.211,full
+15,Kelambakkam,Ramalingapuram 1st Street,12.7792,80.2072,full
+16,Kelambakkam,Ramalingapuram 2nd Street,12.7786,80.208,full
+17,Kelambakkam,Gandhi Nagar Street,12.7905,80.2158,full
+18,Kelambakkam,Murugan Nagar Street,12.7865,80.225,half-full
+19,Kelambakkam,Kamaraj Nagar Street,12.7931,80.2176,empty
+20,Kelambakkam,Anna Nagar Cross Street,12.7812,80.2134,half-full
+21,Kelambakkam,Ambedkar Colony Street,12.7956,80.221,full
+22,Kelambakkam,Nethaji Nagar Street,12.7821,80.2065,full
+23,Kelambakkam,Bharathi Nagar 1st Street,12.7968,80.2145,half-full
+24,Kelambakkam,Bharathi Nagar 2nd Street,12.7972,80.2153,half-full
+25,Kelambakkam,Vivekananda Nagar Street,12.7805,80.2189,full
+26,Kelambakkam,Periyar Nagar Street,12.7984,80.2098,full
+27,Kelambakkam,Muthamil Nagar Street,12.7834,80.2268,empty
+28,Kelambakkam,Selvi Nagar Street,12.7993,80.2172,full
+29,Kelambakkam,Thangam Nagar Street,12.7856,80.212,empty
+30,Kelambakkam,Vel Nagar 1st Street,12.8001,80.2204,full
+31,Kelambakkam,Vel Nagar 2nd Street,12.8005,80.2212,full
+32,Kelambakkam,Lakshmi Nagar Street,12.7844,80.2282,empty
+33,Kelambakkam,Sundaram Colony Street,12.7914,80.2048,half-full
+34,Kelambakkam,Saraswathi Nagar Street,12.7873,80.2168,full
+35,Kelambakkam,Panchayat Back Street,12.7938,80.2256,full
+36,Kelambakkam,Chellamuthu Street,12.7891,80.2034,empty
+37,Kelambakkam,Muniandi Koil Cross Street,12.8012,80.2138,full
+38,Kelambakkam,Rajiv Gandhi Nagar Street,12.7827,80.2155,full
+39,Kelambakkam,Kalaignar Nagar Street,12.7962,80.2271,full
+40,Kelambakkam,Ponmani Nagar Street,12.8023,80.2086,full

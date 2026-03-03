@@ -1,0 +1,303 @@
+[
+  {
+    "S.NO": 1,
+    "Area": "Kandigai",
+    "Longitude": 80.0074,
+    "Latitude": 13.187231,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 2,
+    "Area": "Kandigai",
+    "Longitude": 80.010571,
+    "Latitude": 13.1814,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 3,
+    "Area": "Kandigai",
+    "Longitude": 80.017827,
+    "Latitude": 13.188784,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 4,
+    "Area": "Kandigai",
+    "Longitude": 80.008391,
+    "Latitude": 13.191275,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 5,
+    "Area": "Kandigai",
+    "Longitude": 80.007477,
+    "Latitude": 13.183751,
+    "Bin Status": "Half Full"
+  },
+  {
+    "S.NO": 6,
+    "Area": "Kandigai",
+    "Longitude": 80.015086,
+    "Latitude": 13.180498,
+    "Bin Status": "Empty"
+  },
+  {
+    "S.NO": 7,
+    "Area": "Kandigai",
+    "Longitude": 80.010181,
+    "Latitude": 13.177425,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 8,
+    "Area": "Kandigai",
+    "Longitude": 80.015719,
+    "Latitude": 13.187398,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 9,
+    "Area": "Kandigai",
+    "Longitude": 80.016428,
+    "Latitude": 13.180527,
+    "Bin Status": "Half Full"
+  },
+  {
+    "S.NO": 10,
+    "Area": "Kandigai",
+    "Longitude": 80.007104,
+    "Latitude": 13.189951,
+    "Bin Status": "Half Full"
+  },
+  {
+    "S.NO": 11,
+    "Area": "Kandigai",
+    "Longitude": 80.01817,
+    "Latitude": 13.189893,
+    "Bin Status": "Half Full"
+  },
+  {
+    "S.NO": 12,
+    "Area": "Nallambakkam",
+    "Longitude": 80.174488,
+    "Latitude": 12.917444,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 13,
+    "Area": "Nallambakkam",
+    "Longitude": 80.177386,
+    "Latitude": 12.927315,
+    "Bin Status": "Half Full"
+  },
+  {
+    "S.NO": 14,
+    "Area": "Nallambakkam",
+    "Longitude": 80.173547,
+    "Latitude": 12.913484,
+    "Bin Status": "Empty"
+  },
+  {
+    "S.NO": 15,
+    "Area": "Nallambakkam",
+    "Longitude": 80.18166,
+    "Latitude": 12.92556,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 16,
+    "Area": "Nallambakkam",
+    "Longitude": 80.183676,
+    "Latitude": 12.924914,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 17,
+    "Area": "Nallambakkam",
+    "Longitude": 80.18757,
+    "Latitude": 12.92058,
+    "Bin Status": "Empty"
+  },
+  {
+    "S.NO": 18,
+    "Area": "Nallambakkam",
+    "Longitude": 80.180833,
+    "Latitude": 12.918057,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 19,
+    "Area": "Nallambakkam",
+    "Longitude": 80.181896,
+    "Latitude": 12.92527,
+    "Bin Status": "Empty"
+  },
+  {
+    "S.NO": 20,
+    "Area": "Nallambakkam",
+    "Longitude": 80.181238,
+    "Latitude": 12.925787,
+    "Bin Status": "Empty"
+  },
+  {
+    "S.NO": 21,
+    "Area": "Nallambakkam",
+    "Longitude": 80.172733,
+    "Latitude": 12.923273,
+    "Bin Status": "Half Full"
+  },
+  {
+    "S.NO": 22,
+    "Area": "Nallambakkam",
+    "Longitude": 80.17663,
+    "Latitude": 12.915646,
+    "Bin Status": "Empty"
+  },
+  {
+    "S.NO": 23,
+    "Area": "Kolapakkam",
+    "Longitude": 80.105725,
+    "Latitude": 12.923277,
+    "Bin Status": "Empty"
+  },
+  {
+    "S.NO": 24,
+    "Area": "Kolapakkam",
+    "Longitude": 80.106448,
+    "Latitude": 12.923616,
+    "Bin Status": "Half Full"
+  },
+  {
+    "S.NO": 25,
+    "Area": "Kolapakkam",
+    "Longitude": 80.107837,
+    "Latitude": 12.932171,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 26,
+    "Area": "Kolapakkam",
+    "Longitude": 80.105352,
+    "Latitude": 12.927923,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 27,
+    "Area": "Kolapakkam",
+    "Longitude": 80.116986,
+    "Latitude": 12.926272,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 28,
+    "Area": "Kolapakkam",
+    "Longitude": 80.111746,
+    "Latitude": 12.932369,
+    "Bin Status": "Empty"
+  },
+  {
+    "S.NO": 29,
+    "Area": "Kolapakkam",
+    "Longitude": 80.113666,
+    "Latitude": 12.924738,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 30,
+    "Area": "Kolapakkam",
+    "Longitude": 80.108071,
+    "Latitude": 12.924614,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 31,
+    "Area": "Kolapakkam",
+    "Longitude": 80.11224,
+    "Latitude": 12.937832,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 32,
+    "Area": "Kolapakkam",
+    "Longitude": 80.112954,
+    "Latitude": 12.930911,
+    "Bin Status": "Empty"
+  },
+  {
+    "S.NO": 33,
+    "Area": "Kolapakkam",
+    "Longitude": 80.114416,
+    "Latitude": 12.935486,
+    "Bin Status": "Half Full"
+  },
+  {
+    "S.NO": 34,
+    "Area": "Unamancheri",
+    "Longitude": 80.132514,
+    "Latitude": 12.885665,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 35,
+    "Area": "Unamancheri",
+    "Longitude": 80.136284,
+    "Latitude": 12.887047,
+    "Bin Status": "Half Full"
+  },
+  {
+    "S.NO": 36,
+    "Area": "Unamancheri",
+    "Longitude": 80.147087,
+    "Latitude": 12.885376,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 37,
+    "Area": "Unamancheri",
+    "Longitude": 80.137035,
+    "Latitude": 12.896022,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 38,
+    "Area": "Unamancheri",
+    "Longitude": 80.13833,
+    "Latitude": 12.892487,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 39,
+    "Area": "Unamancheri",
+    "Longitude": 80.139342,
+    "Latitude": 12.896633,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 40,
+    "Area": "Unamancheri",
+    "Longitude": 80.135946,
+    "Latitude": 12.886238,
+    "Bin Status": "Full"
+  },
+  {
+    "S.NO": 41,
+    "Area": "Unamancheri",
+    "Longitude": 80.136204,
+    "Latitude": 12.890982,
+    "Bin Status": "Half Full"
+  },
+  {
+    "S.NO": 42,
+    "Area": "Unamancheri",
+    "Longitude": 80.146365,
+    "Latitude": 12.891353,
+    "Bin Status": "Half Full"
+  },
+  {
+    "S.NO": 43,
+    "Area": "Unamancheri",
+    "Longitude": 80.135509,
+    "Latitude": 12.88839,
+    "Bin Status": "Full"
+  }
+]

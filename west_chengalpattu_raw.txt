@@ -1,0 +1,47 @@
+S. No.	Area	Street	Latitude	Longitude	Bin Status
+1	Mambakkam	Mambakkam - Medavakkam Main Road (Near Water Tower)	12.827300	80.166900	Half-Full
+2	Kandigai	Kelambakkam - Vandalur Road (Near VIT University Gate)	12.848300	80.133000	Half-Full
+3	Mambakkam	Mambakkam - Medavakkam Main Road (Near Auto Stand)	12.827800	80.165200	Full
+4	Kandigai	Kelambakkam - Vandalur Road (Near Agaramthen)	12.850700	80.141200	Half-Full
+5	Mambakkam	Kelambakkam - Vandalur Road (Mambakkam Junction)	12.828000	80.164500	Half-Full
+6	Melakottaiyur	Kelambakkam - Vandalur Road (Melakottaiyur Junction)	12.846000	80.149500	Empty
+7	Kandigai	Kelambakkam - Vandalur Road (Near Tagore Medical College)	12.853900	80.138000	Full
+8	Mambakkam	Kelambakkam - Vandalur Road (Mambakkam North)	12.829100	80.164200	Half-Full
+9	Melakottaiyur	Kelambakkam - Vandalur Road (Near Rialto Enterprises)	12.843200	80.150500	Empty
+10	Melakottaiyur	Nellikuppam Road (Near Lake Street Junction)	12.838300	80.142200	Empty
+11	Mambakkam	Mambakkam - Medavakkam Main Road (Near Akshaya Pollution Centre)	12.851100	80.170300	Full
+12	Kandigai	Kelambakkam - Vandalur Road (Kandigai Bus Stop)	12.851100	80.140300	Half-Full
+13	Mambakkam	Mambakkam - Medavakkam Main Road (Near School Gate)	12.827400	80.166500	Empty
+14	Mambakkam	Mambakkam - Medavakkam Main Road (Near Church)	12.828700	80.164800	Empty
+15	Kandigai	Kelambakkam - Vandalur Road (Near Vijayshanthi Park Avenue)	12.851300	80.140100	Half-Full
+16	Melakottaiyur	Nellikuppam Road (Melakottaiyur Market)	12.848000	80.141500	Half-Full
+17	Kandigai	Kelambakkam - Vandalur Road (Kandigai Junction)	12.851000	80.140700	Empty
+18	Kandigai	Kelambakkam - Vandalur Road (Near Petrol Bunk Kandigai)	12.853400	80.138300	Full
+19	Melakottaiyur	Nellikuppam Road (Near Police Quarters)	12.835300	80.139900	Empty
+20	Melakottaiyur	Nellikuppam Road (Near Primary School)	12.847000	80.140800	Full
+21	Kandigai	Kelambakkam - Vandalur Road (Kandigai Market Area)	12.851600	80.139500	Full
+22	Mambakkam	Kelambakkam - Vandalur Road (Mambakkam South)	12.825800	80.163000	Half-Full
+23	Mambakkam	Mambakkam Lake Street (Main Entrance)	12.833000	80.151000	Half-Full
+24	Melakottaiyur	Nellikuppam Road (Mosque Street Junction)	12.847500	80.141200	Half-Full
+25	Melakottaiyur	Kelambakkam - Vandalur Road (Melakottaiyur South)	12.843500	80.149800	Half-Full
+26	Melakottaiyur	Kelambakkam - Vandalur Road (Melakottaiyur North)	12.846500	80.150000	Half-Full
+27	Kandigai	Kelambakkam - Vandalur Road (Kandigai North Side)	12.852800	80.138800	Empty
+28	Mambakkam	Mambakkam - Medavakkam Main Road (Near Indian Oil Petrol Bunk)	12.851100	80.170300	Empty
+29	Mambakkam	Mambakkam - Medavakkam Main Road (Ponmar Main Road)	12.849500	80.169000	Half-Full
+30	Mambakkam	Kelambakkam - Vandalur Road (Near Mambakkam Village)	12.826500	80.163800	Full
+31	Kandigai	Kelambakkam - Vandalur Road (Near Govt. School Kandigai)	12.852100	80.139200	Half-Full
+32	Melakottaiyur	Kelambakkam - Vandalur Road (Near Sports College)	12.844800	80.148600	Half-Full
+33	Melakottaiyur	Nellikuppam Road (Near MAS Pharmacy)	12.848700	80.141900	Empty
+34	Melakottaiyur	Kelambakkam - Vandalur Road (Near Metro IT Residency)	12.850200	80.154800	Full
+35	Melakottaiyur	Kelambakkam - Vandalur Road (Melakottaiyur Bus Stop)	12.845600	80.149000	Full
+36	Melakottaiyur	Nellikuppam Road (Near Govt. Primary Health Center)	12.847700	80.141100	Empty
+37	Mambakkam	Mambakkam - Medavakkam Main Road (Near Velammal Vidhyashram)	12.827100	80.167200	Full
+38	Kandigai	Kelambakkam - Vandalur Road (Near IIITDM Campus)	12.847200	80.131800	Half-Full
+39	Kandigai	Kelambakkam - Vandalur Road (Kandigai South End)	12.849500	80.136500	Full
+40	Mambakkam	Mambakkam - Medavakkam Main Road (Mambakkam Bus Stop Jn.)	12.827600	80.164900	Half-Full
+41	Kandigai	Kelambakkam - Vandalur Road (Kandigai East End)	12.851800	80.139800	Half-Full
+42	Kandigai	Kelambakkam - Vandalur Road (Near Ellary Food Street)	12.854200	80.137700	Half-Full
+43	Melakottaiyur	Nellikuppam Road (Near AG Church)	12.849000	80.150200	Half-Full
+44	Kandigai	Kelambakkam - Vandalur Road (Kandigai Water Tank Road)	12.850000	80.137500	Full
+45	Mambakkam	Mambakkam - Medavakkam Main Road (Mambakkam Market)	12.828200	80.165500	Half-Full
+46	Mambakkam	Mambakkam - Medavakkam Main Road (Near Temple)	12.826900	80.166000	Full

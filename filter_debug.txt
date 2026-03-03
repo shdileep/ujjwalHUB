@@ -1,0 +1,3 @@
+Simulating filter on 43 Adambakkam bins...
+Passed: 43
+Failed: 0

@@ -1,0 +1,4 @@
+🚀 Starting Nuke for UHD86418
+✅ Found 23 bins assigned.
+📦 Applying permanent deletion...
+✨ SUCCESS: Driver UHD86418 wiped.

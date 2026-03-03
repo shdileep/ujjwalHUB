@@ -1,0 +1,7 @@
+Total Adambakkam Bins in File: 43
+First ID: 01
+Last ID: 43
+No duplicates within Adambakkam set.
+No ID conflicts with other areas.
+Found 43 integer IDs.
+Sequence 1-43 is complete.

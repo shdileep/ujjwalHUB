@@ -1,0 +1,92 @@
+Total bins found: 12136
+
+Bin Counts per Area:
+------------------------------
+Kodungaiyur: 578
+Tondiarpet: 547
+Royapuram: 449
+Tiruvottiyur: 410
+Anna Nagar: 388
+T Nagar: 383
+Velachery: 343
+West Mambalam: 339
+George Town: 323
+Kolathur: 306
+Ashok Nagar: 298
+Saidapet: 297
+Madhavaram: 290
+Thoraipakkam: 275
+Besant Nagar: 246
+Villivakkam: 241
+Thiruvanmiyur: 234
+Nungambakkam: 228
+Sholinganallur: 220
+Perungudi: 213
+Royapettah: 210
+Virugambakkam: 205
+Kilpauk: 196
+Ennore-Manali: 186
+Nanganallur: 185
+Aminjikarai: 184
+Koyambedu: 183
+Perambur: 182
+Neelankarai: 176
+R A Puram: 172
+Triplicane: 168
+Adambakkam: 166
+Egmore: 166
+Ramapuram: 162
+Mylapore: 161
+Choolaimedu: 159
+Maduravoyal: 153
+Ayanavaram: 149
+Peravallur: 148
+Puzhal-Mathur: 139
+Guindy: 136
+Porur: 131
+Madipakkam: 131
+Teynampet: 122
+Valasaravakkam: 110
+Pallikaranai: 105
+Ambattur: 99
+Avadi: 97
+Others (Pallavaram): 90
+Others (Chromepet): 90
+Others (Tambaram): 90
+Others (Navlur): 75
+Others (Kelambakkam): 75
+Others (Vandalur): 75
+Others (Kandigai): 60
+Others (Urapakkam): 60
+Others (Thiruporur): 60
+Others (Padappai): 60
+Others (Singaperumal Koil): 60
+Others (Guduvanchery): 60
+Others (Perungalathur): 60
+Others (Mambakkam): 60
+Others (Maraimalai Nagar): 60
+Kotturpuram: 58
+Taramani: 51
+Others (Anna Nagar West Extn.,): 3
+
+
+Areas in Mapping (constants/areas.ts):
+['Adambakkam', 'Ambattur', 'Aminjikarai', 'Anna Nagar', 'Ashok Nagar', 'Avadi', 'Ayanavaram', 'Besant Nagar', 'Choolaimedu', 'Egmore', 'Ennore-Manali', 'George Town', 'Guindy', 'Kilpauk', 'Kodungaiyur', 'Kolathur', 'Kotturpuram', 'Koyambedu', 'Madhavaram', 'Madipakkam', 'Maduravoyal', 'Mylapore', 'Nanganallur', 'Neelankarai', 'Nungambakkam', 'Pallikaranai', 'Perambur', 'Peravallur', 'Perungudi', 'Porur', 'Puzhal-Mathur', 'R A Puram', 'Ramapuram', 'Royapettah', 'Royapuram', 'Saidapet', 'Sholinganallur', 'T Nagar', 'Taramani', 'Teynampet', 'Thiruvanmiyur', 'Thoraipakkam', 'Tiruvottiyur', 'Tondiarpet', 'Triplicane', 'Valasaravakkam', 'Velachery', 'Villivakkam', 'Virugambakkam', 'West Mambalam']
+
+Mismatches (Areas in bins but not in mapping keys):
+- Others (Anna Nagar West Extn.,) (Count: 3)
+- Others (Kandigai) (Count: 60)
+- Others (Navlur) (Count: 75)
+- Others (Urapakkam) (Count: 60)
+- Others (Thiruporur) (Count: 60)
+- Others (Padappai) (Count: 60)
+- Others (Singaperumal Koil) (Count: 60)
+- Others (Kelambakkam) (Count: 75)
+- Others (Guduvanchery) (Count: 60)
+- Others (Pallavaram) (Count: 90)
+- Others (Chromepet) (Count: 90)
+- Others (Vandalur) (Count: 75)
+- Others (Perungalathur) (Count: 60)
+- Others (Mambakkam) (Count: 60)
+- Others (Tambaram) (Count: 90)
+- Others (Maraimalai Nagar) (Count: 60)

@@ -1,0 +1,11 @@
+--- CSV Bin Counts ---
+ADAMBAKKAM: 88
+ERUKKENCHERRY: 31
+GANGAI NAGAR: 19
+
+Total for mapped components: 138
+
+--- Checking for partial matches ---
+Matches for ADAMBAKKAM: ['ADAMBAKKAM']
+Matches for ERUKKENCHERRY: ['Erukkencherry']
+Matches for GANGAI NAGAR: ['GANGAI NAGAR']

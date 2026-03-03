@@ -1,0 +1,10 @@
+Analyzing c:\ujjwal\adambakkam_bins.csv (Headless Mode)...
+
+--- BIN STATUS COUNTS ---
+Full: 25
+Empty: 10
+Half Full: 8
+
+--- AREA ANALYSIS ---
+Total Unique Areas: 1
+All bins are in the same area: ADAMBAKKAM

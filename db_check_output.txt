@@ -1,0 +1,6 @@
+Checking database...
+Error: Permission denied
+Error: Permission denied
+Error: Permission denied
+Error: Permission denied
+Error: Permission denied
