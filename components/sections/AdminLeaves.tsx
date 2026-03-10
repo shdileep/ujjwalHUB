@@ -2,6 +2,7 @@
 import React, { useState, useMemo } from 'react';
 import { AppState, LeaveRequest } from '../../types';
 import { databaseService } from '../../services/database.service';
+import { logOnly } from '../../services/db.manager';
 import {
    CalendarDays, CheckCircle2, Clock, XCircle,
    User, Phone, Hash, MessageSquare, Send,
@@ -67,11 +68,22 @@ export const AdminLeaves: React.FC<Props> = ({ state, updateState }) => {
 
       updateState({ leaves: updated });
 
+      const leave = state.leaves.find(l => l.id === id);
+
       // Persist to Firebase
       databaseService.updateLeaveRequest(id, { status, adminRemarks }).catch(console.error);
 
+      // ⚡ Supabase + 🍃 MongoDB: log resolution
+      logOnly.leaveResolved(
+         id,
+         status,
+         state.user?.employeeId || '',
+         state.user?.username || 'Admin',
+         leave?.driverId || '',
+         leave?.driverName || ''
+      ).catch(console.warn);
+
       // v11: Sync with Daily Record for immediate Dashboard update
-      const leave = state.leaves.find(l => l.id === id);
       if (leave && status === 'Approved') {
          databaseService.updateDailyRecord({
             driverId: leave.driverId,

@@ -2,6 +2,7 @@
 import React, { useState, useMemo } from 'react';
 import { AppState, LeaveRequest, Notification } from '../../types';
 import { databaseService } from '../../services/database.service';
+import { logOnly } from '../../services/db.manager';
 import { GoogleGenAI } from "@google/genai";
 import {
   CalendarDays, CheckCircle2, Clock, AlertCircle, Plus,
@@ -140,6 +141,9 @@ export const DriverLeaves: React.FC<Props> = ({ state, updateState }) => {
     // Persist to Firebase
     databaseService.createLeaveRequest(newRequest).catch(console.error);
     databaseService.createNotification(activityNotif).catch(console.error);
+
+    // ⚡ Supabase + 🍃 MongoDB: log leave
+    logOnly.leaveRequested(newRequest).catch(console.warn);
 
     // Sync to new unified 'leave' node (Daily Audit)
     databaseService.updateDailyRecord({
@@ -417,6 +421,8 @@ export const DriverLeaves: React.FC<Props> = ({ state, updateState }) => {
                                 updateState({
                                   leaves: state.leaves.map(l => l.id === leave.id ? { ...l, status: 'Cancelled by Driver' } : l)
                                 });
+                                // ⚡ Supabase + 🍃 MongoDB: log cancel
+                                logOnly.leaveCancelled(leave.id, state.user?.employeeId || '', state.user?.username || '').catch(console.warn);
                               } catch (e) {
                                 alert('Failed to cancel leave. Please try again.');
                               }

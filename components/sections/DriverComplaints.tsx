@@ -2,6 +2,7 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react';
 import { AppState, Complaint, Message, Attachment, User as UserType } from '../../types';
 import { databaseService } from '../../services/database.service';
+import { logOnly } from '../../services/db.manager';
 import {
   Plus, Search, Paperclip, Send, Bold, Type, Sparkles,
   ChevronLeft, Star, Reply, Forward, X,
@@ -400,6 +401,8 @@ export const DriverComplaints: React.FC<Props> = ({ state, updateState }) => {
       const updates = { isDeletedByDriver: false };
       updateState({ complaints: state.complaints.map(c => c.id === lastDeleted.id ? { ...c, ...updates } : c) });
       databaseService.updateComplaint(lastDeleted.id, updates);
+      // 🍃 MongoDB: log undo
+      logOnly.complaintUpdated(lastDeleted.id, 'undeleted', user.employeeId || '', user.username, 'driver').catch(console.warn);
       setLastDeleted(null);
     }
   };
@@ -411,6 +414,8 @@ export const DriverComplaints: React.FC<Props> = ({ state, updateState }) => {
     updateState({ complaints: state.complaints.map(c => c.id === mail.id ? { ...c, ...updates } : c) });
     if (selectedEmail?.id === mail.id) setView('list');
     databaseService.updateComplaint(mail.id, updates);
+    // 🍃 MongoDB: log delete
+    logOnly.complaintUpdated(mail.id, 'deleted', user.employeeId || '', user.username, 'driver').catch(console.warn);
   };
 
   const handleStar = (e: React.MouseEvent, mail: Complaint) => {
@@ -418,6 +423,8 @@ export const DriverComplaints: React.FC<Props> = ({ state, updateState }) => {
     const updates = { isStarredByDriver: !mail.isStarredByDriver };
     updateState({ complaints: state.complaints.map(c => c.id === mail.id ? { ...c, ...updates } : c) });
     databaseService.updateComplaint(mail.id, updates);
+    // 🍃 MongoDB: log star toggle
+    logOnly.complaintUpdated(mail.id, mail.isStarredByDriver ? 'unstarred' : 'starred', user.employeeId || '', user.username, 'driver').catch(console.warn);
   };
 
   const onSendDispatch = (data: { subject: string, content: string, attachments: Attachment[], fontFamily: string, isBold: boolean, receiver: string }) => {
@@ -448,8 +455,9 @@ export const DriverComplaints: React.FC<Props> = ({ state, updateState }) => {
       updateState({ complaints: updatedComplaints });
       setSelectedEmail({ ...selectedEmail, ...updates });
 
-      // Persist to Firebase
+      // 🔥 Firebase + 🍃 MongoDB
       databaseService.updateComplaint(selectedEmail.id, updates);
+      logOnly.complaintUpdated(selectedEmail.id, 'replied', user.employeeId || '', user.username, 'driver', { subject: selectedEmail.subject }).catch(console.warn);
 
     } else if (isForwardOpen && selectedEmail) {
       // Forward logic (similar to reply but maybe new thread? No, usually same thread or new?)
@@ -466,6 +474,7 @@ export const DriverComplaints: React.FC<Props> = ({ state, updateState }) => {
       setSelectedEmail({ ...selectedEmail, ...updates });
 
       databaseService.updateComplaint(selectedEmail.id, updates);
+      logOnly.complaintUpdated(selectedEmail.id, 'forwarded', user.employeeId || '', user.username, 'driver', { subject: selectedEmail.subject }).catch(console.warn);
 
     } else {
       // New Complaint
@@ -489,10 +498,10 @@ export const DriverComplaints: React.FC<Props> = ({ state, updateState }) => {
       // Optimistic Update
       updateState({ complaints: [newComplaint, ...(state.complaints || [])] });
 
-      // Persist to Firebase
-      // We pass newComplaint, but we might want to capture the real key if we needed it immediately.
-      // But for now just firing and forgetting is fine for this sync.
+      // 🔥 Firebase save
       databaseService.createComplaint(newComplaint);
+      // ⚡ Supabase + 🍃 MongoDB: log new complaint
+      logOnly.complaintCreated(newComplaint, user.employeeId || '', user.username, 'driver', (user as any).location).catch(console.warn);
     }
 
     setIsComposeOpen(false);

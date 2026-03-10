@@ -14,6 +14,7 @@ import { databaseService } from '../../services/database.service';
 import { AREA_COMPONENT_MAPPING } from '../../constants/areas';
 import { KANDIGAI_BINS } from '../../constants/kandigaiData';
 import { calculateDriverMetrics } from '../../utils/metrics';
+import { logOnly } from '../../services/db.manager';
 
 interface Props {
   state: AppState;
@@ -282,7 +283,17 @@ export const AdminOverview: React.FC<Props> = ({ state }) => {
             driver={driver}
             bins={state.bins}
             leaves={state.leaves}
-            onViewDossier={() => setSelectedDriverForDossier(driver)}
+            onViewDossier={() => {
+              setSelectedDriverForDossier(driver);
+              // ⚡ Supabase + 🍃 MongoDB: log dossier view
+              logOnly.dossierViewed(
+                state.user?.employeeId || '',
+                state.user?.username || '',
+                driver.driverId,
+                driver.username,
+                driver.location || ''
+              ).catch(console.warn);
+            }}
           />
         ))}
       </div>

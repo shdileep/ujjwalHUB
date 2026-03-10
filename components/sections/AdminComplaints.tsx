@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
 import { databaseService } from '../../services/database.service';
+import { logOnly } from '../../services/db.manager';
 
 interface Props {
   complaints: Complaint[];
@@ -416,7 +417,10 @@ export const AdminComplaints: React.FC<Props> = ({ complaints, onUpdate, drivers
       onUpdate(updatedComplaints);
       setSelectedEmail({ ...selectedEmail, ...updates });
 
+      // 🔥 Firebase + 🍃 MongoDB
       databaseService.updateComplaint(selectedEmail.id, updates);
+      const action = isReplyOpen ? 'replied' : 'forwarded';
+      logOnly.complaintUpdated(selectedEmail.id, action, adminUser.employeeId || '', adminUser.username || 'Admin', 'admin', { subject: selectedEmail.subject }).catch(console.warn);
     } else {
       const isGeneral = data.receiver === 'all-drivers@ujjwalhub.ac.in';
       const newComplaint: Complaint = {
@@ -435,7 +439,9 @@ export const AdminComplaints: React.FC<Props> = ({ complaints, onUpdate, drivers
       };
 
       onUpdate([newComplaint, ...complaints]);
+      // 🔥 Firebase + ⚡ Supabase + 🍃 MongoDB
       databaseService.createComplaint(newComplaint);
+      logOnly.complaintCreated(newComplaint, adminUser.employeeId || '', adminUser.username || 'Admin', 'admin', adminUser.location).catch(console.warn);
     }
     setIsComposeOpen(false);
     setIsReplyOpen(false);
@@ -465,7 +471,9 @@ export const AdminComplaints: React.FC<Props> = ({ complaints, onUpdate, drivers
     };
 
     onUpdate(complaints.map(c => c.id === mail.id ? { ...c, ...updates } : c));
+    // 🔥 Firebase + 🍃 MongoDB
     databaseService.updateComplaint(mail.id, updates);
+    logOnly.complaintUpdated(mail.id, 'ai_replied', adminUser.employeeId || '', adminUser.username || 'Admin', 'admin').catch(console.warn);
   };
 
   const handleUndoDelete = () => {
@@ -473,6 +481,8 @@ export const AdminComplaints: React.FC<Props> = ({ complaints, onUpdate, drivers
       const updates = { isDeletedByAdmin: false };
       onUpdate(complaints.map(c => c.id === lastDeleted.id ? { ...c, ...updates } : c));
       databaseService.updateComplaint(lastDeleted.id, updates);
+      // 🍃 MongoDB: log undo delete
+      logOnly.complaintUpdated(lastDeleted.id, 'undeleted', adminUser.employeeId || '', adminUser.username || 'Admin', 'admin').catch(console.warn);
       setLastDeleted(null);
     }
   };
@@ -543,7 +553,7 @@ export const AdminComplaints: React.FC<Props> = ({ complaints, onUpdate, drivers
               <div key={mail.id} onClick={() => handleOpenMail(mail)}
                 className={`flex flex-col md:flex-row items-center gap-4 md:gap-10 px-4 md:px-10 py-6 md:py-8 hover:bg-slate-50/50 cursor-pointer transition-all border-l-8 group ${mail.status === 'Unread' ? 'border-red-500 bg-white' : 'border-transparent opacity-80'}`}>
                 <div className="flex items-center gap-6 flex-1 min-w-0">
-                  <Star size={20} onClick={(e) => { e.stopPropagation(); const updates = { isStarredByAdmin: !mail.isStarredByAdmin }; onUpdate(complaints.map(c => c.id === mail.id ? { ...c, ...updates } : c)); databaseService.updateComplaint(mail.id, updates); }} className={`shrink-0 transition-all hover:scale-125 ${mail.isStarredByAdmin ? 'text-amber-400 fill-amber-400' : 'text-slate-200'}`} />
+                  <Star size={20} onClick={(e) => { e.stopPropagation(); const updates = { isStarredByAdmin: !mail.isStarredByAdmin }; onUpdate(complaints.map(c => c.id === mail.id ? { ...c, ...updates } : c)); databaseService.updateComplaint(mail.id, updates); logOnly.complaintUpdated(mail.id, mail.isStarredByAdmin ? 'unstarred' : 'starred', adminUser.employeeId || '', adminUser.username || 'Admin', 'admin').catch(console.warn); }} className={`shrink-0 transition-all hover:scale-125 ${mail.isStarredByAdmin ? 'text-amber-400 fill-amber-400' : 'text-slate-200'}`} />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-1">
                       <p className="text-base font-black text-slate-900 truncate uppercase tracking-tight">

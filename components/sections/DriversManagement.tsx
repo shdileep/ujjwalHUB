@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { databaseService } from '../../services/database.service';
+import { logOnly } from '../../services/db.manager';
 import { DriversHubEntry, User, AppState } from '../../types';
 import { Phone, Mail, User as UserIcon, Clock, ShieldCheck, Search, CheckCircle2, UserCheck, UserX, Calendar, Eye, X, FileBarChart, Download, Printer, ShieldAlert, BadgeCheck, FileText, Scale, Activity, Briefcase, Lock, Unlock, MapPin, Trash2, Send } from 'lucide-react';
 import jsPDF from 'jspdf';
@@ -42,8 +43,8 @@ const DutyLogsModal: React.FC<{ driver: DriversHubEntry; onClose: () => void }> 
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-50">
-              {driver.workLogs && driver.workLogs.length > 0 ? (
-                driver.workLogs.map((log: any, idx: number) => (
+              {(Array.isArray(driver.workLogs) ? driver.workLogs : Object.values(driver.workLogs || {})).length > 0 ? (
+                (Array.isArray(driver.workLogs) ? driver.workLogs : Object.values(driver.workLogs || {})).map((log: any, idx: number) => (
                   <tr key={idx} className="hover:bg-slate-50/80 transition-colors">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-2">
@@ -188,7 +189,23 @@ export const DriversManagement: React.FC<Props> = ({ drivers, updateState, admin
     }
   };
 
-  const addHeaderAndFooter = (doc: jsPDF, title: string, driver: DriversHubEntry) => {
+  const urlToBase64 = async (url: string): Promise<string> => {
+    try {
+      const response = await fetch(url, { mode: 'cors' });
+      const blob = await response.blob();
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result as string);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    } catch (e) {
+      console.warn('Failed to fetch profile image for PDF:', e);
+      return '';
+    }
+  };
+
+  const addHeaderAndFooter = (doc: jsPDF, title: string, driver: DriversHubEntry, resolvedPhoto?: string) => {
     const pageWidth = doc.internal.pageSize.getWidth();
 
     // 1. Header & Title
@@ -217,9 +234,10 @@ export const DriversManagement: React.FC<Props> = ({ drivers, updateState, admin
     const photoY = 50;
     const photoW = 30;
     const photoH = 35;
-    if (driver.personnelIdentity.profilePhoto && driver.personnelIdentity.profilePhoto.startsWith('data:')) {
+    const photoRenderStr = resolvedPhoto || driver.personnelIdentity.profilePhoto;
+    if (photoRenderStr && photoRenderStr.startsWith('data:')) {
       try {
-        doc.addImage(driver.personnelIdentity.profilePhoto, 'JPEG', photoX, photoY, photoW, photoH);
+        doc.addImage(photoRenderStr, 'JPEG', photoX, photoY, photoW, photoH);
       } catch (e) {
         doc.rect(photoX, photoY, photoW, photoH);
       }
@@ -321,7 +339,12 @@ export const DriversManagement: React.FC<Props> = ({ drivers, updateState, admin
       driver.personnelIdentity.location = profile.location || driver.personnelIdentity.location;
     }
 
-    addHeaderAndFooter(doc, "DEPLOYMENT TASK REGISTRY", driver);
+    let photoStr = driver.personnelIdentity.profilePhoto;
+    if (photoStr && photoStr.startsWith('http')) {
+      photoStr = await urlToBase64(photoStr);
+    }
+
+    addHeaderAndFooter(doc, "DEPLOYMENT TASK REGISTRY", driver, photoStr);
 
     const allBins = await databaseService.getAllBins();
     const normalizedTargetId = (driver.driverId || '').toString().toLowerCase().trim();
@@ -353,19 +376,43 @@ export const DriversManagement: React.FC<Props> = ({ drivers, updateState, admin
 
     const pdfBlob = doc.output('bloburl');
     setPdfPreview({ url: pdfBlob as unknown as string, title: "DEPLOYMENT TASK REGISTRY" });
+
+    // ⚡ Supabase + 🍃 MongoDB audit trigger
+    if (adminUser) {
+      logOnly.adminPdfExported(
+        adminUser.employeeId || 'admin',
+        adminUser.username || 'Admin',
+        driver.driverId,
+        driver.personnelIdentity?.name || 'Unknown',
+        "Deployment Task Registry PDF"
+      ).catch(console.warn);
+    }
   };
 
   const generateLifecycleReport = async (driver: DriversHubEntry) => {
     const doc = new jsPDF();
     const profile = await databaseService.getDriver(driver.driverId);
+    let workLogs: any[] = [];
     if (profile) {
       driver.personnelIdentity.email = profile.email || driver.personnelIdentity.email;
       driver.personnelIdentity.location = profile.location || driver.personnelIdentity.location;
+      const rawLogs = profile.workLogs || [];
+      workLogs = Array.isArray(rawLogs) ? rawLogs : Object.values(rawLogs);
     }
 
-    addHeaderAndFooter(doc, "OPERATIONAL LIFECYCLE LOGS", driver);
+    // Fallback parsing just in case
+    const fallbackLogs = driver.workLogs || [];
+    const parsedFallback = Array.isArray(fallbackLogs) ? fallbackLogs : Object.values(fallbackLogs);
 
-    const workLogs = driver.workLogs || [];
+    workLogs = workLogs.length > 0 ? workLogs : parsedFallback;
+
+    let photoStr = driver.personnelIdentity.profilePhoto;
+    if (photoStr && photoStr.startsWith('http')) {
+      photoStr = await urlToBase64(photoStr);
+    }
+
+    addHeaderAndFooter(doc, "OPERATIONAL LIFECYCLE LOGS", driver, photoStr);
+
     const rows = workLogs.length > 0
       ? workLogs.map((log: any, i: number) => [
         i + 1,
@@ -391,6 +438,17 @@ export const DriversManagement: React.FC<Props> = ({ drivers, updateState, admin
 
     const pdfBlob = doc.output('bloburl');
     setPdfPreview({ url: pdfBlob as unknown as string, title: "OPERATIONAL LIFECYCLE LOGS" });
+
+    // ⚡ Supabase + 🍃 MongoDB audit trigger
+    if (adminUser) {
+      logOnly.adminPdfExported(
+        adminUser.employeeId || 'admin',
+        adminUser.username || 'Admin',
+        driver.driverId,
+        driver.personnelIdentity?.name || 'Unknown',
+        "Operational Lifecycle Logs PDF"
+      ).catch(console.warn);
+    }
   };
 
   const filteredDrivers = (drivers || []).filter(driver => {

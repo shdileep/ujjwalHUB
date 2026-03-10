@@ -24,8 +24,13 @@ import {
     User
 } from '../types';
 import { performKMeans } from '../utils/clustering';
+import { offlineManager, registerDatabaseService } from './offline.service';
 
 export const databaseService = {
+    _init() {
+        registerDatabaseService(this);
+    },
+
     // ============ SPECIAL SINGLE NODES (REQUESTED BY USER) ============
     async saveToDriverNode(driverId: string, data: any): Promise<void> {
         console.log(`📝 DB: Saving to /driver/${driverId}`);
@@ -213,7 +218,14 @@ export const databaseService = {
         console.log(`✅ [K-Means] Redistribution for ${areaName} complete.`);
     },
 
-    async recordDutySession(driverId: string, type: 'start' | 'end'): Promise<void> {
+    async recordDutySession(driverId: string, type: 'start' | 'end', skipQueue = false): Promise<void> {
+        if (!navigator.onLine && !skipQueue) {
+            return offlineManager.queueAction({
+                type: 'recordDutySession',
+                payload: { driverId, type }
+            });
+        }
+
         const timestamp = new Date().toISOString();
         const dateKey = timestamp.split('T')[0];
 
@@ -283,16 +295,35 @@ export const databaseService = {
     },
 
     async getDriver(driverId: string): Promise<DriverProfile | null> {
-        const snapshot = await get(ref(database, `drivers/${driverId}`));
-        if (snapshot.exists()) return snapshot.val();
-
-        // Fallback to singular node
-        const singularSnapshot = await get(ref(database, `driver/${driverId}`));
-        return singularSnapshot.exists() ? singularSnapshot.val() : null;
+        try {
+            const snapshot = await get(ref(database, `drivers/${driverId}`));
+            if (snapshot.exists()) {
+                const driver = snapshot.val();
+                await offlineManager.setCache(`driver_${driverId}`, driver);
+                return driver;
+            }
+            // Fallback to singular node
+            const singularSnapshot = await get(ref(database, `driver/${driverId}`));
+            if (singularSnapshot.exists()) {
+                const driver = singularSnapshot.val();
+                await offlineManager.setCache(`driver_${driverId}`, driver);
+                return driver;
+            }
+        } catch (error) {
+            console.warn(`📶 DB: Fetch for driver ${driverId} failed, checking cache...`);
+        }
+        return await offlineManager.getCache<DriverProfile>(`driver_${driverId}`);
     },
 
     // Update Driver Status (Active/On Duty / Offline)
-    async updateDriverStatus(driverId: string, status: 'online' | 'offline'): Promise<void> {
+    async updateDriverStatus(driverId: string, status: 'online' | 'offline', skipQueue = false): Promise<void> {
+        if (!navigator.onLine && !skipQueue) {
+            return offlineManager.queueAction({
+                type: 'updateDriverStatus',
+                payload: { driverId, status }
+            });
+        }
+
         const timestamp = new Date().toISOString();
         const updates: any = {};
 
@@ -300,16 +331,14 @@ export const databaseService = {
         updates[`drivers/${driverId}/status`] = status;
         if (status === 'online') {
             updates[`drivers/${driverId}/activeDutyTime`] = timestamp;
-            await this.recordDutySession(driverId, 'start');
+            await this.recordDutySession(driverId, 'start', skipQueue);
         } else {
             updates[`drivers/${driverId}/lastLogoutTime`] = timestamp;
-            await this.recordDutySession(driverId, 'end');
+            await this.recordDutySession(driverId, 'end', skipQueue);
         }
 
         // 2. Update DriversHub
         updates[`DriversHub/${driverId}/availability/status`] = status;
-
-        // ... rest of the status update logic ...
 
         // 3. Update LiveDriverStatus
         const driverProfile = await this.getDriver(driverId);
@@ -328,8 +357,15 @@ export const databaseService = {
         await update(ref(database), updates);
     },
 
-    async incrementDriverTaskCount(driverId: string): Promise<void> {
+    async incrementDriverTaskCount(driverId: string, skipQueue = false): Promise<void> {
         if (!driverId) return;
+        if (!navigator.onLine && !skipQueue) {
+            return offlineManager.queueAction({
+                type: 'incrementDriverTaskCount',
+                payload: { driverId }
+            });
+        }
+
         const hubRef = ref(database, `DriversHub/${driverId}/deployment/tasksCompleted`);
         const snapshot = await get(hubRef);
         const currentCount = snapshot.exists() ? (snapshot.val() || 0) : 0;
@@ -344,12 +380,22 @@ export const databaseService = {
     },
 
     async getAllDrivers(): Promise<DriverProfile[]> {
-        const snapshot = await get(ref(database, 'drivers'));
-        if (!snapshot.exists()) return [];
-        return Object.entries(snapshot.val()).map(([key, data]: [string, any]) => ({
-            ...data,
-            driverId: data.driverId || key
-        }));
+        try {
+            const snapshot = await get(ref(database, 'drivers'));
+            if (snapshot.exists()) {
+                const drivers = Object.entries(snapshot.val()).map(([key, data]: [string, any]) => ({
+                    ...data,
+                    driverId: data.driverId || key
+                })) as DriverProfile[];
+                await offlineManager.setCache('drivers', drivers);
+                return drivers;
+            }
+        } catch (error) {
+            console.warn('📶 DB: Network fetch for drivers failed, checking offline cache...');
+        }
+
+        const cachedDrivers = await offlineManager.getCache<DriverProfile[]>('drivers');
+        return cachedDrivers || [];
     },
 
     subscribeToDrivers(callback: (drivers: DriverProfile[]) => void): () => void {
@@ -372,12 +418,22 @@ export const databaseService = {
 
     // ============ ADMINS ============
     async getAllAdmins(): Promise<AdminProfile[]> {
-        const snapshot = await get(ref(database, 'admins'));
-        if (!snapshot.exists()) return [];
-        return Object.entries(snapshot.val()).map(([key, data]: [string, any]) => ({
-            ...data,
-            adminId: data.adminId || key
-        }));
+        try {
+            const snapshot = await get(ref(database, 'admins'));
+            if (snapshot.exists()) {
+                const admins = Object.entries(snapshot.val()).map(([key, data]: [string, any]) => ({
+                    ...data,
+                    adminId: data.adminId || key
+                })) as AdminProfile[];
+                await offlineManager.setCache('admins', admins);
+                return admins;
+            }
+        } catch (error) {
+            console.warn('📶 DB: Network fetch for admins failed, checking offline cache...');
+        }
+
+        const cachedAdmins = await offlineManager.getCache<AdminProfile[]>('admins');
+        return cachedAdmins || [];
     },
 
     async createAdmin(adminId: string, adminData: AdminProfile): Promise<void> {
@@ -391,12 +447,24 @@ export const databaseService = {
     },
 
     async getAdmin(adminId: string): Promise<AdminProfile | null> {
-        const snapshot = await get(ref(database, `admins/${adminId}`));
-        if (snapshot.exists()) return snapshot.val();
-
-        // Fallback to singular node
-        const singularSnapshot = await get(ref(database, `admin/${adminId}`));
-        return singularSnapshot.exists() ? singularSnapshot.val() : null;
+        try {
+            const snapshot = await get(ref(database, `admins/${adminId}`));
+            if (snapshot.exists()) {
+                const admin = snapshot.val();
+                await offlineManager.setCache(`admin_${adminId}`, admin);
+                return admin;
+            }
+            // Fallback to singular node
+            const singularSnapshot = await get(ref(database, `admin/${adminId}`));
+            if (singularSnapshot.exists()) {
+                const admin = singularSnapshot.val();
+                await offlineManager.setCache(`admin_${adminId}`, admin);
+                return admin;
+            }
+        } catch (error) {
+            console.warn(`📶 DB: Fetch for admin ${adminId} failed, checking cache...`);
+        }
+        return await offlineManager.getCache<AdminProfile>(`admin_${adminId}`);
     },
 
     // ============ LIVE DRIVER STATUS ============
@@ -495,8 +563,17 @@ export const databaseService = {
     },
 
     async getUser(userId: string): Promise<any | null> {
-        const snapshot = await get(ref(database, `users/${userId}`));
-        return snapshot.exists() ? snapshot.val() : null;
+        try {
+            const snapshot = await get(ref(database, `users/${userId}`));
+            if (snapshot.exists()) {
+                const user = snapshot.val();
+                await offlineManager.setCache(`user_data_${userId}`, user);
+                return user;
+            }
+        } catch (error) {
+            console.warn(`📶 DB: Fetch for user ${userId} failed, checking cache...`);
+        }
+        return await offlineManager.getCache<any>(`user_data_${userId}`);
     },
 
     async getUserByEmail(email: string): Promise<any | null> {
@@ -527,9 +604,19 @@ export const databaseService = {
 
     // ============ BINS ============
     async getAllBins(): Promise<Bin[]> {
-        const snapshot = await get(ref(database, 'bins'));
-        if (!snapshot.exists()) return [];
-        return Object.values(snapshot.val());
+        try {
+            const snapshot = await get(ref(database, 'bins'));
+            if (snapshot.exists()) {
+                const bins = Object.values(snapshot.val()) as Bin[];
+                await offlineManager.setCache('bins', bins);
+                return bins;
+            }
+        } catch (error) {
+            console.warn('📶 DB: Network fetch for bins failed, checking offline cache...');
+        }
+
+        const cachedBins = await offlineManager.getCache<Bin[]>('bins');
+        return cachedBins || [];
     },
 
     async createBin(binId: string, binData: Bin): Promise<void> {
@@ -558,7 +645,14 @@ export const databaseService = {
         }
     },
 
-    async updateBinStatus(binId: string, status: Bin['status'], fillLevel: number, driverId?: string): Promise<void> {
+    async updateBinStatus(binId: string, status: Bin['status'], fillLevel: number, driverId?: string, skipQueue = false): Promise<void> {
+        if (!navigator.onLine && !skipQueue) {
+            return offlineManager.queueAction({
+                type: 'updateBinStatus',
+                payload: { binId, status, fillLevel, driverId }
+            });
+        }
+
         const updates: any = {};
         updates[`bins/${binId}/status`] = status;
         updates[`bins/${binId}/fillLevel`] = fillLevel;
@@ -579,9 +673,19 @@ export const databaseService = {
     },
 
     async getAllUsers(): Promise<any[]> {
-        const snapshot = await get(ref(database, 'users'));
-        if (!snapshot.exists()) return [];
-        return Object.values(snapshot.val());
+        try {
+            const snapshot = await get(ref(database, 'users'));
+            if (snapshot.exists()) {
+                const users = Object.values(snapshot.val());
+                await offlineManager.setCache('all_users', users);
+                return users;
+            }
+        } catch (error) {
+            console.warn('📶 DB: Network fetch for all users failed, checking offline cache...');
+        }
+
+        const cachedUsers = await offlineManager.getCache<any[]>('all_users');
+        return cachedUsers || [];
     },
 
     // ============ GENERIC DRIVER UPDATE (Compatibility) ============
@@ -597,7 +701,14 @@ export const databaseService = {
         }
     },
 
-    async recordLogout(driverId: string): Promise<void> {
+    async recordLogout(driverId: string, skipQueue = false): Promise<void> {
+        if (!navigator.onLine && !skipQueue) {
+            return offlineManager.queueAction({
+                type: 'recordLogout',
+                payload: { driverId }
+            });
+        }
+
         const timestamp = new Date().toISOString();
         const date = timestamp.split('T')[0];
         const displayTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -605,10 +716,12 @@ export const databaseService = {
         const driverRef = ref(database, `drivers/${driverId}`);
         const snapshot = await get(driverRef);
         const currentData = snapshot.val() || {};
-        let workLogs = currentData.workLogs || [];
+        let rawLogs = currentData.workLogs || [];
+        // Firebase might return arrays as objects with numeric keys
+        let workLogs = Array.isArray(rawLogs) ? rawLogs : Object.values(rawLogs);
 
         // Find the active session (one with end: null)
-        const activeIndex = [...workLogs].reverse().findIndex(log => log.end === null);
+        const activeIndex = [...workLogs].reverse().findIndex((log: any) => log.end === null);
         if (activeIndex !== -1) {
             const actualIndex = workLogs.length - 1 - activeIndex;
             const session = workLogs[actualIndex];
@@ -654,7 +767,14 @@ export const databaseService = {
 
 
 
-    async updateBin(binId: string, updates: Partial<Bin>, driverId?: string): Promise<void> {
+    async updateBin(binId: string, updates: Partial<Bin>, driverId?: string, skipQueue = false): Promise<void> {
+        if (!navigator.onLine && !skipQueue) {
+            return offlineManager.queueAction({
+                type: 'updateBin',
+                payload: { binId, updates, driverId }
+            });
+        }
+
         const finalUpdates: any = {};
         Object.entries(updates).forEach(([key, val]) => {
             finalUpdates[`bins/${binId}/${key}`] = val;
@@ -1012,7 +1132,9 @@ export const databaseService = {
         const driverRef = ref(database, `drivers/${driverId}`);
         const snapshot = await get(driverRef);
         const currentData = snapshot.val() || {};
-        const workLogs = currentData.workLogs || [];
+        const rawLogs = currentData.workLogs || [];
+        // Safely parse Firebase object-arrays
+        const workLogs = Array.isArray(rawLogs) ? rawLogs : Object.values(rawLogs);
 
         // Clean up any stale active sessions (if driver didn't log out properly)
         const cleanedLogs = workLogs.map((log: any) => {
@@ -1415,3 +1537,7 @@ export const databaseService = {
         console.log(`✅ ${role} ${employeeId} purged from database.`);
     }
 };
+
+// Auto-initialize to register with offline manager
+databaseService._init();
+

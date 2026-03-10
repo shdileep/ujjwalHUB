@@ -12,6 +12,7 @@ import { KANDIGAI_BINS } from '../../constants/kandigaiData';
 import { AREA_COMPONENT_MAPPING } from '../../constants/areas';
 import { getSpecialAreaBins } from '../../utils/binRandomizer';
 import { calculateDriverMetrics } from '../../utils/metrics';
+import { logOnly } from '../../services/db.manager';
 
 interface Props {
    state: AppState;
@@ -302,7 +303,21 @@ export const DriverPayments: React.FC<Props> = ({ state }) => {
                            </td>
                            <td className="px-8 py-7 text-center">
                               <button
-                                 onClick={() => setActivePaySlip(item)}
+                                 onClick={() => {
+                                    setActivePaySlip(item);
+                                    // ⚡ Supabase + 🍃 MongoDB: log payslip view
+                                    logOnly.salaryViewed({
+                                       driverId: user.employeeId || '',
+                                       driverName: user.username || '',
+                                       area: (user as any).location || '',
+                                       month: item.month,
+                                       grossSalary: item.gross,
+                                       netSalary: item.net,
+                                       deductions: item.gross - item.net,
+                                       leaveDays: item.leaves,
+                                       tasksIncomplete: item.incomplete
+                                    }).catch(console.warn);
+                                 }}
                                  className="px-6 py-3 bg-indigo-50 text-indigo-600 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-indigo-600 hover:text-white transition-all shadow-sm border border-indigo-100 flex items-center gap-2 mx-auto"
                               >
                                  <FileText size={14} /> {item.status === 'Credited' ? 'View Slip' : 'Project Slip'}
@@ -462,7 +477,20 @@ export const DriverPayments: React.FC<Props> = ({ state }) => {
                      </div>
 
                      <div className="flex flex-wrap items-center justify-center gap-5 pt-12 border-t border-slate-100 print:hidden">
-                        <button className="flex items-center gap-4 px-10 py-5 bg-slate-900 text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-2xl hover:bg-indigo-600 active:scale-95 transition-all">
+                        <button
+                           className="flex items-center gap-4 px-10 py-5 bg-slate-900 text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-2xl hover:bg-indigo-600 active:scale-95 transition-all"
+                           onClick={() => {
+                              // 🍃 MongoDB: log PDF download
+                              logOnly.complaintUpdated(
+                                 activePaySlip.ref,
+                                 'pdf_downloaded',
+                                 user.employeeId || '',
+                                 user.username || '',
+                                 'driver',
+                                 { month: activePaySlip.month, netSalary: activePaySlip.net }
+                              ).catch(console.warn);
+                           }}
+                        >
                            <Download size={20} /> Download PDF
                         </button>
                         <button className="flex items-center gap-4 px-10 py-5 bg-white border border-slate-200 text-slate-600 rounded-2xl font-black text-xs uppercase tracking-widest hover:border-indigo-500 hover:shadow-lg transition-all active:scale-95">

@@ -11,6 +11,7 @@ import {
 import { databaseService } from '../../services/database.service';
 import { DynamicLogo } from '../DynamicLogo';
 import { calculateDriverMetrics } from '../../utils/metrics';
+import { syncAll } from '../../services/db.manager';
 
 interface Props {
   state: AppState;
@@ -126,13 +127,21 @@ export const DriverHome: React.FC<Props> = ({ state, updateState }) => {
 
       if (isActive && state.user?.employeeId) {
         try {
-          await databaseService.recordDutyStart(state.user.employeeId);
+          await syncAll.driverLogin(
+            state.user.employeeId,
+            state.user.username || 'Driver',
+            (state.user as any).location || ''
+          );
         } catch (err) {
           console.error("Failed to record duty start:", err);
         }
       } else if (!isActive && state.user?.employeeId) {
         try {
-          await databaseService.recordLogout(state.user.employeeId);
+          await syncAll.driverLogout(
+            state.user.employeeId,
+            state.user.username || 'Driver',
+            (state.user as any).location || ''
+          );
         } catch (err) {
           console.error("Failed to record logout:", err);
         }
