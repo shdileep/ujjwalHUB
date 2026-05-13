@@ -443,3 +443,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-29 17:41:53] Fine-tune map tile caching headers and eviction policy
 - Ensured local map tiles refresh regularly without exceeding storage quotas.
 
+
+### [2026-05-13 09:42:15] Implement initial GPS geofencing buffer for municipal ward boundaries
+- Add 50-meter adaptive buffer to prevent spurious out-of-boundary alerts near edge streets.
