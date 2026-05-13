@@ -455,3 +455,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-13 16:50:38] Refine leaflet marker cluster zoom thresholds for high-density bin zones
 - Adjust spiderfy distance and maximum cluster radius for clear visual separation.
+
+### [2026-05-13 19:22:11] Update collection route progress indicator in mobile driver cockpit
+- Display completed vs remaining waypoints with estimated time of arrival calculation.
