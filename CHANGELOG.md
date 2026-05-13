@@ -446,3 +446,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-13 09:42:15] Implement initial GPS geofencing buffer for municipal ward boundaries
 - Add 50-meter adaptive buffer to prevent spurious out-of-boundary alerts near edge streets.
+
+### [2026-05-13 11:28:40] Optimize offline bin state queue serialization format
+- Switch payload serialization to binary pack format to reduce IndexedDB storage overhead.
