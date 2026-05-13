@@ -449,3 +449,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-13 11:28:40] Optimize offline bin state queue serialization format
 - Switch payload serialization to binary pack format to reduce IndexedDB storage overhead.
+
+### [2026-05-13 14:15:22] Add debounce handler to driver shift toggle action
+- Prevent accidental duplicate shift initialization on slow network connections.
