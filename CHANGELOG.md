@@ -461,3 +461,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-14 11:14:08] Add validation check for bin overflow hazard reports
 - Require photo attachment and minimum severity selection before submission.
+
+### [2026-05-14 15:46:33] Tune service worker cache lifetime for static GIS vector assets
+- Set cache expiry to 7 days with stale-while-revalidate background refresh.
