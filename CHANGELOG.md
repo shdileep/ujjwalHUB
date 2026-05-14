@@ -458,3 +458,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-13 19:22:11] Update collection route progress indicator in mobile driver cockpit
 - Display completed vs remaining waypoints with estimated time of arrival calculation.
+
+### [2026-05-14 11:14:08] Add validation check for bin overflow hazard reports
+- Require photo attachment and minimum severity selection before submission.
