@@ -470,3 +470,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-17 14:08:45] Improve turn-by-turn instruction card readability under direct sunlight
 - Increase contrast ratios and font sizing for in-vehicle mounting viewports.
+
+### [2026-05-17 17:55:12] Add sanitation worker attendance reconciliation utility
+- Match driver shift check-in timestamps with assigned vehicle ignition events.
