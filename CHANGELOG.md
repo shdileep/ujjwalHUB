@@ -464,3 +464,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-14 15:46:33] Tune service worker cache lifetime for static GIS vector assets
 - Set cache expiry to 7 days with stale-while-revalidate background refresh.
+
+### [2026-05-17 11:32:19] Implement telemetry retry backoff with jitter on reconnect
+- Prevent thundering herd on server when multiple fleet units reconnect simultaneously.
