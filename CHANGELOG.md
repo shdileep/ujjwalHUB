@@ -467,3 +467,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-17 11:32:19] Implement telemetry retry backoff with jitter on reconnect
 - Prevent thundering herd on server when multiple fleet units reconnect simultaneously.
+
+### [2026-05-17 14:08:45] Improve turn-by-turn instruction card readability under direct sunlight
+- Increase contrast ratios and font sizing for in-vehicle mounting viewports.
