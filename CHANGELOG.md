@@ -494,3 +494,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-18 17:09:44] Add unit test suite for municipal routing graph node connectivity
 - Verify bidirectional traversal rules across one-way residential streets.
+
+### [2026-05-18 18:25:03] Enhance error recovery when Leaflet tile provider returns 503
+- Automatically fallback to secondary open-street-map mirror tile servers.
