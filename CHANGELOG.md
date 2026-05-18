@@ -473,3 +473,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-17 17:55:12] Add sanitation worker attendance reconciliation utility
 - Match driver shift check-in timestamps with assigned vehicle ignition events.
+
+### [2026-05-18 09:12:05] Refactor A* heuristic distance computation for urban grid streets
+- Incorporate Manhattan distance bias for rectangular block navigation.
