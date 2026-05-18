@@ -497,3 +497,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-18 18:25:03] Enhance error recovery when Leaflet tile provider returns 503
 - Automatically fallback to secondary open-street-map mirror tile servers.
+
+### [2026-05-18 19:40:27] Tune audio chime duration on successful bin barcode scan
+- Shorten playback duration to 150ms to allow faster successive bin scans.
