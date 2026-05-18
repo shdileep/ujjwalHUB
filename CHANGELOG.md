@@ -485,3 +485,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-18 13:15:30] Implement battery status monitoring in background telemetry worker
 - Throttle GPS polling frequency when device battery drops below twenty percent.
+
+### [2026-05-18 14:38:52] Update Gemini prompt template for incident anomaly summarization
+- Improve extraction of location, timestamp, and severity from citizen text reports.
