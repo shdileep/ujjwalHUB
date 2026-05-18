@@ -476,3 +476,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-18 09:12:05] Refactor A* heuristic distance computation for urban grid streets
 - Incorporate Manhattan distance bias for rectangular block navigation.
+
+### [2026-05-18 10:24:41] Add voice alert notifications for approaching urgent collection stops
+- Use Web Speech synthesis API to announce high-priority bin waypoints safely.
