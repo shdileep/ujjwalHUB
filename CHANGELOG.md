@@ -479,3 +479,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-18 10:24:41] Add voice alert notifications for approaching urgent collection stops
 - Use Web Speech synthesis API to announce high-priority bin waypoints safely.
+
+### [2026-05-18 11:47:19] Optimize memory allocation during large polygon GeoJSON parsing
+- Stream boundary features progressively to avoid garbage collection spikes.
