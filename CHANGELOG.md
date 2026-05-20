@@ -506,3 +506,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-20 10:18:24] Refactor vehicle speed calculation from successive GPS telemetry points
 - Apply Kalman filter smoothing to eliminate noise from tall building reflections.
+
+### [2026-05-20 13:42:50] Improve mobile viewport scrolling behavior during modal confirmation dialogs
+- Lock background body scroll to prevent disorientation on touch devices.
