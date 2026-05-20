@@ -509,3 +509,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-20 13:42:50] Improve mobile viewport scrolling behavior during modal confirmation dialogs
 - Lock background body scroll to prevent disorientation on touch devices.
+
+### [2026-05-20 16:21:15] Add export to CSV action for daily ward collection compliance metrics
+- Generate structured tabular records with driver ID, timestamp, and weight logged.
