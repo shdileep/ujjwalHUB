@@ -512,3 +512,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-20 16:21:15] Add export to CSV action for daily ward collection compliance metrics
 - Generate structured tabular records with driver ID, timestamp, and weight logged.
+
+### [2026-05-20 18:50:02] Update dark mode color palette for nighttime sanitation shifts
+- Calibrate ambient dark gray shades to reduce driver eye strain during night duty.
