@@ -503,3 +503,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-18 20:55:18] Add shift break duration tracker to driver hours compliance module
 - Log statutory rest intervals to comply with municipal fleet safety guidelines.
+
+### [2026-05-20 10:18:24] Refactor vehicle speed calculation from successive GPS telemetry points
+- Apply Kalman filter smoothing to eliminate noise from tall building reflections.
