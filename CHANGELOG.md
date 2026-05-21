@@ -539,3 +539,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-21 19:20:05] Improve offline banner transition animations on network state change
 - Provide smooth slide-in notification when device switches to offline mode.
+
+### [2026-05-21 20:45:51] Add vehicle fuel efficiency calculation helper based on route elevation
+- Account for uphill gradients when projecting fuel consumption for heavy trucks.
