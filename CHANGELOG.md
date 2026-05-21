@@ -515,3 +515,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-20 18:50:02] Update dark mode color palette for nighttime sanitation shifts
 - Calibrate ambient dark gray shades to reduce driver eye strain during night duty.
+
+### [2026-05-21 09:35:10] Optimize IndexedDB index definitions for fast historical route lookups
+- Create compound index on wardId and shiftDate to accelerate query latency.
