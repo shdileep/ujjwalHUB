@@ -524,3 +524,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-21 12:15:33] Add safety warning banner for severe weather alert in driver view
 - Fetch municipal weather warnings and display prominent dismissible banner.
+
+### [2026-05-21 13:40:21] Refine Gemini NLP sentiment parsing for citizen feedback messages
+- Categorize citizen feedback into cleanliness, punctuality, and staff conduct.
