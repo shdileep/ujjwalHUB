@@ -521,3 +521,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-21 10:50:42] Implement dynamic recalculation of remaining route distance
 - Update remaining route kilometer estimate whenever driver deviates from path.
+
+### [2026-05-21 12:15:33] Add safety warning banner for severe weather alert in driver view
+- Fetch municipal weather warnings and display prominent dismissible banner.
