@@ -527,3 +527,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-21 13:40:21] Refine Gemini NLP sentiment parsing for citizen feedback messages
 - Categorize citizen feedback into cleanliness, punctuality, and staff conduct.
+
+### [2026-05-21 15:05:49] Tune WebSocket keep-alive ping interval for live fleet monitoring
+- Set ping interval to 25 seconds with 5-second pong timeout to detect dropouts.
