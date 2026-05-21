@@ -518,3 +518,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-21 09:35:10] Optimize IndexedDB index definitions for fast historical route lookups
 - Create compound index on wardId and shiftDate to accelerate query latency.
+
+### [2026-05-21 10:50:42] Implement dynamic recalculation of remaining route distance
+- Update remaining route kilometer estimate whenever driver deviates from path.
