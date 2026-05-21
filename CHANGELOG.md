@@ -530,3 +530,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-21 15:05:49] Tune WebSocket keep-alive ping interval for live fleet monitoring
 - Set ping interval to 25 seconds with 5-second pong timeout to detect dropouts.
+
+### [2026-05-21 16:30:12] Add visual pulse animation to overdue collection markers on map
+- Highlight bins waiting over 24 hours with rhythmic amber beacon animation.
