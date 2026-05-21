@@ -533,3 +533,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-21 16:30:12] Add visual pulse animation to overdue collection markers on map
 - Highlight bins waiting over 24 hours with rhythmic amber beacon animation.
+
+### [2026-05-21 17:55:38] Implement automated local storage cleanup for stale route cache entries
+- Evict cached route polylines older than 72 hours to preserve device storage.
