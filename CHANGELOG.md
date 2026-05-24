@@ -542,3 +542,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-21 20:45:51] Add vehicle fuel efficiency calculation helper based on route elevation
 - Account for uphill gradients when projecting fuel consumption for heavy trucks.
+
+### [2026-05-24 15:20:44] Fix minor padding inconsistency in driver profile badge display
+- Align badge text with avatar thumbnail across varying screen resolutions.
