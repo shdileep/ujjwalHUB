@@ -584,3 +584,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 17:20:51] Improve print layout styles for municipal vehicle maintenance inspection sheets
 - Add page breaks and standard border formatting for printed inspection logs.
+
+### [2026-05-26 18:04:16] Add bin collection speed run detection to flag anomalous instant pickups
+- Validate minimum realistic transit duration between successive bin scans.
