@@ -575,3 +575,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 15:12:07] Refactor Supabase authentication token refresh handler
 - Silently refresh session tokens in background before expiration to prevent logout.
+
+### [2026-05-26 15:55:42] Add ward boundary intersection helper for vehicle location classification
+- Implement ray-casting point-in-polygon algorithm with bounding-box pre-check.
