@@ -596,3 +596,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 20:15:48] Enhance admin live fleet view with vehicle speed and heading directional arrows
 - Rotate vehicle marker icons in real-time according to compass heading telemetry.
+
+### [2026-05-26 21:05:22] Add fallback offline map tiles for central municipal zones
+- Bundle zoom levels 12-15 vector tiles in application bundle for zero-network areas.
