@@ -551,3 +551,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 09:22:38] Refactor bin fill level prediction model with time-of-day decay factors
 - Calibrate weekend commercial zone accumulation rates against residential baselines.
+
+### [2026-05-26 10:05:19] Optimize Leaflet canvas renderer for rendering 1000+ simultaneous bin markers
+- Switch from SVG to HTML5 Canvas marker rendering to ensure 60fps interaction.
