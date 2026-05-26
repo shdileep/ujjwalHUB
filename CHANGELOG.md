@@ -563,3 +563,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 12:18:22] Improve Gemini AI executive summary generator for municipal sanitation audits
 - Format multi-ward collection totals into concise bullet points for management.
+
+### [2026-05-26 13:02:14] Add tactile haptic feedback on route waypoint arrival trigger
+- Trigger distinctive dual-pulse vibration when truck enters 25m waypoint radius.
