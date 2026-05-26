@@ -548,3 +548,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 08:45:12] Implement real-time driver ETA calculation based on traffic speed profiles
 - Factor historical congestion factors into waypoint arrival time projections.
+
+### [2026-05-26 09:22:38] Refactor bin fill level prediction model with time-of-day decay factors
+- Calibrate weekend commercial zone accumulation rates against residential baselines.
