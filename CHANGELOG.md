@@ -587,3 +587,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 18:04:16] Add bin collection speed run detection to flag anomalous instant pickups
 - Validate minimum realistic transit duration between successive bin scans.
+
+### [2026-05-26 18:48:30] Tune garbage collection intervals in background location tracker service
+- Nullify stale GPS point references to avoid long-running memory creep.
