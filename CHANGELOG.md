@@ -545,3 +545,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-24 15:20:44] Fix minor padding inconsistency in driver profile badge display
 - Align badge text with avatar thumbnail across varying screen resolutions.
+
+### [2026-05-26 08:45:12] Implement real-time driver ETA calculation based on traffic speed profiles
+- Factor historical congestion factors into waypoint arrival time projections.
