@@ -593,3 +593,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 19:32:05] Implement customizable audio cues for successful waypoint completion
 - Allow drivers to select subtle audio cues tailored to noisy cabin environments.
+
+### [2026-05-26 20:15:48] Enhance admin live fleet view with vehicle speed and heading directional arrows
+- Rotate vehicle marker icons in real-time according to compass heading telemetry.
