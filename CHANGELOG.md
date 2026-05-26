@@ -554,3 +554,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 10:05:19] Optimize Leaflet canvas renderer for rendering 1000+ simultaneous bin markers
 - Switch from SVG to HTML5 Canvas marker rendering to ensure 60fps interaction.
+
+### [2026-05-26 10:48:55] Add automated hazard detection flag for road blockages reported by drivers
+- Mark blocked street segments immediately in routing graph to reroute trailing trucks.
