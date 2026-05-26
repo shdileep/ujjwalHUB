@@ -581,3 +581,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 16:38:19] Update PWA web app manifest with standalone display mode and orientation locks
 - Prevent unexpected orientation flips during rough terrain driving.
+
+### [2026-05-26 17:20:51] Improve print layout styles for municipal vehicle maintenance inspection sheets
+- Add page breaks and standard border formatting for printed inspection logs.
