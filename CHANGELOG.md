@@ -578,3 +578,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 15:55:42] Add ward boundary intersection helper for vehicle location classification
 - Implement ray-casting point-in-polygon algorithm with bounding-box pre-check.
+
+### [2026-05-26 16:38:19] Update PWA web app manifest with standalone display mode and orientation locks
+- Prevent unexpected orientation flips during rough terrain driving.
