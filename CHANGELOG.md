@@ -611,3 +611,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-27 15:20:09] Update Gemini system instruction for sanitation complaint auto-categorization
 - Add strict JSON schema definition to guarantee parseable category responses.
+
+### [2026-05-27 17:08:52] Add debounce to live map search input to avoid redundant geocoding queries
+- Delay geocoding API requests by 350ms during active text input.
