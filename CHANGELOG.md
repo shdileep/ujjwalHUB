@@ -608,3 +608,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-27 13:35:44] Improve responsive layout of admin fleet statistics grid on 4K monitors
 - Use auto-fitting CSS grid template to maximize visual telemetry density.
+
+### [2026-05-27 15:20:09] Update Gemini system instruction for sanitation complaint auto-categorization
+- Add strict JSON schema definition to guarantee parseable category responses.
