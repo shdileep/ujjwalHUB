@@ -614,3 +614,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-27 17:08:52] Add debounce to live map search input to avoid redundant geocoding queries
 - Delay geocoding API requests by 350ms during active text input.
+
+### [2026-05-27 19:25:40] Optimize SVG icon bundle size by removing unused metadata and comments
+- Reduce total icon asset payload by 28% for faster cold boot times.
