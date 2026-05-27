@@ -602,3 +602,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-27 10:14:30] Refactor driver shift report generator with printable summary table
 - Include total distance covered, bins collected, and total active duty time.
+
+### [2026-05-27 11:52:18] Add sanity check on GPS altitude values to filter invalid zero readings
+- Discard elevation anomalies caused by cold GPS receiver startups.
