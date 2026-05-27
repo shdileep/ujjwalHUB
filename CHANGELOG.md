@@ -605,3 +605,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-27 11:52:18] Add sanity check on GPS altitude values to filter invalid zero readings
 - Discard elevation anomalies caused by cold GPS receiver startups.
+
+### [2026-05-27 13:35:44] Improve responsive layout of admin fleet statistics grid on 4K monitors
+- Use auto-fitting CSS grid template to maximize visual telemetry density.
