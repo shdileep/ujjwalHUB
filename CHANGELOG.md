@@ -599,3 +599,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-26 21:05:22] Add fallback offline map tiles for central municipal zones
 - Bundle zoom levels 12-15 vector tiles in application bundle for zero-network areas.
+
+### [2026-05-27 10:14:30] Refactor driver shift report generator with printable summary table
+- Include total distance covered, bins collected, and total active duty time.
