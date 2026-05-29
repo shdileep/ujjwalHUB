@@ -626,3 +626,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 
 ### [2026-05-29 14:10:22] Add route optimization benchmark tests comparing Dijkstra vs A* paths
 - Document computation times and memory utilization across varying node counts.
+
+### [2026-05-29 16:45:09] Refine dark mode contrast for map route line overlays
+- Use high-visibility neon cyan for active route and translucent purple for visited.
