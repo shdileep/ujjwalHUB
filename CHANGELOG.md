@@ -11,3 +11,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-01 11:41:10] Add nearest-neighbor boundary fallback for driver pathing
 - Implemented fallback logic when GPS telemetry encounters degraded signal zones.
 
+### [2026-07-01 14:13:29] Improve A* heuristic weighting for multi-point route traversal
+- Calibrated diagonal distance weights for dense urban street topologies.
+
