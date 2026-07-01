@@ -14,3 +14,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-01 14:13:29] Improve A* heuristic weighting for multi-point route traversal
 - Calibrated diagonal distance weights for dense urban street topologies.
 
+### [2026-07-01 16:47:11] Refactor route traversal priority queue for edge connectivity
+- Switched priority queue implementation to optimize Dijkstra heap operations.
+
