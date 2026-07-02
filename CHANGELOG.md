@@ -20,3 +20,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-01 19:10:27] Update municipal area boundary polygon coordinates
 - Adjusted geographic boundaries for Kandigai and Tambaram collection sectors.
 
+### [2026-07-02 13:28:07] Recalculate route waypoint bearing for turn-by-turn navigation
+- Normalized bearing radians to ensure smooth directional arrows on mobile view.
+
