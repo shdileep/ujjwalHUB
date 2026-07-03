@@ -29,3 +29,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-03 10:02:45] Refine route polyline simplification algorithm
 - Applied Ramer-Douglas-Peucker algorithm to reduce Leaflet polyline node overhead.
 
+### [2026-07-03 10:33:28] Adjust collection route seed locations for fleet deployment
+- Updated initial depot coordinates to minimize empty return travel time.
+
