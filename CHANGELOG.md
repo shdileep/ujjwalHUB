@@ -74,3 +74,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-03 20:21:39] Enhance leave application status tracking in driver profile
 - Surfaced approval lifecycle steps clearly in driver settings screen.
 
+### [2026-07-03 21:09:51] Add formal tone consistency check to Gemini response parser
+- Validated formal register and sanitized generated output for compliance.
+
