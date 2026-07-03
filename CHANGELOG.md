@@ -56,3 +56,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-03 16:10:48] Add tactile vibration feedback on task completion
 - Integrated navigator.vibrate() pattern for field driver task confirmations.
 
+### [2026-07-03 16:54:46] Refine duty session active timer calculations
+- Eliminated minor drift in elapsed duty timer during app backgrounding.
+
