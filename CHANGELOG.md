@@ -80,3 +80,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-04 13:24:34] Sanitize AI-generated leave letter formatting
 - Cleaned up markdown artifacts and normalized line breaks for print fidelity.
 
+### [2026-07-04 17:32:29] Update leave category classification heuristics
+- Mapped input descriptions to standardized municipal leave codes automatically.
+
