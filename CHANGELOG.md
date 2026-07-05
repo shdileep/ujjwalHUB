@@ -83,3 +83,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-04 17:32:29] Update leave category classification heuristics
 - Mapped input descriptions to standardized municipal leave codes automatically.
 
+### [2026-07-05 11:20:07] Improve live duty pulse heartbeat tracking stability
+- Adjusted keep-alive ping interval to 15 seconds to minimize false offlines.
+
