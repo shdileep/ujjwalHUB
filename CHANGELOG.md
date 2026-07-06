@@ -101,3 +101,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-06 11:18:46] Add driver active duty duration aggregator
 - Aggregated total daily driving and collection hours for administrative payroll.
 
+### [2026-07-06 13:27:34] Improve offline status detection timeout for fleet units
+- Gracefully flagged units as idle after configurable inactivity threshold.
+
