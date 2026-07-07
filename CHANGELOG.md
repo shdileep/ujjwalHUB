@@ -119,3 +119,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-07 15:30:30] Refine printable performance audit typography and alignment
 - Ensured consistent header alignment across multi-page audit reports.
 
+### [2026-07-07 18:42:28] Add summary statistics to zonal sanitation report
+- Included total tonnage collected and on-time route completion percentages.
+
