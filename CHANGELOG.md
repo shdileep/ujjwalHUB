@@ -128,3 +128,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-08 14:11:53] Update PWA service worker background cache strategy
 - Cached essential map tile assets for offline route visibility.
 
+### [2026-07-08 16:53:08] Tune manifest icon asset resolution for high-DPI displays
+- Provided crisp icons across varying mobile screen pixel ratios.
+
