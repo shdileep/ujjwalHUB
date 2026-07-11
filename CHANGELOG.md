@@ -155,3 +155,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-11 11:37:12] Tune TSP heuristic threshold for high-density bin zones
 - Improved branch-and-bound pruning to speed up sequential collection paths.
 
+### [2026-07-11 14:10:23] Add nearest-neighbor boundary fallback for driver pathing
+- Implemented fallback logic when GPS telemetry encounters degraded signal zones.
+
