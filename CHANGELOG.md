@@ -173,3 +173,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-12 15:30:45] Optimize spatial distance cache for real-time routing
 - Added memoization for bin-to-bin Manhattan and Haversine distance computations.
 
+### [2026-07-12 17:43:24] Refine route polyline simplification algorithm
+- Applied Ramer-Douglas-Peucker algorithm to reduce Leaflet polyline node overhead.
+
