@@ -170,3 +170,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-12 13:17:11] Recalculate route waypoint bearing for turn-by-turn navigation
 - Normalized bearing radians to ensure smooth directional arrows on mobile view.
 
+### [2026-07-12 15:30:45] Optimize spatial distance cache for real-time routing
+- Added memoization for bin-to-bin Manhattan and Haversine distance computations.
+
