@@ -164,3 +164,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-11 19:17:15] Refactor route traversal priority queue for edge connectivity
 - Switched priority queue implementation to optimize Dijkstra heap operations.
 
+### [2026-07-12 11:26:37] Update municipal area boundary polygon coordinates
+- Adjusted geographic boundaries for Kandigai and Tambaram collection sectors.
+
