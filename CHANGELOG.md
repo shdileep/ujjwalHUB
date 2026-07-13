@@ -182,3 +182,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-13 12:30:28] Refactor driver collection double-tap confirmation flow
 - Prevented inadvertent status updates by adding 300ms double-tap window.
 
+### [2026-07-13 15:28:53] Add debounce protection on bin collection toggle
+- Prevented duplicate task mutations when tapped repeatedly under high latency.
+
