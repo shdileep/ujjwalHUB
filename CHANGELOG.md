@@ -191,3 +191,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-07-14 13:33:43] Improve driver task dispatch sync state management
 - Enhanced synchronization between local state and remote collection queue.
 
+### [2026-07-14 17:27:25] Enhance offline bin sync queue handler with exponential retry
+- Implemented automatic queue replay upon network restoration.
+
