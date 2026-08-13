@@ -206,3 +206,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-13 14:14:10] Refine duty session active timer calculations
 - Eliminated minor drift in elapsed duty timer during app backgrounding.
 
+### [2026-08-13 16:38:10] Improve bin priority sorting for urgent collection alerts
+- Ranked bins with overfill reports higher in the sequential route queue.
+
