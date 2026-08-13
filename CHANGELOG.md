@@ -209,3 +209,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-13 16:38:10] Improve bin priority sorting for urgent collection alerts
 - Ranked bins with overfill reports higher in the sequential route queue.
 
+### [2026-08-13 19:14:51] Refine Gemini NLP prompt template for leave documentation
+- Standardized administrative tone for official municipal leave applications.
+
