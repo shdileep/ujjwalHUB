@@ -218,3 +218,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-14 13:19:15] Update AI grammar refinement pipeline for municipal reports
 - Integrated structured output parsing for Gemini 1.5 Flash completions.
 
+### [2026-08-14 15:26:21] Enhance leave application status tracking in driver profile
+- Surfaced approval lifecycle steps clearly in driver settings screen.
+
