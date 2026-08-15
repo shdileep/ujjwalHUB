@@ -239,3 +239,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-15 17:36:33] Update admin mission control live vehicle tracking markers
 - Updated vehicle icon styling with directional heading pointers.
 
+### [2026-08-15 19:44:38] Enhance ward filtering hierarchy for zonal administrative oversight
+- Enabled multi-select ward filtering in admin telemetry dashboard.
+
