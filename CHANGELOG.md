@@ -236,3 +236,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-15 15:28:28] Refactor fleet presence listener with debounce handling
 - Smoothed vehicle presence status toggles during momentary packet drops.
 
+### [2026-08-15 17:36:33] Update admin mission control live vehicle tracking markers
+- Updated vehicle icon styling with directional heading pointers.
+
