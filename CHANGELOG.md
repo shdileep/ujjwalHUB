@@ -233,3 +233,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-15 13:23:46] Improve live duty pulse heartbeat tracking stability
 - Adjusted keep-alive ping interval to 15 seconds to minimize false offlines.
 
+### [2026-08-15 15:28:28] Refactor fleet presence listener with debounce handling
+- Smoothed vehicle presence status toggles during momentary packet drops.
+
