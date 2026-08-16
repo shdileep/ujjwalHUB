@@ -245,3 +245,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-16 10:02:37] Optimize admin dashboard re-rendering cycle for vehicle pins
 - Prevented full map re-render when individual vehicle position updates arrive.
 
+### [2026-08-16 10:33:20] Add driver active duty duration aggregator
+- Aggregated total daily driving and collection hours for administrative payroll.
+
