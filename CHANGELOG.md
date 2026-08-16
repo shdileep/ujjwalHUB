@@ -257,3 +257,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-16 12:37:36] Improve performance dossier PDF export layout
 - Enhanced page margins and typography in generated administrative dossiers.
 
+### [2026-08-16 13:27:18] Add duty timestamps and bin collection log table formatting
+- Formatted tabular audit trail with date-time localization.
+
