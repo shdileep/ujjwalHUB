@@ -254,3 +254,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-16 12:00:47] Refine administrative alert banner on delayed routes
 - Triggered subtle notification badge when route progress falls behind schedule.
 
+### [2026-08-16 12:37:36] Improve performance dossier PDF export layout
+- Enhanced page margins and typography in generated administrative dossiers.
+
