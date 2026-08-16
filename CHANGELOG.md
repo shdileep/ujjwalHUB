@@ -272,3 +272,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-16 16:03:41] Format driver shift logs with microsecond precision handling
 - Normalized timestamps across database ingestion points.
 
+### [2026-08-16 16:47:41] Update PWA service worker background cache strategy
+- Cached essential map tile assets for offline route visibility.
+
