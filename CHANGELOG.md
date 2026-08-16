@@ -260,3 +260,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-16 13:27:18] Add duty timestamps and bin collection log table formatting
 - Formatted tabular audit trail with date-time localization.
 
+### [2026-08-16 13:58:39] Optimize PDF generation memory footprint for large fleets
+- Streamlined canvas rendering to prevent high memory usage during bulk export.
+
