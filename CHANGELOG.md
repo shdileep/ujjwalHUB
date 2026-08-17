@@ -299,3 +299,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-17 14:10:31] Optimize Dijkstra route matrix calculation for ward sector
 - Refined shortest-path edge traversal weights for municipal routes.
 
+### [2026-08-17 16:50:34] Tune TSP heuristic threshold for high-density bin zones
+- Improved branch-and-bound pruning to speed up sequential collection paths.
+
