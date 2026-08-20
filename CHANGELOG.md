@@ -332,3 +332,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-20 14:21:40] Add debounce protection on bin collection toggle
 - Prevented duplicate task mutations when tapped repeatedly under high latency.
 
+### [2026-08-20 16:44:11] Update bin status synchronizer with optimistic local updates
+- Ensured instant UI response while background sync commits to Firebase.
+
