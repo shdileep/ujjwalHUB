@@ -326,3 +326,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-19 17:31:16] Adjust collection route seed locations for fleet deployment
 - Updated initial depot coordinates to minimize empty return travel time.
 
+### [2026-08-20 11:45:33] Refactor driver collection double-tap confirmation flow
+- Prevented inadvertent status updates by adding 300ms double-tap window.
+
