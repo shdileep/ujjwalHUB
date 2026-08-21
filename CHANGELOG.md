@@ -344,3 +344,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-21 13:19:35] Update collection completion percentage calculation
 - Aligned completion progress bar with verified double-tap confirmations.
 
+### [2026-08-21 15:29:18] Fix bin inspection state transition in driver dashboard
+- Resolved edge case where inspected bins occasionally stayed in pending state.
+
