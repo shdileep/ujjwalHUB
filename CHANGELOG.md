@@ -359,3 +359,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-22 17:39:29] Refine Gemini NLP prompt template for leave documentation
 - Standardized administrative tone for official municipal leave applications.
 
+### [2026-08-23 11:45:49] Add automated validation for administrative leave requests
+- Ensured mandatory date spans and reason categories are populated before submission.
+
