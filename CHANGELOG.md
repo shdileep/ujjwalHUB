@@ -362,3 +362,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-23 11:45:49] Add automated validation for administrative leave requests
 - Ensured mandatory date spans and reason categories are populated before submission.
 
+### [2026-08-23 14:21:51] Update AI grammar refinement pipeline for municipal reports
+- Integrated structured output parsing for Gemini 1.5 Flash completions.
+
