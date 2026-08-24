@@ -371,3 +371,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-23 19:20:40] Add formal tone consistency check to Gemini response parser
 - Validated formal register and sanitized generated output for compliance.
 
+### [2026-08-24 12:29:23] Sanitize AI-generated leave letter formatting
+- Cleaned up markdown artifacts and normalized line breaks for print fidelity.
+
