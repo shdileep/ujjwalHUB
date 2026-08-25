@@ -389,3 +389,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-25 15:23:15] Enhance ward filtering hierarchy for zonal administrative oversight
 - Enabled multi-select ward filtering in admin telemetry dashboard.
 
+### [2026-08-25 17:28:08] Optimize admin dashboard re-rendering cycle for vehicle pins
+- Prevented full map re-render when individual vehicle position updates arrive.
+
