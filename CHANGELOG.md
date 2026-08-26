@@ -398,3 +398,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-26 10:42:41] Improve offline status detection timeout for fleet units
 - Gracefully flagged units as idle after configurable inactivity threshold.
 
+### [2026-08-26 12:19:20] Refine administrative alert banner on delayed routes
+- Triggered subtle notification badge when route progress falls behind schedule.
+
