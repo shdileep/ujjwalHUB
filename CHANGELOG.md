@@ -425,3 +425,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-27 15:32:25] Tune manifest icon asset resolution for high-DPI displays
 - Provided crisp icons across varying mobile screen pixel ratios.
 
+### [2026-08-27 17:35:20] Improve client storage sync on network reconnection
+- Handled conflict resolution between indexedDB entries and server timestamps.
+
