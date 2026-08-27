@@ -416,3 +416,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-26 20:06:10] Add summary statistics to zonal sanitation report
 - Included total tonnage collected and on-time route completion percentages.
 
+### [2026-08-27 11:25:47] Format driver shift logs with microsecond precision handling
+- Normalized timestamps across database ingestion points.
+
