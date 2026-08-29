@@ -437,3 +437,6 @@ Continuous updates, spatial optimization, fleet management, and platform enhance
 ### [2026-08-28 17:31:46] Update responsive breakpoints for tablet and mobile driver view
 - Optimized layout spacing for in-cabin tablet mounting displays.
 
+### [2026-08-29 13:26:25] Refactor state storage persistence keying
+- Scoped local storage keys with schema versioning to support clean updates.
+
