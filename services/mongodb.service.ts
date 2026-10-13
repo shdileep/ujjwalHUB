@@ -5,8 +5,8 @@
 */
 
 const MONGODB_CONFIG = {
-    endpoint: import.meta.env.VITE_MONGODB_ENDPOINT || '',
-    apiKey: import.meta.env.VITE_MONGODB_API_KEY || '',
+    endpoint: import.meta.env.VITE_MONGODB_ENDPOINT || 'https://data.mongodb-api.com/app/ujjwalroute-abcdef/endpoint/data/v1',
+    apiKey: import.meta.env.VITE_MONGODB_API_KEY || 'al-Io03IeH4cv6k-0pKNT74ruiJP2lbMsFXYARUcUe2-eE',
     database: import.meta.env.VITE_MONGODB_DATABASE || 'ujjwal_db',
     dataSource: import.meta.env.VITE_MONGODB_CLUSTER || 'Cluster0'
 };

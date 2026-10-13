@@ -5,8 +5,8 @@
 */
 
 const CLOUDINARY_CONFIG = {
-    cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || '',
-    uploadPreset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || ''
+    cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'dt3glziix',
+    uploadPreset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'ujjwalHUB'
 };
 
 export const cloudinaryService = {
