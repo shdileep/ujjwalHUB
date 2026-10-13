@@ -13,7 +13,7 @@ import { DynamicLogo } from '../DynamicLogo';
 import { databaseService } from '../../services/database.service';
 import { AREA_COMPONENT_MAPPING } from '../../constants/areas';
 import { KANDIGAI_BINS } from '../../constants/kandigaiData';
-import { calculateDriverMetrics } from '../../utils/metrics';
+import { calculateDriverMetrics, getHistoricalMetrics } from '../../utils/metrics';
 import { logOnly } from '../../services/db.manager';
 
 interface Props {
@@ -382,13 +382,18 @@ export const AdminOverview: React.FC<Props> = ({ state }) => {
                 </div>
 
                 <div className="space-y-4">
-                  <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em] flex items-center gap-2"><History size={14} /> Archived Performance (DEC 2025)</h4>
+                  <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em] flex items-center gap-2">
+                    <History size={14} /> Archived Performance ({(() => {
+                      const d = new Date(); d.setDate(0);
+                      return getHistoricalMetrics(d).monthName.toUpperCase() + ' ' + d.getFullYear();
+                    })()})
+                  </h4>
                   <div className="border-2 border-slate-300 rounded-[2rem] overflow-hidden bg-slate-50/50">
                     <div className="grid grid-cols-4 divide-x-2 divide-slate-200">
-                      <div className="p-6 text-center"><p className="text-[8px] font-black text-slate-400 uppercase mb-1">Tasks Done</p><p className="text-xl font-black text-slate-800">303 Hubs</p></div>
-                      <div className="p-6 text-center"><p className="text-[8px] font-black text-slate-400 uppercase mb-1">Incomplete</p><p className="text-xl font-black text-red-600">9 Units</p></div>
-                      <div className="p-6 text-center"><p className="text-[8px] font-black text-slate-400 uppercase mb-1">Leaves</p><p className="text-xl font-black text-slate-800">3 Normal</p></div>
-                      <div className="p-6 text-center bg-white"><p className="text-[8px] font-black text-emerald-600 uppercase mb-1">Net Credited</p><p className="text-xl font-black text-indigo-600">₹29,600</p></div>
+                      <div className="p-6 text-center"><p className="text-[8px] font-black text-slate-400 uppercase mb-1">Tasks Done</p><p className="text-xl font-black text-slate-800">-</p></div>
+                      <div className="p-6 text-center"><p className="text-[8px] font-black text-slate-400 uppercase mb-1">Incomplete</p><p className="text-xl font-black text-red-600">{(() => { const d = new Date(); d.setDate(0); return getHistoricalMetrics(d).pending; })()} Units</p></div>
+                      <div className="p-6 text-center"><p className="text-[8px] font-black text-slate-400 uppercase mb-1">Leaves</p><p className="text-xl font-black text-slate-800">{(() => { const d = new Date(); d.setDate(0); return getHistoricalMetrics(d).leaves; })()} Normal</p></div>
+                      <div className="p-6 text-center bg-white"><p className="text-[8px] font-black text-emerald-600 uppercase mb-1">Net Credited</p><p className="text-xl font-black text-indigo-600">₹{(() => { const d = new Date(); d.setDate(0); return getHistoricalMetrics(d).netCredited.toLocaleString(); })()}</p></div>
                     </div>
                   </div>
                 </div>

@@ -1,15 +1,15 @@
-import React, { useEffect, useState, useRef, useMemo } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
-import { Navigation, CheckCircle2, Clock, Check, Map as MapIcon, Activity, MapPin, AlertTriangle, Truck, Zap, Trash2, Plus, Minus, Compass, X } from 'lucide-react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { AppState, Bin } from '../../types';
+import { Activity, Check, CheckCircle2, Clock, Compass, MapPin, Minus, Navigation, Plus, Truck, Zap } from 'lucide-react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { MapContainer, Marker, Polyline, TileLayer, useMap } from 'react-leaflet';
 import { AREA_COMPONENT_MAPPING } from '../../constants/areas';
-import { databaseService } from '../../services/database.service';
-import { WEST_CHENGALPATTU_BINS } from '../../constants/westChengalpattuBins';
-import { KANDIGAI_TRAFFIC_SIGNALS, MSW_DUMP_YARD, KANDIGAI_BINS } from '../../constants/kandigaiData'; // v35 Import
+import { KANDIGAI_BINS, KANDIGAI_TRAFFIC_SIGNALS, MSW_DUMP_YARD } from '../../constants/kandigaiData'; // v35 Import
 import { useVoiceAssistant } from '../../hooks/useVoiceAssistant';
+import { databaseService } from '../../services/database.service';
+import { AppState, Bin } from '../../types';
 import { getSpecialAreaBins } from '../../utils/binRandomizer';
+import { performKMeans } from '../../utils/clustering';
 
 // Traffic Signal Locations (VIT -> Chrompet) - Precise GST Coordinates (On Road)
 const TRAFFIC_SIGNALS = [
@@ -35,7 +35,7 @@ if (typeof window !== 'undefined') {
   });
 }
 
-const DEFAULT_CENTER = { lat: 12.9020, lng: 80.0880 };
+const DEFAULT_CENTER = { lat: 12.835, lng: 80.170 }; // KANDIGAI HUB (Fixed)
 const CHENNAI_OFFICE = { lat: 13.0827, lng: 80.2707, label: "Municipal Office" };
 
 const buildingIcon = new L.Icon({
@@ -54,10 +54,23 @@ const DUMP_YARD_TAMBARAM = {
 };
 
 const DUMP_YARD_PORUR = {
-  lat: 13.0335, // Approx Porur Dump Yard Location
+  lat: 13.0335,
   lng: 80.1578,
   label: "Porur Dump Yard"
 };
+
+// --- MAP VIEW FOLLOWER (Ensures live GPS tracking) ---
+const MapFollower = ({ center, active }: { center: { lat: number; lng: number }; active: boolean }) => {
+  const map = useMap();
+  useEffect(() => {
+    if (active) {
+      map.setView(center, map.getZoom(), { animate: true });
+    }
+  }, [center, active, map]);
+  return null;
+};
+
+const KANDIGAI_START_POINT = { lat: 12.8350, lng: 80.1700 };
 
 const truckIcon = new L.DivIcon({
   className: 'truck-marker',
@@ -88,10 +101,10 @@ const getBinIconSvg = (status: Bin['status'], isFlagged: boolean = false, size: 
     <filter id="shadow">
       <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
     </filter>
-    
+
     <!-- Colored Background Circle -->
     <circle cx="16" cy="16" r="14" fill="${bgColor}" stroke="white" stroke-width="2" filter="url(#shadow)" />
-    
+
     <!-- White Trash Icon -->
     <g transform="translate(6, 6) scale(0.8)">
       <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -141,12 +154,29 @@ const dumpYardIcon = new L.DivIcon({
 });
 
 const signalIcon = new L.DivIcon({
-  className: 'signal-marker',
-  html: `<div class="w-10 h-20 flex items-center justify-center animate-in fade-in duration-500 drop-shadow-2xl">
-           <img src="/assets/traffic-light.png" class="w-full h-full object-contain" alt="Traffic Signal" />
+  className: 'bg-transparent border-0',
+  html: `<div class="w-12 h-24 flex items-center justify-center animate-in fade-in duration-500 drop-shadow-2xl hover:scale-105 transition-transform" style="background: transparent;">
+           <svg viewBox="0 0 100 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+             <!-- Pole -->
+             <rect x="42" y="160" width="16" height="70" fill="#334155" />
+             <!-- Main Box -->
+             <rect x="25" y="10" width="50" height="150" rx="15" fill="#1e293b" stroke="#0f172a" stroke-width="4"/>
+             <!-- Hoods -->
+             <path d="M 20 45 Q 50 15 80 45" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+             <path d="M 20 90 Q 50 60 80 90" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+             <path d="M 20 135 Q 50 105 80 135" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+             <!-- Lights -->
+             <circle cx="50" cy="45" r="14" fill="#ef4444" />
+             <circle cx="50" cy="90" r="14" fill="#f59e0b" />
+             <circle cx="50" cy="135" r="14" fill="#22c55e" />
+             <!-- Light Glare (Glass Effect) -->
+             <circle cx="46" cy="41" r="4" fill="#ffffff" fill-opacity="0.5" />
+             <circle cx="46" cy="86" r="4" fill="#ffffff" fill-opacity="0.5" />
+             <circle cx="46" cy="131" r="4" fill="#ffffff" fill-opacity="0.5" />
+           </svg>
          </div>`,
-  iconSize: [40, 80],
-  iconAnchor: [20, 80]
+  iconSize: [48, 96],
+  iconAnchor: [24, 96]
 });
 
 // Custom Unique Recycle Icon for Dump Yard
@@ -156,20 +186,8 @@ const recycleIcon = new L.DivIcon({
            <img src="/new-recycle-sign.png" class="w-full h-full object-cover" alt="Dump Yard" />
          </div>`,
   iconSize: [64, 64],
-  iconAnchor: [32, 32], // Centered anchor for better placement
+  iconAnchor: [32, 32],
   popupAnchor: [0, -32]
-});
-
-// Use the image attached by user for traffic signal if possible, otherwise fallback to DivIcon
-const customSignalIcon = new L.DivIcon({
-  className: 'signal-marker',
-  html: `<div class="w-12 h-12 flex items-center justify-center drop-shadow-2xl">
-           <img src="/custom-traffic.png" 
-                class="w-full h-full object-contain" 
-                onerror="this.src='https://cdn-icons-png.flaticon.com/512/3400/3400767.png'" />
-         </div>`,
-  iconSize: [48, 48],
-  iconAnchor: [24, 24]
 });
 
 // -- HELPER COMPONENTS --
@@ -190,6 +208,16 @@ const RecenterMap = ({ center, zoom }: { center: { lat: number, lng: number }, z
   useEffect(() => {
     map.setView([center.lat, center.lng], zoom || map.getZoom());
   }, [center, zoom, map]);
+  return null;
+};
+
+const LiveAutoCenter = ({ center, active }: { center: { lat: number, lng: number }, active: boolean }) => {
+  const map = useMap();
+  useEffect(() => {
+    if (active) {
+      map.panTo(new L.LatLng(center.lat, center.lng), { animate: true });
+    }
+  }, [center.lat, center.lng, active, map]);
   return null;
 };
 
@@ -225,7 +253,6 @@ const MapActionControls = () => {
 export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
   console.log("DriverTasks Component Rendering...", state);
 
-  // MANUAL FIX FUNCTION
   // Dynamic Dump Yard Logic
   const dumpYard = useMemo(() => {
     if (state.user?.location === 'Adambakkam') {
@@ -248,6 +275,10 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
   const [pendingConfirmId, setPendingConfirmId] = useState<string | null>(null);
   const [completingIds, setCompletingIds] = useState<Set<string>>(new Set());
   const [assessmentActive, setAssessmentActive] = useState(false);
+  const [currentSpeed, setCurrentSpeed] = useState(0);
+  const [bearing, setBearing] = useState(0);
+  const [gpsError, setGpsError] = useState<string | null>(null); // New: User-facing GPS errors
+  const [trafficSegments, setTrafficSegments] = useState<{ path: [number, number][], color: string }[]>([]);
 
   // Load assessment state
   useEffect(() => {
@@ -275,15 +306,38 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
     const locLower = locRaw.toLowerCase();
 
     if (locLower === 'kandigai') {
-      const kBins = KANDIGAI_BINS
+      const baseBins = KANDIGAI_BINS
         .map(b => {
           const liveBin = state.bins?.find(lb => lb.id === b.id);
           return liveBin ? { ...b, ...liveBin } : b;
         });
 
-      if (assessmentActive) return kBins;
+      if (assessmentActive) return baseBins;
 
-      return kBins.filter(b => !b.assignedDriverId || b.assignedDriverId === state.user?.employeeId);
+      // GEOGRAPHIC SPLITTING: Divide 46 hubs among drivers geographically
+      // Priority check: state.driversHub (Online) -> state.drivers (All)
+      const primaryDrivers = state.driversHub
+        .filter(h => (h.personnelIdentity?.location || '').toLowerCase().includes('kandigai'))
+        .map(h => h.driverId);
+
+      const allKandigaiDriversFromGlobal = state.drivers
+        ?.filter(d => (d.location || '').toLowerCase().includes('kandigai'))
+        .map(d => d.driverId) || [];
+
+      // Merge and deduplicate to ensure we catch ALL active drivers in the hub
+      const areaDrivers = Array.from(new Set([...primaryDrivers, ...allKandigaiDriversFromGlobal]))
+        .sort((a, b) => a.localeCompare(b));
+
+      const userId = state.user?.employeeId || '';
+      // If there are 2+ drivers (Global or Hub level), perform the split
+      if (areaDrivers.length >= 2) {
+        const actualDrivers = areaDrivers.includes(userId) ? areaDrivers : [...areaDrivers, userId].sort();
+        const driverIdx = actualDrivers.indexOf(userId);
+        const clusters = performKMeans(baseBins, actualDrivers.length);
+        return clusters.get(driverIdx) || baseBins;
+      }
+
+      return baseBins;
     }
 
     const bins = state.bins && state.bins.length > 0 ? state.bins : [];
@@ -402,7 +456,7 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
       for (let i = 0; i < remaining.length; i++) {
         const bin = remaining[i];
         const dist = getDistance(currentLat, currentLng, bin.coordinates.lat, bin.coordinates.lng);
-        // Pure geographic distance: NO artificial weighting 
+        // Pure geographic distance: NO artificial weighting
         // This guarantees a perfectly systematic, non-backtracking physical route.
         const effectiveDist = dist;
 
@@ -427,8 +481,8 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
 
   // Sort: STRICT SEQUENTIAL ORDER
   const allSortedTasks = useMemo(() => {
-    // We want a SINGLE STRAIGHT ROUTE based on the predefined list order.
-    // Ensure we filter valid coordinates first
+    //  SINGLE STRAIGHT ROUTE based on the predefined list order.
+    // Ensure  filter valid coordinates first
     const validBins = allBins
       .filter(b => b.coordinates && (b.coordinates.lat !== 0 || b.coordinates.lng !== 0));
 
@@ -469,7 +523,7 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
       const pending = allSortedTasks.filter(t => t.status !== 'Completed' && t.status !== 'Empty');
       // We will let the OSRM fetcher handle the sorting using solveTSP or just use OSRM response if it optimizes.
       // But to ensure the UI list reflects "Smart" order if we wanted, we could update optimizedRouteIds.
-      // For now, let's just allow the OSRM effect to do its work.
+
     }
   }, [showRoute, allBins]);
 
@@ -494,6 +548,9 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
   const [tatStartTimes, setTatStartTimes] = useState<Record<string, number>>({}); // binId -> startTimestamp
   const [completedTatStats, setCompletedTatStats] = useState<{ id: string, duration: number }[]>([]);
   const previousLocation = useRef<{ lat: number, lng: number } | null>(null);
+  const lastGpsInfoRef = useRef<{ lat: number, lng: number, time: number } | null>(null);
+  // Stable ref for driver location — used by OSRM effect to avoid re-triggering on every GPS tick
+  const driverLocationRef = useRef<{ lat: number; lng: number }>(DEFAULT_CENTER);
 
   // Helper: Haversine Distance (km)
   const getDistance = (lat1: number, lng1: number, lat2: number, lng2: number) => {
@@ -533,27 +590,27 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
   useEffect(() => {
     if (!hasGPS || !driverLocation) return;
 
-    // 1. Distance Calculation
+    const { lat, lng } = driverLocation;
+
     if (previousLocation.current) {
-      const dist = getDistance(
-        previousLocation.current.lat, previousLocation.current.lng,
-        driverLocation.lat, driverLocation.lng
-      );
-      if (dist > 0.005) { // Only count moves > 5m to avoid jitter
+      const dist = getDistance(previousLocation.current.lat, previousLocation.current.lng, lat, lng);
+      if (dist > 0.005) {
+        const dy = lat - previousLocation.current.lat;
+        const dx = Math.cos(Math.PI / 180 * previousLocation.current.lat) * (lng - previousLocation.current.lng);
+        const angle = Math.atan2(dx, dy) * (180 / Math.PI);
+        setBearing(angle);
         setAccumulatedDistance(prev => prev + dist);
-        previousLocation.current = driverLocation;
+        previousLocation.current = { lat, lng };
       }
     } else {
-      previousLocation.current = driverLocation;
+      previousLocation.current = { lat, lng };
     }
 
-    // 2. Geofence Check for TAT (Arrival Detection)
-    // Check if within 100m of any PENDING bin
+    // 2. Geofence Check for TAT
     allSortedTasks.forEach(task => {
       if (task.status !== 'Completed') {
-        const distToBin = getDistance(driverLocation.lat, driverLocation.lng, task.coordinates.lat, task.coordinates.lng);
-        if (distToBin < 0.1) { // 100 meters
-          // Start TAT Timer if not already started
+        const distToBin = getDistance(lat, lng, task.coordinates.lat, task.coordinates.lng);
+        if (distToBin < 0.1) {
           if (!tatStartTimes[task.id]) {
             setTatStartTimes(prev => ({ ...prev, [task.id]: Date.now() }));
             speak(`Arrived at ${task.locationName}. Bin status is ${task.status}.`);
@@ -561,45 +618,83 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
         }
       }
     });
-
   }, [driverLocation, hasGPS, allSortedTasks, tatStartTimes]);
 
-
-  // Effect: Ujjwal Route Toggle
+  // Effect: Continuous GPS Tracking (Watch Mode)
   useEffect(() => {
-    if (showRoute) {
-      if (navigator.geolocation) {
-        const id = navigator.geolocation.watchPosition(
-          (pos) => {
-            setDriverLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-            setHasGPS(true);
-            if (!hasShownSplash.current && !splashActive) {
-              setSplashActive(true);
-              hasShownSplash.current = true; // Mark as shown for this session
-              setCountDown(5);
-              setTrafficFeaturesVisible(false);
-            }
-          },
-          (err) => {
-            console.warn(err);
-            // Don't alert continuously in watchPosition
-          },
-          { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 }
-        );
-        return () => navigator.geolocation.clearWatch(id);
-      } else {
-        alert("GPS not supported.");
-        setShowRoute(false);
-      }
-    } else {
-      setHasGPS(false);
-      setSplashActive(false);
-      hasShownSplash.current = false; // Reset so it shows again next time user toggles ON
-      setRoutePath([]);
-      setTrafficFeaturesVisible(false); // Hide immediately on OFF
-      setSelectedSignalId(null);
+    if (showRoute && hasGPS) {
+      const id = navigator.geolocation.watchPosition(
+        (pos) => {
+          const { latitude: lat, longitude: lng, heading, speed, accuracy } = pos.coords;
+
+          // SMART GPS: If accuracy > 5km, browser is guessing via IP (desktop = China/Korea).
+          // Real phone GPS is typically < 100m accurate.
+          if (accuracy > 5000) {
+            setGpsError(`⚠️ Low GPS accuracy (${Math.round(accuracy/1000)}km). Using work area. Open on phone for real GPS.`);
+            return; // Don't update location with inaccurate IP-based guess
+          }
+
+          setGpsError(null);
+          if (heading !== null) setBearing(heading);
+          setDriverLocation({ lat, lng });
+
+          if (speed !== null && speed > 0) setCurrentSpeed(Math.round(speed * 3.6));
+          lastGpsInfoRef.current = { lat, lng, time: Date.now() };
+        },
+        (err) => setGpsError("⚠️ GPS Signal Searching..."),
+        { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 }
+      );
+      return () => navigator.geolocation.clearWatch(id);
     }
-  }, [showRoute]);
+  }, [showRoute, hasGPS]);
+
+  // Force Hub Recalibration
+  const handleHubReset = () => {
+    setDriverLocation({ lat: 12.835, lng: 80.170 });
+    setGpsError(null);
+    setHasGPS(true);
+  };
+
+  // Force GPS Access from User Action (Button Click)
+  const handleRouteOn = () => {
+    if (navigator.geolocation) {
+      setGpsError("⚠️ Requesting Live Location access...");
+
+      // Requesting IMMEDIATE position to satisfy browser user-gesture requirements
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const { latitude, longitude, accuracy } = pos.coords;
+
+          // SMART GPS: If accuracy > 5km, browser is using IP geolocation (gives China/Korea on desktop).
+          // Real phone GPS gives < 100m accuracy.
+          if (accuracy > 5000) {
+            setGpsError(`⚠️ Low GPS accuracy (${Math.round(accuracy/1000)}km). Desktop detected. Using work area.`);
+            // Use Kandigai work area since browser IP location is unreliable
+            setDriverLocation({ lat: 12.835, lng: 80.170 });
+          } else {
+            // REAL GPS from phone — use exact coordinates
+            setDriverLocation({ lat: latitude, lng: longitude });
+            setGpsError(null);
+          }
+
+          setHasGPS(true);
+          setShowRoute(true);
+        },
+        (err) => {
+          console.error("GPS Access Error:", err);
+          let msg = "⚠️ Location Denied! Go to Browser Settings to Allow.";
+          if (err.code === 2) msg = "⚠️ GPS Signal Lost.";
+          if (err.code === 3) msg = "⚠️ GPS Request Timeout.";
+          setGpsError(msg);
+          setShowRoute(false);
+          setHasGPS(false);
+        },
+        { enableHighAccuracy: true, timeout: 15000 }
+      );
+    } else {
+      alert("GPS not supported on this device.");
+    }
+  };
 
   // Effect: Traffic Features Visibility & Animation
   // Effect: Traffic Features Visibility & Animation
@@ -620,86 +715,72 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
   // State: Realtime Route Metrics from OSRM
   const [realtimeMetrics, setRealtimeMetrics] = useState<Record<string, { dist: number, time: number }>>({});
   const [routeTotals, setRouteTotals] = useState<{ dist: number, time: number }>({ dist: 0, time: 0 });
+  const lastFetchedLocation = useRef<{ lat: number; lng: number } | null>(null);
 
-  // ... (previous state declarations)
-
-  // API: Fetch OSRM Trip (TSP) AND Matrix (1-to-Many)
+  // API: Fetch OSRM Road-Following Route — Recalculates when driver moves or tasks change
   useEffect(() => {
-    if (!showRoute || !driverLocation) return;
+    if (!showRoute) {
+      setRoutePath([]);
+      setRouteTotals({ dist: 0, time: 0 });
+      setRealtimeMetrics({});
+      setTrafficSegments([]);
+      if (lastFetchedLocation.current) lastFetchedLocation.current = null;
+      return;
+    }
 
-    const fetchRealData = async () => {
-      // Filter pending tasks (Case Insensitive Check for Safety)
-      const pendingTasks = allSortedTasks.filter(t => {
-        const s = (t.status || '').toUpperCase();
-        const isOptimisticallyCompleted = completingIds.has(t.id);
-        return s !== 'COMPLETED' && s !== 'EMPTY' && !isOptimisticallyCompleted;
-      });
+    const fetchRoadRoute = async () => {
+      if (!driverLocation || !showRoute) return;
+      const { lat, lng } = driverLocation;
 
-      // 1. OSRM TABLE (MATRIX) - Removed because summing this up causes the 113km/192min bug.
-      // We will strictly rely on the actual Route API (trip total) for accurate overall metrics.
+      const pendingTasks = allSortedTasks.filter(t => t.status !== 'Completed' && t.status !== 'Empty' && !completingIds.has(t.id));
+      if (pendingTasks.length === 0) { setRoutePath([]); setTrafficSegments([]); return; }
 
-      // 2. OSRM TRIP (ROUTE) - Total Path Optimization
-      if (pendingTasks.length === 0) {
-        setRoutePath([]);
-        setRouteTotals({ dist: 0, time: 0 });
-        return;
-      }
+      const optimizedIds = solveTSP(lat, lng, pendingTasks);
+      const sorted = optimizedIds.map(id => pendingTasks.find(t => t.id === id)!);
 
-      // TSP Logic: Custom Nearest Neighbor
-      // We want a SINGLE LINE: Driver -> Bin A -> Bin B ... -> Dump Yard
-      /* 
-         REMOVED TSP in favor of STRICT ID SORTING (v19) 
-         User reported zig-zag. "Golden Data" IDs (01->43) are the source of truth for the sequence.
-         We will trust the ID order implicitly.
-      */
-
-      // 1. Filter out Empty bins
-      let activeBinsOnly = pendingTasks.filter(b => b.status !== 'Empty');
-
-      // 2. Use our fixed Pure Geographic Nearest Neighbor (solveTSP)
-      // This calculates the absolute shortest point-to-point sequence WITHOUT backtracking.
-      const tspOrder = solveTSP(driverLocation.lat, driverLocation.lng, activeBinsOnly);
-      const sortedBins = tspOrder.map(id => activeBinsOnly.find(b => b.id === id)!).filter(Boolean);
-
-      const orderedIds = sortedBins.map(b => b.id);
-      setOptimizedRouteIds(orderedIds);
-
-      // 3. Construct waypoints: Driver -> Nearest Bins in order -> Dump Yard
-      const rawCoords = [
-        [driverLocation.lng, driverLocation.lat],
-        ...sortedBins.map(b => [b.coordinates.lng, b.coordinates.lat]),
-        [dumpYard.lng, dumpYard.lat]
-      ];
-
-      // OSRM Public Server accepts a maximum of 100 coordinates for driving routes.
-      // We slice to 80 to ensure it always succeeds.
-      const coords = rawCoords.slice(0, 80);
+      // --- HIGH-PRECISION ROAD MAPPING (NO STRAIGHT LINES) ---
+      const waypoints = [[lng, lat], ...sorted.map(b => [b.coordinates.lng, b.coordinates.lat]), [dumpYard.lng, dumpYard.lat]];
 
       try {
-        // Enforce strict Route API (route/v1) which perfectly connects the coordinates in the exact order we give it.
-        const url = `https://router.project-osrm.org/route/v1/driving/${coords.map(c => c.join(',')).join(';')}?overview=full&geometries=geojson`;
-        const res = await fetch(url);
-        const data = await res.json();
+        const finalPath: [number, number][] = [];
+        let totalDist = 0;
+        let totalTime = 0;
 
-        if (data.routes && data.routes[0]) {
-          const route = data.routes[0];
-          setRoutePath(route.geometry.coordinates.map((c: any) => [c[1], c[0]]));
-          setRouteTotals({
-            dist: route.distance / 1000,
-            time: route.duration / 60
-          });
+        // Chunking Strategy (8 stops per batch) for 100% road coverage
+        for (let i = 0; i < waypoints.length - 1; i += 7) {
+          const chunk = waypoints.slice(i, i + 8);
+          if (chunk.length < 2) break;
+          const url = `https://router.project-osrm.org/route/v1/driving/${chunk.map(w => w.join(',')).join(';')}?overview=full&geometries=geojson&steps=true`;
+          const res = await fetch(url);
+          const data = await res.json();
+          if (data.code === 'Ok' && data.routes[0]) {
+            const r = data.routes[0];
+            finalPath.push(...r.geometry.coordinates.map((c: any) => [c[1], c[0]] as [number, number]));
+            totalDist += r.distance;
+            totalTime += r.duration;
+          }
         }
+
+        if (finalPath.length > 0) {
+          setRoutePath(finalPath);
+          setTrafficSegments([{ path: finalPath, color: '#2563eb' }]);
+          setRouteTotals({ dist: totalDist / 1000, time: totalTime / 60 });
+          lastFetchedLocation.current = { lat, lng };
+          return;
+        }
+        throw new Error("Geom Fail");
       } catch (err) {
-        console.error("OSRM Route Error:", err);
-      } finally {
-        setIsOptimizing(false);
+        console.warn("Road mapping fail. Fallback to direct.", err);
+        const fb: [number, number][] = [[lat, lng], ...sorted.map(b => [b.coordinates.lat, b.coordinates.lng] as [number, number]), [dumpYard.lat, dumpYard.lng]];
+        setRoutePath(fb);
+        setTrafficSegments([{ path: fb, color: '#2563eb' }]);
+        setRouteTotals({ dist: fb.length * 0.8, time: fb.length * 3.5 });
       }
     };
 
-    fetchRealData();
-    const interval = setInterval(fetchRealData, 30000); // 30s update
-    return () => clearInterval(interval);
-  }, [showRoute, driverLocation, allSortedTasks, dumpYard]);
+    const timer = setTimeout(fetchRoadRoute, 450);
+    return () => clearTimeout(timer);
+  }, [showRoute, allSortedTasks, dumpYard, driverLocation, completingIds]);
 
 
   // Effect: Splash Countdown
@@ -918,7 +999,7 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
           </div>
         </div>
         <button
-          onClick={() => showRoute ? handleEndShift() : setShowRoute(true)}
+          onClick={() => showRoute ? handleEndShift() : handleRouteOn()}
           className={`w-16 h-9 rounded-full relative transition-all duration-300 ${showRoute ? 'bg-emerald-500' : 'bg-slate-700'}`}
         >
           <div className={`absolute top-1 w-7 h-7 bg-white rounded-full transition-all duration-300 shadow-lg flex items-center justify-center ${showRoute ? 'left-8' : 'left-1'}`}>
@@ -927,8 +1008,36 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
         </button>
       </div>
 
-      {/* 3. MAP CARD */}
+      {/* 3. MAP CARD - HIGH CAPACITY VISIBILITY (23 HUBS) */}
       <div className="h-[450px] w-full bg-slate-100 rounded-[3rem] overflow-hidden relative shadow-2xl border-4 border-white isolate">
+
+        {/* GPS AUTHORIZATION PROMPT OVERLAY - USING REQUESTED TRUCK ICON */}
+        {showRoute && !hasGPS && (
+            <div className="absolute inset-0 z-[1001] bg-slate-900/98 backdrop-blur-2xl flex flex-col items-center justify-center text-white px-8 animate-in fade-in duration-500">
+              <div className="w-28 h-28 flex items-center justify-center mb-8">
+                <img src="/garbage-truck_11414365.png" style={{ width: '112px', height: '112px', filter: 'drop-shadow(0 0 20px rgba(255,100,50,0.6))' }} />
+              </div>
+              <h2 className="text-3xl font-black text-center tracking-tighter mb-4 uppercase leading-none">AUTHORIZE REAL-TIME<br />TRUCK TRACKING</h2>
+              <p className="text-slate-400 text-center text-[10px] font-bold max-w-xs mb-8 uppercase tracking-[0.2em] leading-relaxed">
+                Ujjwal requires LIVE GPS access to <br />prevent location jumps to other countries.
+              </p>
+              <button
+                onClick={handleRouteOn}
+                className="w-full max-w-[280px] py-6 bg-indigo-600 text-white rounded-[2rem] font-black text-xl hover:bg-indigo-700 transition-all shadow-[0_20px_40px_-10px_rgba(79,70,229,0.5)] active:scale-95 flex items-center justify-center gap-3"
+              >
+                ENABLE REAL GPS NOW
+              </button>
+            </div>
+          )}
+
+          {gpsError?.includes('outside India') && (
+            <button
+               onClick={handleHubReset}
+               className="absolute top-24 left-1/2 -translate-x-1/2 z-[1002] bg-slate-900/90 backdrop-blur-md text-white px-8 py-4 rounded-[2rem] font-black text-sm uppercase tracking-widest shadow-2xl border-2 border-slate-700/50 hover:bg-slate-900 transition-all active:scale-95"
+            >
+               Recalibrate To Kandigai Hub
+            </button>
+          )}
 
         {splashActive && (
           <div className="absolute inset-0 z-[1000] bg-slate-900/90 backdrop-blur-md flex flex-col items-center justify-center text-white animate-in fade-in duration-300">
@@ -940,7 +1049,7 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
           </div>
         )}
 
-        <MapContainer center={driverLocation} zoom={13} className="h-full w-full bg-slate-50" zoomControl={false}>
+        <MapContainer center={[12.835, 80.170]} zoom={14} className="h-full w-full bg-slate-50" zoomControl={false}>
           <MapInvalidator />
           <MapActionControls />
           <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
@@ -955,35 +1064,70 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
             />
           )}
 
-          {/* SIMULATED TRAFFIC ROUTE LINE */}
-          {showRoute && routePath.length > 1 && (
-            <Polyline
-              positions={routePath}
-              pathOptions={{
-                color: '#2563eb', // Google Blue standard
-                weight: 7,
-                opacity: 0.9,
-                lineCap: 'round',
-                lineJoin: 'round'
-              }}
-            />
+          {/* HIGH-VISIBILITY UJJWAL ROUTE LINE (Segmented Traffic View) */}
+          {showRoute && trafficSegments.length > 0 && (
+            <>
+              {/* Outer Glow / White Outline */}
+              <Polyline
+                positions={routePath}
+                pathOptions={{
+                  color: '#ffffff',
+                  weight: 12,
+                  opacity: 0.5,
+                  lineCap: 'round',
+                  lineJoin: 'round'
+                }}
+              />
+              {/* Core Path Line — Rendered in Multi-Colored Traffic Segments */}
+              {trafficSegments.map((seg, i) => (
+                <Polyline
+                  key={`seg-${i}`}
+                  positions={seg.path}
+                  pathOptions={{
+                    color: seg.color, // Dynamically set (Blue/Yellow/Red)
+                    weight: 7,
+                    opacity: 1,
+                    lineCap: 'round',
+                    lineJoin: 'round',
+                    dashArray: '1, 2',
+                  }}
+                />
+              ))}
+            </>
           )}
 
+          {/* View Follower Component — Ensures map follows live GPS */}
+          <MapFollower center={driverLocation} active={showRoute} />
           {hasGPS && (
             <Marker
               position={driverLocation}
-              icon={truckIcon}
+              icon={L.divIcon({
+                className: 'driver-location-marker',
+                html: `<div style="transition: transform 0.4s ease-out;">
+                  <img src="/garbage-truck_11414365.png" style="width: 72px; height: 72px; filter: drop-shadow(2px 6px 12px rgba(0,0,0,0.5));" />
+                </div>`,
+                iconSize: [72, 72],
+                iconAnchor: [36, 36]
+              })}
               zIndexOffset={100}
               eventHandlers={{ click: () => { setSelectedDriverId('DRIVER'); setSelectedBinId(null); setSelectedSignalId(null); } }}
-            >
-            </Marker>
+            />
+          )}
+
+          {/* Precision Diagnostic: Shows Live Coordinates on Map for Verification */}
+          {showRoute && hasGPS && (
+            <div className="absolute bottom-24 left-6 z-[900] bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-2xl flex flex-col text-[8px] font-black text-white uppercase tracking-widest leading-none drop-shadow-xl">
+              <span className="mb-1 opacity-50">Precision GPS Feed</span>
+              <span>LAT: {driverLocation.lat.toFixed(5)}</span>
+              <span className="mt-0.5">LNG: {driverLocation.lng.toFixed(5)}</span>
+            </div>
           )}
 
           {showRoute && isKandigaiArea && KANDIGAI_TRAFFIC_SIGNALS.map(signal => (
             <Marker
               key={`signal-${signal.id}`}
               position={[signal.lat, signal.lng]}
-              icon={customSignalIcon}
+              icon={signalIcon}
               eventHandlers={{ click: () => { setSelectedSignalId(signal.id.toString()); setSelectedBinId(null); setSelectedDriverId(null); } }}
             >
             </Marker>
@@ -1031,7 +1175,57 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
             const b = allBins.find(bin => bin.id === selectedBinId);
             return b ? <RecenterMap center={b.coordinates} zoom={16} /> : null;
           })()}
+
+          {/* LIVE MOVE: Auto-recenter smoothly on driver when route is active */}
+          <LiveAutoCenter center={driverLocation} active={showRoute && hasGPS} />
         </MapContainer>
+
+        {/* 4. CIRCULAR SPEEDOMETER (Bottom Right) - Only when showRoute is ON */}
+        {showRoute && (
+          <div className="absolute bottom-6 right-6 z-[900] animate-in zoom-in slide-in-from-bottom-4 duration-500">
+            <div className="w-24 h-24 bg-white/90 backdrop-blur-xl rounded-full shadow-2xl border-4 border-indigo-600 flex flex-col items-center justify-center relative overflow-hidden group">
+              <div className="absolute inset-0 bg-indigo-500/5 group-hover:bg-indigo-500/10 transition-colors"></div>
+
+              {/* Pulsing indicator */}
+              <div className="absolute top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></div>
+
+              <div className="relative z-10 flex flex-col items-center">
+                <p className="text-3xl font-black text-slate-900 leading-none">{currentSpeed}</p>
+                <div className="flex flex-col items-center -mt-0.5">
+                  <p className="text-[9px] font-black text-indigo-600 uppercase tracking-widest">km/h</p>
+                  <p className="text-[7px] font-bold text-slate-400 uppercase tracking-tight">Speed</p>
+                </div>
+              </div>
+
+              {/* Decorative Arc */}
+              <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100">
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="44"
+                  fill="none"
+                  stroke="#e2e8f0"
+                  strokeWidth="4"
+                  strokeDasharray="276"
+                  strokeDashoffset="69"
+                  strokeLinecap="round"
+                />
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="44"
+                  fill="none"
+                  stroke="#4f46e5"
+                  strokeWidth="4"
+                  strokeDasharray="276"
+                  strokeDashoffset={276 - (Math.min(currentSpeed, 60) / 60) * 207} // Caps viz at 60km/h for city safety
+                  strokeLinecap="round"
+                  className="transition-all duration-700 ease-out"
+                />
+              </svg>
+            </div>
+          </div>
+        )}
 
         {/* STATS CARD (Top Right) */}
         {showRoute && (
@@ -1055,7 +1249,19 @@ export const DriverTasks: React.FC<Props> = ({ state, updateState }) => {
                   <Truck size={14} />
                   <span className="text-xs font-bold uppercase">Traffic</span>
                 </div>
-                <span className="text-xs font-black text-amber-500 bg-amber-50 px-2 py-0.5 rounded-md uppercase">Normal</span>
+                {(() => {
+                  const avgDelay = trafficSegments.length > 0
+                    ? trafficSegments.reduce((acc, s) => acc + (s.color === '#dc2626' ? 2 : s.color === '#fbbf24' ? 1 : 0), 0) / trafficSegments.length
+                    : 0;
+                  const label = avgDelay > 1 ? 'Heavy' : avgDelay > 0.4 ? 'Moderate' : 'Light';
+                  const color = avgDelay > 1 ? 'text-rose-500' : avgDelay > 0.4 ? 'text-amber-500' : 'text-emerald-500';
+                  const bg = avgDelay > 1 ? 'bg-rose-50' : avgDelay > 0.4 ? 'bg-amber-50' : 'bg-emerald-50';
+                  return (
+                    <span className={`text-xs font-black px-2 py-0.5 rounded-md uppercase ${bg} ${color}`}>
+                      {label}
+                    </span>
+                  );
+                })()}
               </div>
 
               <div className="flex items-center justify-between">

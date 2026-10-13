@@ -81,6 +81,18 @@ const TRAINED_INTENTS = {
       hi: ["रूट बंद", "ड्यूटी खत्म करो", "रूट ऑफ", "ऑफ रूट"],
       ta: ["வழியை நிறுத்து", "டியூட்டி முடி", "ரூட் ஆப்"],
       te: ["రూట్ ఆఫ్ చేయి", "డ్యూటీ ఆపు", "రూట్ ఆఫ్"]
+    },
+    VOICE_GUIDANCE_ON: {
+      en: ["voice on", "turn on voice", "enable voice", "voice guidance on", "start voice", "voice assistant on"],
+      hi: ["वॉयस ऑन", "आवाज़ चालू", "वॉयस गाइडेंस ऑन"],
+      ta: ["குரல் ஆன்", "குரல் வழிகாட்டல் தொடங்கு"],
+      te: ["వాయిస్ ఆన్", "వాయిస్ గైడెన్స్ ఆన్"]
+    },
+    VOICE_GUIDANCE_OFF: {
+      en: ["voice off", "turn off voice", "disable voice", "voice guidance off", "stop voice", "voice assistant off", "mute voice"],
+      hi: ["वॉयस ऑफ", "आवाज़ बंद", "वॉयस गाइडेंस ऑफ"],
+      ta: ["குரல் ஆப்", "குரல் வழிகாட்டல் நிறுத்து"],
+      te: ["వాయిస్ ఆఫ్", "వాయిస్ గైడెన్స్ ఆఫ్"]
     }
   }
 };
@@ -284,6 +296,18 @@ export const AIAssistant: React.FC<Props> = ({ state, activeTab, setActiveTab, u
         return { 
           reply: { English: "Route stopped", Hindi: "रूट बंद कर दिया गया", Tamil: "வழி நிறுத்தப்பட்டது", Telugu: "రూట్ ఆఫ్ చేయబడింది" }[language],
           action: () => { updateState({ isUjjwalRouteActive: false }); }
+        };
+
+      case "VOICE_GUIDANCE_ON":
+        return {
+          reply: { English: "Voice guidance turned on. You will hear spoken directions on the Voice Route page.", Hindi: "वॉयस गाइडेंस चालू कर दिया गया।", Tamil: "குரல் வழிகாட்டல் இயக்கப்பட்டது.", Telugu: "వాయిస్ గైడెన్స్ ఆన్ చేయబడింది." }[language],
+          action: () => { localStorage.setItem('ujjwal_voice_guidance', 'true'); }
+        };
+
+      case "VOICE_GUIDANCE_OFF":
+        return {
+          reply: { English: "Voice guidance turned off. The Voice Route page will be silent.", Hindi: "वॉयस गाइडेंस बंद कर दिया गया।", Tamil: "குரல் வழிகாட்டல் நிறுத்தப்பட்டது.", Telugu: "వాయిస్ గైడెన్స్ ఆఫ్ చేయబడింది." }[language],
+          action: () => { localStorage.setItem('ujjwal_voice_guidance', 'false'); window.speechSynthesis?.cancel(); }
         };
 
       default:

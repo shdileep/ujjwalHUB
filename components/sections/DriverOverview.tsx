@@ -8,6 +8,7 @@ import {
 import { DynamicLogo } from '../DynamicLogo';
 import { KANDIGAI_BINS } from '../../constants/kandigaiData';
 import { AREA_COMPONENT_MAPPING } from '../../constants/areas';
+import { calculateDriverMetrics, getHistoricalMetrics } from '../../utils/metrics';
 import { getSpecialAreaBins } from '../../utils/binRandomizer';
 
 const OfficialSealedStamp = () => (
@@ -44,9 +45,30 @@ const OfficialSealedStamp = () => (
   </div>
 );
 
+// Tamil Nadu public holidays 2026 (ISO date strings)
 const HOLIDAYS_2026 = [
-  '2026-01-01', '2026-01-15', '2026-01-16', '2026-01-17', '2026-01-26',
-  '2026-02-01', '2026-02-14' // added Mahashivratri or relevant holidays
+  '2026-01-01', // New Year's Day
+  '2026-01-14', // Pongal
+  '2026-01-15', // Thiruvalluvar Day
+  '2026-01-16', // Uzhavar Thirunal
+  '2026-01-26', // Republic Day
+  '2026-02-15', // Maha Shivaratri
+  '2026-03-20', // Holi / Spring Equinox
+  '2026-04-01', // Tamil New Year
+  '2026-04-10', // Good Friday
+  '2026-04-14', // Ambedkar Jayanti
+  '2026-05-01', // Labour Day
+  '2026-05-22', // Buddha Purnima
+  '2026-06-17', // Eid al-Adha
+  '2026-07-17', // Muharram
+  '2026-08-15', // Independence Day
+  '2026-08-22', // Onam
+  '2026-09-07', // Milad-un-Nabi
+  '2026-10-02', // Gandhi Jayanti
+  '2026-10-20', // Dussehra
+  '2026-11-04', // Diwali
+  '2026-11-14', // Ayudha Puja
+  '2026-12-25', // Christmas
 ];
 
 interface Props {
@@ -54,7 +76,6 @@ interface Props {
 }
 
 export const DriverOverview: React.FC<Props> = ({ state }) => {
-  const user = state.user!;
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
@@ -62,15 +83,21 @@ export const DriverOverview: React.FC<Props> = ({ state }) => {
     return () => clearInterval(timer);
   }, []);
 
-  const isWeekend = (date: Date) => date.getDay() === 0 || date.getDay() === 6;
-  const isHoliday = (date: Date) => {
-    const str = date.toISOString().split('T')[0];
-    return HOLIDAYS_2026.includes(str);
-  };
-
-  const currentDriver = state.drivers.find(d => d.employeeId === user.employeeId);
+  const user = state.user;
+  const currentDriver = state.drivers.find(d => d.employeeId === user?.employeeId);
 
   const metrics = useMemo(() => {
+    // If user not yet loaded, return safe defaults
+    if (!user) return {
+      todayCompleted: 0, todayIncomplete: 0, currentTaskCount: 0,
+      driverLeaves: [], todayAssigned: 0, approvedLeavesCount: 0,
+      rejectedLeavesCount: 0, febTotalTasks: 0, section1Header: '',
+      liveActionableBins: 0, pendingTasksList: [],
+      liveNetSalary: 32000,
+      lastMonthMetrics: { leaves: 0, pending: 0, taskPenalty: 0, leavePenalty: 0, netCredited: 32000, totalCompletedTasks: 0, monthName: '', fullMonthName: '', year: 2026 },
+      todayStr: '', yesterdayStr: ''
+    };
+
     let allBins = state.bins && state.bins.length > 0 ? state.bins : [];
     if (user.location === 'Kandigai') {
       // Merge static definitions with live Firebase states
@@ -160,20 +187,52 @@ export const DriverOverview: React.FC<Props> = ({ state }) => {
       return days;
     };
 
-    // FEBRUARY LOGIC (Feb 1st to Yesterday)
+    // ── DYNAMIC CURRENT-MONTH CONTINUOUS TASK SUMMARY ──────────────────────
     const trueNow = new Date();
     const yesterday = new Date(trueNow);
     yesterday.setDate(yesterday.getDate() - 1);
 
-    const febStart = new Date(2026, 1, 1); // Month is 0-indexed, 1 = Feb
-    const febWorkingDays = getValidWorkingDays(febStart, yesterday, ['2026-02-15']); // added Shivaratri
-    const febTotalTasks = febWorkingDays * 35; // 35 per working day
+    // Start of the current calendar month
+    const monthStart = new Date(trueNow.getFullYear(), trueNow.getMonth(), 1);
+
+    // Count valid working days from monthStart → yesterday (excl. Sundays & holidays)
+    const continuousWorkingDays = getValidWorkingDays(monthStart, yesterday, HOLIDAYS_2026);
+
+    // At exactly 11:59 PM today, today's 38 tasks are added automatically.
+    // We check: if current time is 23:59 or later, add today's tasks too.
+    const isAfter2359 = trueNow.getHours() === 23 && trueNow.getMinutes() >= 59;
+    const todayIsWorkingDay = trueNow.getDay() !== 0 && !HOLIDAYS_2026.includes(trueNow.toISOString().split('T')[0]);
+    const bonusTasks = isAfter2359 && todayIsWorkingDay ? 38 : 0;
+    const continuousTotalTasks = continuousWorkingDays * 38 + bonusTasks;
+
+    // Header date strings for Section 1
+    const section1MonthName = monthStart.toLocaleDateString('en-US', { month: 'long' });
+    const section1YesterdayStr = yesterday.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    const section1Header = `${section1MonthName} 01 – ${section1YesterdayStr}`;
+
+    // ── TODAY'S LIVE ACTIVITY ─────────────────────────────────────────────────
+    // Count Half Full + Full bins from the driver's own bin pool (live from Tasks page)
+    const liveActionableBins = driverBinsFiltered.filter(b => {
+      const s = (b.status || '').toLowerCase().trim();
+      return s === 'full' || s === 'half full' || s === 'half-full';
+    }).length;
 
     // PENDING TASKS LIST
     const pendingTasksList = driverBins.filter(b => b.status !== 'Completed' && b.status !== 'Empty');
 
-    // LIVE SALARY (32000 - 500*leaves - 200*incomplete)
-    const liveNetSalary = 32000 - (approvedLeaves.length * 500) - (todayIncomplete * 200);
+    // LIVE SALARY — use the same shared formula as DriverPayments page
+    const salaryMetrics = calculateDriverMetrics(
+      { employeeId: user.employeeId, driverId: user.employeeId } as any,
+      state.bins,
+      state.leaves
+    );
+    const liveNetSalary = salaryMetrics.netSalary;
+
+    // HISTORICAL SIMULATION DATA for last month
+    const currentDate = new Date();
+    // Setting date to 0 gets exactly the last day of the previous calendar month
+    const lastMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+    const lastMonthMetrics = getHistoricalMetrics(lastMonthDate);
 
     return {
       todayCompleted,
@@ -183,14 +242,29 @@ export const DriverOverview: React.FC<Props> = ({ state }) => {
       todayAssigned,
       approvedLeavesCount: approvedLeaves.length,
       rejectedLeavesCount: rejectedLeaves.length,
-      febTotalTasks,
+      febTotalTasks: continuousTotalTasks,
+      section1Header,
+      liveActionableBins,
       pendingTasksList,
       liveNetSalary,
-      janTotalTasks: getValidWorkingDays(new Date(2026, 0, 1), new Date(2026, 0, 31), ['2026-01-01', '2026-01-14', '2026-01-15', '2026-01-16', '2026-01-26']) * 35,
+      lastMonthMetrics,
+      todayMonthDate: trueNow.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }),
       todayStr: trueNow.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
       yesterdayStr: yesterday.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
     };
-  }, [state.bins, state.leaves, currentDriver, user.employeeId, now]);
+  }, [state.bins, state.leaves, currentDriver, user?.employeeId, now]);
+
+  // Null guard after all hooks — safe early return if user hasn't loaded yet
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-100">
+        <div className="flex flex-col items-center gap-4 text-slate-400">
+          <div className="w-10 h-10 border-4 border-slate-300 border-t-indigo-500 rounded-full animate-spin" />
+          <p className="text-xs font-black uppercase tracking-widest">Loading Profile…</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-100 flex flex-col items-center py-6 md:py-12 px-4 sm:px-6 space-y-12 pb-24 print:bg-white print:p-0">
@@ -292,37 +366,52 @@ export const DriverOverview: React.FC<Props> = ({ state }) => {
         {/* TABLES SECTION */}
         <div className="space-y-12">
 
-          {/* 1. Daily Live Tasks Table */}
+          {/* 1. Aggregated Live Objective Routine – updated per spec */}
           <div>
             <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.2em] flex items-center gap-2 mb-4">
               <Activity size={14} className="text-indigo-600" /> Aggregated Live Objective Routine
             </h4>
             <div className="border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
               <table className="w-full text-left text-xs text-slate-800">
+
+                {/* ── Section 1: Continuous Task Summary ── */}
                 <thead className="bg-slate-100 text-[10px] font-black text-slate-500 uppercase tracking-widest">
                   <tr>
-                    <th className="p-4 border-b border-slate-200">Continuous Task Summary</th>
-                    <th className="p-4 border-b border-slate-200 text-center">Unit Count</th>
-                    <th className="p-4 border-b border-slate-200 text-right">Synchronization Status</th>
+                    <th className="p-4 border-b border-slate-200" colSpan={3}>
+                      {/* Removed Section Header Text */}
+                    </th>
+                  </tr>
+                  <tr>
+                    <th className="px-4 pb-3 border-b border-slate-200">Date Range</th>
+                    <th className="px-4 pb-3 border-b border-slate-200 text-center">Unit Count</th>
+                    <th className="px-4 pb-3 border-b border-slate-200 text-right">Synchronization Status</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 font-bold">
                   <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="p-4">Feb 01 - Feb {metrics.yesterdayStr}</td>
+                    {/* Dynamic: «Month» 01 – «Month» «Yesterday's Date» */}
+                    <td className="p-4 text-slate-700">{metrics.section1Header}</td>
                     <td className="p-4 text-center text-indigo-600 font-black text-sm">{metrics.febTotalTasks}</td>
-                    <td className="p-4 text-right flex items-center justify-end gap-1.5 text-indigo-500"><Activity size={14} /> Live (Always)</td>
+                    <td className="p-4 text-right flex items-center justify-end gap-1.5 text-indigo-500">
+                      <Activity size={14} /> Live (Always)
+                    </td>
                   </tr>
+
                   <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="p-4 text-slate-600">Today ({metrics.todayStr})</td>
-                    <td className="p-4 text-center text-amber-600 font-black text-sm">{metrics.todayAssigned}</td>
-                    <td className="p-4 text-right flex items-center justify-end gap-1.5 text-amber-500"><AlertCircle size={14} /> Pending</td>
+                    <td className="p-4 text-slate-600">{metrics.todayMonthDate}</td>
+                    <td className="p-4 text-center text-amber-600 font-black text-sm">{metrics.liveActionableBins}</td>
+                    <td className="p-4 text-right flex items-center justify-end gap-1.5 text-amber-500">
+                      <AlertCircle size={14} /> Real-Time
+                    </td>
                   </tr>
                   <tr className="bg-slate-50">
                     <td className="p-4 text-slate-900 font-black border-t-2 border-slate-200">Completed Tasks Today</td>
                     <td className="p-4 text-center font-black text-emerald-600 text-lg border-t-2 border-slate-200">
                       {metrics.todayCompleted}
                     </td>
-                    <td className="p-4 text-right text-emerald-500 text-[10px] uppercase border-t-2 border-slate-200"><CheckCircle2 size={12} className="inline mr-1" />Completed</td>
+                    <td className="p-4 text-right text-emerald-500 text-[10px] uppercase border-t-2 border-slate-200">
+                      <CheckCircle2 size={12} className="inline mr-1" />Completed
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -334,7 +423,7 @@ export const DriverOverview: React.FC<Props> = ({ state }) => {
           {/* 2. Leaves & Live Payroll Synchronization Table */}
           <div>
             <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.2em] flex items-center gap-2 mb-4">
-              <Calendar size={14} className="text-indigo-600" /> February's Employee Leave & Live Payroll Registry
+              <Calendar size={14} className="text-indigo-600" /> {new Date().toLocaleDateString('en-US', { month: 'long' })}'s Employee Leave & Live Payroll Registry
             </h4>
             <div className="border border-slate-200 rounded-2xl overflow-hidden">
               <table className="w-full text-left text-xs text-slate-800">
@@ -365,10 +454,10 @@ export const DriverOverview: React.FC<Props> = ({ state }) => {
             </div>
           </div>
 
-          {/* 3. Preceding Month Database (January 2026) */}
+          {/* 3. Preceding Month Database */}
           <div>
             <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.2em] flex items-center gap-2 mb-4">
-              <CheckCircle2 size={14} className="text-indigo-600" /> Last Month's Records (Jan)
+              <CheckCircle2 size={14} className="text-indigo-600" /> Last Month's Records ({metrics.lastMonthMetrics.monthName})
             </h4>
             <div className="border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
               <table className="w-full text-left text-xs text-slate-800">
@@ -381,24 +470,24 @@ export const DriverOverview: React.FC<Props> = ({ state }) => {
                 </thead>
                 <tbody className="divide-y divide-slate-100 font-bold">
                   <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="p-4 text-slate-600">Complete (Excl. Sundays & General Holidays)</td>
-                    <td className="p-4 text-center text-emerald-600 font-black text-sm">{metrics.janTotalTasks}</td>
+                    <td className="p-4 text-slate-600">Complete</td>
+                    <td className="p-4 text-center text-emerald-600 font-black text-sm">{metrics.lastMonthMetrics.totalCompletedTasks} Total Completed Tasks</td>
                     <td className="p-4 text-right text-slate-400 uppercase text-[10px]">Registry Locked</td>
                   </tr>
                   <tr className="hover:bg-slate-50 transition-colors">
                     <td className="p-4 text-slate-600">Pending Operations</td>
-                    <td className="p-4 text-center text-amber-600 font-black text-sm">5 Tasks Incomplete</td>
-                    <td className="p-4 text-right text-rose-500 uppercase text-[10px] whitespace-nowrap">-₹1000 (-200/task)</td>
+                    <td className="p-4 text-center text-amber-600 font-black text-sm">{metrics.lastMonthMetrics.pending} Tasks Incomplete</td>
+                    <td className="p-4 text-right text-rose-500 uppercase text-[10px] whitespace-nowrap">-₹{metrics.lastMonthMetrics.taskPenalty.toLocaleString()}</td>
                   </tr>
                   <tr className="hover:bg-slate-50 transition-colors">
                     <td className="p-4 text-slate-600">Leaves Total Approved</td>
-                    <td className="p-4 text-center text-amber-600 font-black text-sm">3 Leaves</td>
-                    <td className="p-4 text-right text-rose-500 uppercase text-[10px] whitespace-nowrap">-₹1500 (-500/leave)</td>
+                    <td className="p-4 text-center text-amber-600 font-black text-sm">{metrics.lastMonthMetrics.leaves} Leaves</td>
+                    <td className="p-4 text-right text-rose-500 uppercase text-[10px] whitespace-nowrap">-₹{metrics.lastMonthMetrics.leavePenalty.toLocaleString()}</td>
                   </tr>
                   <tr className="bg-slate-50 border-t-2 border-slate-200 transition-colors">
                     <td className="p-4 text-slate-900 font-black">Last Month Salary</td>
                     <td className="p-4 text-center text-slate-900 font-black text-sm">Net Credited</td>
-                    <td className="p-4 text-right text-emerald-600 font-black text-lg">₹29,500</td>
+                    <td className="p-4 text-right text-emerald-600 font-black text-lg">₹{metrics.lastMonthMetrics.netCredited.toLocaleString()}</td>
                   </tr>
                 </tbody>
               </table>

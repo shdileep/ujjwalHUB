@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Truck, Trash2, Users, PieChart, Bell, Info, UserCircle, CreditCard, LayoutDashboard, MessageSquareWarning, CalendarDays, Settings as SettingsIcon, FileText, LayoutList } from 'lucide-react';
+import { Truck, Trash2, Users, PieChart, Bell, Info, UserCircle, CreditCard, LayoutDashboard, MessageSquareWarning, CalendarDays, Settings as SettingsIcon, FileText, LayoutList, Mic } from 'lucide-react';
 
 export const CHENNAI_LOCATIONS = [
   { name: 'Kandigai', streets: ['Kelambakkam–Vandalur Road', 'Vengadamangalam Road', 'Melakottaiyur Main Road', 'Nallambakkam Village Road', 'Tagore College Road', 'Munu Adhi Nagar'] },
@@ -62,6 +62,7 @@ export const ADMIN_NAV_ITEMS = [
 export const DRIVER_NAV_ITEMS = [
   { id: 'home', label: 'Home', icon: <LayoutDashboard size={20} /> },
   { id: 'overview', label: 'Overview', icon: <FileText size={20} /> },
+  { id: 'voice-route', label: 'Voice Route', icon: <Mic size={20} /> },
   { id: 'profile', label: 'Profile', icon: <UserCircle size={20} /> },
   { id: 'tasks', label: 'Tasks', icon: <Trash2 size={20} /> },
   { id: 'leaves', label: 'Leaves', icon: <CalendarDays size={20} /> },

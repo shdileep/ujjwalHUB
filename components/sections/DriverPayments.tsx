@@ -11,7 +11,7 @@ import {
 import { KANDIGAI_BINS } from '../../constants/kandigaiData';
 import { AREA_COMPONENT_MAPPING } from '../../constants/areas';
 import { getSpecialAreaBins } from '../../utils/binRandomizer';
-import { calculateDriverMetrics } from '../../utils/metrics';
+import { calculateDriverMetrics, getHistoricalMetrics } from '../../utils/metrics';
 import { logOnly } from '../../services/db.manager';
 
 interface Props {
@@ -72,7 +72,7 @@ export const DriverPayments: React.FC<Props> = ({ state }) => {
    const [activePaySlip, setActivePaySlip] = useState<any | null>(null);
    const [isSyncing, setIsSyncing] = useState(false);
    const [showCreditPopup, setShowCreditPopup] = useState(false);
-   const user = state.user!;
+   const user = state.user;
 
    // Financial Constants
    const GROSS_MONTHLY = 34000;
@@ -114,12 +114,14 @@ export const DriverPayments: React.FC<Props> = ({ state }) => {
          const status = isCurrentMonth ? 'Processing' : 'Credited';
          const refCode = `UHB-${iterYear.toString().slice(-2)}-${(iterMonth + 1).toString().padStart(3, '0')}`;
 
-         const isJan2026 = iterYear === 2026 && iterMonth === 0;
-         const historyIncomplete = isJan2026 ? 5 : 0;
-         const historyLeaves = isJan2026 ? 3 : 0;
-         const historyTaskDeduction = historyIncomplete * 100; // Updated to match utility (100 per uncollected)
-         const historyLeavePenaltyCombined = historyLeaves * 500; // Simplified
-         const historyNet = BASE_NET_F - historyTaskDeduction - historyLeavePenaltyCombined;
+         const histMonthDate = new Date(iterYear, iterMonth, 1);
+         const histNode = getHistoricalMetrics(histMonthDate);
+
+         const historyIncomplete = histNode.pending;
+         const historyLeaves = histNode.leaves;
+         const historyTaskDeduction = histNode.taskPenalty; // Uses * 200 properly
+         const historyLeavePenaltyCombined = histNode.leavePenalty;
+         const historyNet = histNode.netCredited;
 
          const entry = {
             month: `${monthNames[iterMonth]} ${iterYear}`,
@@ -404,9 +406,9 @@ export const DriverPayments: React.FC<Props> = ({ state }) => {
                               <div className="flex justify-between items-center">
                                  <div className="flex flex-col">
                                     <span className="text-sm font-bold text-slate-500 uppercase tracking-wide">Task Penalty ({activePaySlip.incomplete} Units)</span>
-                                    <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest">₹100 Per Incomplete Node</span>
+                                    <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest">₹200 Per Incomplete Node</span>
                                  </div>
-                                 <span className="text-base font-black text-red-500">- ₹{(activePaySlip.incomplete * 100).toLocaleString()}.00</span>
+                                 <span className="text-base font-black text-red-500">- ₹{(activePaySlip.incomplete * 200).toLocaleString()}.00</span>
                               </div>
                               <div className="flex justify-between items-center">
                                  <div className="flex flex-col">
@@ -417,7 +419,7 @@ export const DriverPayments: React.FC<Props> = ({ state }) => {
                               </div>
                               <div className="flex justify-between items-center pt-8 border-t border-slate-100 font-black">
                                  <span className="text-sm uppercase tracking-widest text-red-600">Total Deductions</span>
-                                 <span className="text-xl text-red-600">₹{(2000 + (activePaySlip.incomplete * 100) + (activePaySlip.leaves * 500)).toLocaleString()}.00</span>
+                                 <span className="text-xl text-red-600">₹{(2000 + (activePaySlip.incomplete * 200) + (activePaySlip.leaves * 500)).toLocaleString()}.00</span>
                               </div>
                            </div>
                         </div>

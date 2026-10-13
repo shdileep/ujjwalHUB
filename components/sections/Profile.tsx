@@ -121,7 +121,7 @@ export const Profile: React.FC<Props> = ({ user, onUpdate }) => {
   const [showChangeFields, setShowChangeFields] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleSave = () => {
+  const handleSave = async () => {
     const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
 
     if (showChangeFields && (newPassword.trim() !== '' || confirmPassword.trim() !== '')) {
@@ -134,6 +134,19 @@ export const Profile: React.FC<Props> = ({ user, onUpdate }) => {
         return;
       }
       formData.password = newPassword;
+    }
+
+    // Save to Database permanently
+    try {
+      if (user.role === 'admin') {
+        await databaseService.updateUser(user.uid, formData);
+        await databaseService.saveToAdminNode(user.employeeId || user.uid, formData);
+      } else {
+        await databaseService.updateUser(user.uid, formData);
+        await databaseService.updateDriver(user.employeeId || user.uid, formData);
+      }
+    } catch (err) {
+      console.error("Profile save to DB failed:", err);
     }
 
     onUpdate(formData);
@@ -180,9 +193,10 @@ export const Profile: React.FC<Props> = ({ user, onUpdate }) => {
     }
   };
 
-  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      // 1. Optimistic UI update
       const reader = new FileReader();
       reader.onloadend = () => {
         const base64String = reader.result as string;
@@ -192,11 +206,57 @@ export const Profile: React.FC<Props> = ({ user, onUpdate }) => {
         }
       };
       reader.readAsDataURL(file);
+
+      // 2. Upload to Cloudinary & Update DBs permanently
+      try {
+        const { cloudinaryService } = await import('../../services/cloudinary.service');
+        const { syncAll } = await import('../../services/db.manager');
+        
+        // Ensure ID is valid
+        const idToUse = user.employeeId || user.uid;
+
+        let permanentPhotoUrl = null;
+        if (user.role === 'admin') {
+          const uploaded = await cloudinaryService.uploadImage(file, `ujjwalhub/admins/${idToUse}`);
+          if (uploaded.secure_url) {
+            permanentPhotoUrl = uploaded.secure_url;
+            await databaseService.updateUser(user.uid, { profilePhoto: permanentPhotoUrl });
+            await databaseService.saveToAdminNode(idToUse, { ...user, profilePhoto: permanentPhotoUrl });
+          }
+        } else {
+          permanentPhotoUrl = await syncAll.updateDriverPhoto(idToUse, user.username, file);
+          await databaseService.updateUser(user.uid, { profilePhoto: permanentPhotoUrl }); 
+        }
+
+        if (permanentPhotoUrl) {
+          setFormData(prev => ({ ...prev, profilePhoto: permanentPhotoUrl }));
+          if (!isEditing) {
+            onUpdate({ ...user, profilePhoto: permanentPhotoUrl });
+          }
+        } else {
+           alert("Failed to securely upload your photo to Cloudinary. It may disappear on refresh.");
+        }
+      } catch (err) {
+        console.error("Deep Photo Sync Failed:", err);
+      }
     }
   };
 
-  const removePhoto = () => {
-    setFormData(prev => ({ ...prev, profilePhoto: undefined }));
+  const removePhoto = async () => {
+    setFormData(prev => ({ ...prev, profilePhoto: null }));
+    
+    try {
+      if (user.role === 'admin') {
+        await databaseService.updateUser(user.uid, { profilePhoto: null });
+        await databaseService.saveToAdminNode(user.employeeId || user.uid, { ...user, profilePhoto: null });
+      } else {
+        await databaseService.updateUser(user.uid, { profilePhoto: null });
+        await databaseService.updateDriver(user.employeeId || user.uid, { profilePhoto: null });
+      }
+    } catch (e) {
+      console.warn("Failed to remove photo from DB", e);
+    }
+
     if (!isEditing) {
       onUpdate({ ...user, profilePhoto: undefined });
     }

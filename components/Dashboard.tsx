@@ -44,7 +44,8 @@ export const Dashboard: React.FC<Props> = ({ state, onLogout, updateState, onSyn
     }, 5000);
     return () => clearTimeout(timer);
   }, []);
-  const [activeTab, setActiveTab] = useState('live-status');
+  const [activeTab, setActiveTabRaw] = useState(() => sessionStorage.getItem('admin_active_tab') || 'live-status');
+  const setActiveTab = (tab: string) => { sessionStorage.setItem('admin_active_tab', tab); setActiveTabRaw(tab); };
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const [isSyncing, setIsSyncing] = useState(false);

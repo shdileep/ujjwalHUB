@@ -43,40 +43,47 @@ const DutyLogsModal: React.FC<{ driver: DriversHubEntry; onClose: () => void }> 
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-50">
-              {(Array.isArray(driver.workLogs) ? driver.workLogs : Object.values(driver.workLogs || {})).length > 0 ? (
-                (Array.isArray(driver.workLogs) ? driver.workLogs : Object.values(driver.workLogs || {})).map((log: any, idx: number) => (
-                  <tr key={idx} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-2">
-                        <Calendar size={14} className="text-slate-400" />
-                        <span className="text-sm font-bold text-slate-700">{log.date || 'N/A'}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-2">
-                        <Clock size={14} className="text-emerald-500" />
-                        <span className="text-sm font-black text-slate-900 uppercase tracking-tight">{log.start || 'N/A'}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-2">
-                        <Clock size={14} className="text-rose-500" />
-                        <span className="text-sm font-black text-slate-900 uppercase tracking-tight">{log.end || 'ACTIVE'}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                      <span className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${log.duration === 'Active' ? 'bg-indigo-50 text-indigo-600 animate-pulse' : 'bg-emerald-50 text-emerald-600'
-                        }`}>
-                        {log.duration || '0 min'}
-                      </span>
-                    </td>
+              {(() => {
+                const todayStr = new Date().toISOString().split('T')[0];
+                const rawLogs = driver.workLogs || {};
+                const parsedLogs = Array.isArray(rawLogs) ? rawLogs : Object.values(rawLogs);
+                const todaysLogs = parsedLogs.filter((log: any) => log.date === todayStr);
+
+                return todaysLogs.length > 0 ? (
+                  todaysLogs.map((log: any, idx: number) => (
+                    <tr key={idx} className="hover:bg-slate-50/80 transition-colors">
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-2">
+                          <Calendar size={14} className="text-slate-400" />
+                          <span className="text-sm font-bold text-slate-700">{log.date || 'N/A'}</span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-2">
+                          <Clock size={14} className="text-emerald-500" />
+                          <span className="text-sm font-black text-slate-900 uppercase tracking-tight">{log.start || 'N/A'}</span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-2">
+                          <Clock size={14} className="text-rose-500" />
+                          <span className="text-sm font-black text-slate-900 uppercase tracking-tight">{log.end || 'ACTIVE'}</span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 text-right">
+                        <span className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${log.duration === 'Active' ? 'bg-indigo-50 text-indigo-600 animate-pulse' : 'bg-emerald-50 text-emerald-600'
+                          }`}>
+                          {log.duration || '0 min'}
+                        </span>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={4} className="py-12 text-center text-slate-400 font-bold uppercase tracking-widest text-xs">No Operational Logs Found For Today</td>
                   </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan={4} className="py-12 text-center text-slate-400 font-bold uppercase tracking-widest text-xs">No Operational Logs Found</td>
-                </tr>
-              )}
+                );
+              })()}
             </tbody>
           </table>
         </div>
@@ -268,7 +275,7 @@ export const DriversManagement: React.FC<Props> = ({ drivers, updateState, admin
     doc.text(`Working Hub: ${driver.personnelIdentity.location || 'Kandigai'}`, detailX, 84);
   };
 
-  const addSignatureAndStamp = (doc: jsPDF, finalY: number) => {
+  const addSignatureAndStamp = (doc: jsPDF, finalY: number, stampImageBase64?: string) => {
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
     let currentY = finalY + 25;
@@ -315,16 +322,34 @@ export const DriversManagement: React.FC<Props> = ({ drivers, updateState, admin
 
     const sealX = pageWidth - 55;
     const sealY = currentY + 5;
-    doc.setDrawColor(5, 150, 105);
-    doc.setLineWidth(1);
-    doc.circle(sealX + 20, sealY + 20, 20);
-    doc.circle(sealX + 20, sealY + 20, 18);
-    doc.setFontSize(5);
-    doc.text("OFFICIAL SEAL • UJJWAL HUB", sealX + 20, sealY + 15, { align: 'center' });
-    doc.setFontSize(10);
-    doc.text("CERTIFIED", sealX + 20, sealY + 23, { align: 'center' });
-    doc.setFontSize(4);
-    doc.text(" TAMIL NADU MUNICIPAL AUTH ", sealX + 20, sealY + 28, { align: 'center' });
+    
+    if (stampImageBase64) {
+      try {
+        doc.addImage(stampImageBase64, 'PNG', sealX + 5, sealY, 35, 35);
+      } catch (e) {
+        doc.setDrawColor(5, 150, 105);
+        doc.setLineWidth(1);
+        doc.circle(sealX + 20, sealY + 20, 20);
+        doc.circle(sealX + 20, sealY + 20, 18);
+        doc.setFontSize(5);
+        doc.text("OFFICIAL SEAL • UJJWAL HUB", sealX + 20, sealY + 15, { align: 'center' });
+        doc.setFontSize(10);
+        doc.text("CERTIFIED", sealX + 20, sealY + 23, { align: 'center' });
+        doc.setFontSize(4);
+        doc.text(" TAMIL NADU MUNICIPAL AUTH ", sealX + 20, sealY + 28, { align: 'center' });
+      }
+    } else {
+      doc.setDrawColor(5, 150, 105);
+      doc.setLineWidth(1);
+      doc.circle(sealX + 20, sealY + 20, 20);
+      doc.circle(sealX + 20, sealY + 20, 18);
+      doc.setFontSize(5);
+      doc.text("OFFICIAL SEAL • UJJWAL HUB", sealX + 20, sealY + 15, { align: 'center' });
+      doc.setFontSize(10);
+      doc.text("CERTIFIED", sealX + 20, sealY + 23, { align: 'center' });
+      doc.setFontSize(4);
+      doc.text(" TAMIL NADU MUNICIPAL AUTH ", sealX + 20, sealY + 28, { align: 'center' });
+    }
 
     doc.setTextColor(180);
     doc.setFontSize(7);
@@ -372,7 +397,15 @@ export const DriversManagement: React.FC<Props> = ({ drivers, updateState, admin
     });
 
     const finalY = (doc as any).lastAutoTable.finalY || 95;
-    addSignatureAndStamp(doc, finalY);
+    
+    let stampStr;
+    try {
+      stampStr = await urlToBase64('/stamp.png');
+    } catch (e) {
+      console.warn("Could not load stamp image for PDF", e);
+    }
+    
+    addSignatureAndStamp(doc, finalY, stampStr);
 
     const pdfBlob = doc.output('bloburl');
     setPdfPreview({ url: pdfBlob as unknown as string, title: "DEPLOYMENT TASK REGISTRY" });
@@ -406,6 +439,10 @@ export const DriversManagement: React.FC<Props> = ({ drivers, updateState, admin
 
     workLogs = workLogs.length > 0 ? workLogs : parsedFallback;
 
+    // RULE: Daily Operational Cycle - Filter to ONLY today's logs
+    const todayStr = new Date().toISOString().split('T')[0];
+    workLogs = workLogs.filter((log: any) => log.date === todayStr);
+
     let photoStr = driver.personnelIdentity.profilePhoto;
     if (photoStr && photoStr.startsWith('http')) {
       photoStr = await urlToBase64(photoStr);
@@ -413,16 +450,23 @@ export const DriversManagement: React.FC<Props> = ({ drivers, updateState, admin
 
     addHeaderAndFooter(doc, "OPERATIONAL LIFECYCLE LOGS", driver, photoStr);
 
+    let totalActiveMinutes = 0;
+
     const rows = workLogs.length > 0
-      ? workLogs.map((log: any, i: number) => [
-        i + 1,
-        log.id || 'N/A',
-        log.date || 'N/A',
-        log.start || 'N/A',
-        log.end || (log.duration === 'Active' ? 'STILL ON DUTY' : 'STALE'),
-        log.duration || 'In Progress'
-      ])
-      : [['-', 'NO LOGS RECORDED IN CLOUD', '-', '-', '-', '-']];
+      ? workLogs.map((log: any, i: number) => {
+        if (log.duration && log.duration.includes('min')) {
+          totalActiveMinutes += parseInt(log.duration.replace(/[^0-9]/g, '')) || 0;
+        }
+        return [
+          i + 1,
+          log.id || 'N/A',
+          log.date || 'N/A',
+          log.start || 'N/A',
+          log.end || (log.duration === 'Active' ? 'STILL ON DUTY' : 'STALE'),
+          log.duration || 'In Progress'
+        ];
+      })
+      : [['-', 'NO LOGS RECORDED FOR TODAY', '-', '-', '-', '-']];
 
     autoTable(doc, {
       startY: 95,
@@ -433,8 +477,28 @@ export const DriversManagement: React.FC<Props> = ({ drivers, updateState, admin
       styles: { fontSize: 7 }
     });
 
-    const finalY = (doc as any).lastAutoTable.finalY || 95;
-    addSignatureAndStamp(doc, finalY);
+    let finalY = (doc as any).lastAutoTable.finalY || 95;
+
+    // Add driver login and logout counting total time
+    if (workLogs.length > 0) {
+      finalY += 5;
+      doc.setFillColor(240, 253, 244);
+      doc.rect(14, finalY, doc.internal.pageSize.getWidth() - 28, 12, 'F');
+      doc.setFontSize(9);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(22, 163, 74);
+      doc.text(`Daily Summary (${todayStr}): ${workLogs.length} Total Login Entries | Cumulative Monitored Time: ${totalActiveMinutes} Minutes`, 18, finalY + 8);
+      finalY += 12;
+    }
+
+    let stampStr;
+    try {
+      stampStr = await urlToBase64('/stamp.png');
+    } catch (e) {
+      console.warn("Could not load stamp image for PDF", e);
+    }
+
+    addSignatureAndStamp(doc, finalY, stampStr);
 
     const pdfBlob = doc.output('bloburl');
     setPdfPreview({ url: pdfBlob as unknown as string, title: "OPERATIONAL LIFECYCLE LOGS" });

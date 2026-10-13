@@ -14,11 +14,27 @@
   <link rel="manifest" href="/manifest.json?v=1.2.1">
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/ujjwal-pwa-sw.js', { scope: '/' })
-          .then(reg => console.log('Ujjwal Hub SW Registered'))
-          .catch(err => console.error('SW Error:', err));
-      });
+      var isDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+      if (isDev) {
+        // In dev mode: unregister ALL service workers to prevent stale SW serving offline.html
+        navigator.serviceWorker.getRegistrations().then(function (registrations) {
+          for (var reg of registrations) {
+            reg.unregister();
+            console.log('[Dev] Unregistered stale SW:', reg.scope);
+          }
+        });
+        // Also clear all caches so no offline fallback is served
+        caches.keys().then(function (keys) {
+          keys.forEach(function (key) { caches.delete(key); });
+        });
+      } else {
+        // Production only: register the service worker
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .then(function (reg) { console.log('Ujjwal Hub SW Registered'); })
+            .catch(function (err) { console.error('SW Error:', err); });
+        });
+      }
     }
   </script>
 

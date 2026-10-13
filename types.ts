@@ -36,7 +36,7 @@ export interface DriverProfile {
   email: string;
   phone: string;
   password?: string; // Encrypted ideally, but storing as requested
-  status: 'online' | 'offline';
+  status: 'online' | 'offline' | 'blocked';
   availability?: string; // Added to match usage
   activeDutyTime?: string;
   lastLogoutTime?: string;

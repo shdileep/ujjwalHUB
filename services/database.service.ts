@@ -80,6 +80,7 @@ export const databaseService = {
         // 1. Save to Drivers Node
         const cleanDriverData = {
             ...driverData,
+            isActive: driverData.isActive !== undefined ? driverData.isActive : true,
             status: driverData.status || 'offline',
             location: driverData.location || 'Kandigai',
             createdAt: driverData.createdAt || new Date().toISOString(),
@@ -119,7 +120,7 @@ export const databaseService = {
         const liveStatus: LiveDriverStatus = {
             driverId: driverId,
             driverName: driverData.username || 'Unknown',
-            status: driverData.status || 'offline',
+            status: (driverData.status === 'online' ? 'online' : 'offline'),
             lastActive: new Date().toISOString(),
             location: driverData.location || 'Kandigai'
         };
@@ -134,88 +135,97 @@ export const databaseService = {
     },
 
     async redistributeAreaBins(areaName: string): Promise<void> {
-        console.log(`🔄 [K-Means] Redistributing bins for area: ${areaName}...`);
+        try {
+            console.log(`🔄 [K-Means] Redistributing bins for area: ${areaName}...`);
 
-        // 1. Fetch all drivers in this area
-        const driversRef = ref(database, 'drivers');
-        const driversSnapshot = await get(driversRef);
-        if (!driversSnapshot.exists()) return;
+            // 1. Fetch all drivers in this area
+            const driversRef = ref(database, 'drivers');
+            const driversSnapshot = await get(driversRef);
+            if (!driversSnapshot.exists()) return;
 
-        const allDrivers = Object.values(driversSnapshot.val() as Record<string, DriverProfile>);
-        const areaDrivers = allDrivers
-            .filter(d => {
-                const dLoc = (d.location || '').toLowerCase();
-                const target = areaName.toLowerCase();
-                // Match either the exact location or the location containing the zone suffix
-                return dLoc === target || dLoc.startsWith(target + ' - zone');
-            })
-            .sort((a, b) => (a.createdAt || '').localeCompare(b.createdAt || ''));
+            const allDrivers = Object.values(driversSnapshot.val() as Record<string, DriverProfile>);
+            const areaDrivers = allDrivers
+                .filter(d => {
+                    if (!d || typeof d !== 'object') return false;
+                    const dLoc = (d.location || '').toLowerCase();
+                    const target = (areaName || '').toLowerCase();
+                    return dLoc === target || dLoc.startsWith(target + ' - zone');
+                })
+                .sort((a, b) => (a.createdAt || '').localeCompare(b.createdAt || ''));
 
-        if (areaDrivers.length === 0) {
-            console.warn(`⚠️ No drivers found for ${areaName} to redistribute bins.`);
-            return;
-        }
+            if (areaDrivers.length === 0) {
+                console.warn(`⚠️ No drivers found for ${areaName} to redistribute bins.`);
+                return;
+            }
 
-        // 2. Fetch all bins in this area
-        const binsRef = ref(database, 'bins');
-        const binsSnapshot = await get(binsRef);
-        if (!binsSnapshot.exists()) return;
+            // 2. Fetch all bins in this area
+            const binsRef = ref(database, 'bins');
+            const binsSnapshot = await get(binsRef);
+            if (!binsSnapshot.exists()) return;
 
-        const allBins = Object.values(binsSnapshot.val() as Record<string, Bin>);
-        const areaBins = allBins
-            .filter(b => {
-                const bArea = (b.areaName || '').toLowerCase();
-                const bLoc = (b.locationName || '').toLowerCase();
-                const target = areaName.toLowerCase();
+            const allBins = Object.values(binsSnapshot.val() as Record<string, Bin>);
+            const areaBins = allBins
+                .filter(b => {
+                    if (!b || typeof b !== 'object') return false;
+                    const bArea = (b.areaName || '').toLowerCase();
+                    const bLoc = (b.locationName || '').toLowerCase();
+                    const target = (areaName || '').toLowerCase();
 
-                if (bArea === target || bLoc === target) return true;
-                if (target === 'west chengalpattu') {
-                    const isMatch = bArea === 'west chengalpattu' || bArea === 'kandigai';
-                    if (isMatch) return true;
-                    return ['kandigai', 'nallambakkam', 'kolapakkam', 'unamancheri', 'melakottaiyur']
-                        .some(sa => bLoc.includes(sa) || bArea.includes(sa));
-                }
-                return false;
+                    if (bArea === target || bLoc === target) return true;
+                    if (target === 'west chengalpattu') {
+                        const isMatch = bArea === 'west chengalpattu' || bArea === 'kandigai';
+                        if (isMatch) return true;
+                        return ['kandigai', 'nallambakkam', 'kolapakkam', 'unamancheri', 'melakottaiyur']
+                            .some(sa => bLoc.includes(sa) || bArea.includes(sa));
+                    }
+                    return false;
+                });
+
+            if (areaBins.length === 0) {
+                console.warn(`⚠️ No bins found for ${areaName} to redistribute.`);
+                return;
+            }
+
+            console.log(`📊 Clustering ${areaBins.length} bins for ${areaDrivers.length} drivers in ${areaName}...`);
+
+            // 3. Perform K-Means Clustering
+            const k = areaDrivers.length;
+            const clusteredBinsMap = performKMeans(areaBins, k);
+
+            const updates: any = {};
+
+            // Map clusters to drivers based on their index in sorted areaDrivers
+            areaDrivers.forEach((driver, driverIdx) => {
+                const driverId = driver.driverId || driver.employeeId;
+                if (!driverId) return;
+
+                const assignedBins = clusteredBinsMap.get(driverIdx) || [];
+                const zoneName = areaDrivers.length > 1
+                    ? `${areaName} - Zone ${driverIdx + 1}`
+                    : areaName;
+
+                console.log(`📍 Assigning ${assignedBins.length} bins to ${driver.username || driverId} (${zoneName})`);
+
+                // Update Driver Node with Zone Info
+                updates[`drivers/${driverId}/assignedZone`] = zoneName;
+                updates[`DriversHub/${driverId}/personnelIdentity/location`] = zoneName;
+                updates[`LiveDriverStatus/${driverId}/location`] = zoneName;
+
+                // Update each bin in this cluster
+                assignedBins.forEach(bin => {
+                    if (bin?.id) {
+                        updates[`bins/${bin.id}/assignedDriverId`] = driverId;
+                    }
+                });
             });
 
-        if (areaBins.length === 0) {
-            console.warn(`⚠️ No bins found for ${areaName} to redistribute.`);
-            return;
+            if (Object.keys(updates).length > 0) {
+                await update(ref(database), updates);
+            }
+            console.log(`✅ [K-Means] Redistribution for ${areaName} complete.`);
+        } catch (err) {
+            console.warn(`⚠️ redistributeAreaBins non-fatal error for ${areaName}:`, err);
         }
-
-        console.log(`📊 Clustering ${areaBins.length} bins for ${areaDrivers.length} drivers in ${areaName}...`);
-
-        // 3. Perform K-Means Clustering
-        const k = areaDrivers.length;
-        const clusteredBinsMap = performKMeans(areaBins, k);
-
-        const updates: any = {};
-
-        // Map clusters to drivers based on their index in sorted areaDrivers
-        areaDrivers.forEach((driver, driverIdx) => {
-            const assignedBins = clusteredBinsMap.get(driverIdx) || [];
-            const zoneName = areaDrivers.length > 1
-                ? `${areaName} - Zone ${driverIdx + 1}`
-                : areaName;
-
-            console.log(`📍 Assigning ${assignedBins.length} bins to ${driver.username} (${zoneName})`);
-
-            // Update Driver Node with Zone Info
-            updates[`drivers/${driver.driverId}/assignedZone`] = zoneName;
-            updates[`DriversHub/${driver.driverId}/personnelIdentity/location`] = zoneName;
-            updates[`LiveDriverStatus/${driver.driverId}/location`] = zoneName;
-
-            // Optional: If we want to keep d.location synced as well
-            // updates[`drivers/${driver.driverId}/location`] = zoneName;
-
-            // Update each bin in this cluster
-            assignedBins.forEach(bin => {
-                updates[`bins/${bin.id}/assignedDriverId`] = driver.driverId;
-            });
-        });
-
-        await update(ref(database), updates);
-        console.log(`✅ [K-Means] Redistribution for ${areaName} complete.`);
     },
 
     async recordDutySession(driverId: string, type: 'start' | 'end', skipQueue = false): Promise<void> {
@@ -383,10 +393,14 @@ export const databaseService = {
         try {
             const snapshot = await get(ref(database, 'drivers'));
             if (snapshot.exists()) {
-                const drivers = Object.entries(snapshot.val()).map(([key, data]: [string, any]) => ({
-                    ...data,
-                    driverId: data.driverId || key
-                })) as DriverProfile[];
+                const drivers = Object.entries(snapshot.val())
+                    .filter(([key, data]: [string, any]) => key !== 'lastLogoutTime' && key !== 'status' && data && typeof data === 'object')
+                    .map(([key, data]: [string, any]) => ({
+                        ...data,
+                        driverId: data.driverId || key,
+                        employeeId: data.employeeId || data.driverId || key,
+                        isActive: data.isActive !== undefined ? data.isActive : (data.status !== 'blocked')
+                    })) as DriverProfile[];
                 await offlineManager.setCache('drivers', drivers);
                 return drivers;
             }
@@ -402,10 +416,14 @@ export const databaseService = {
         const driversRef = ref(database, 'drivers');
         const unsubscribe = onValue(driversRef, (snapshot) => {
             if (snapshot.exists()) {
-                const drivers = Object.entries(snapshot.val()).map(([key, data]: [string, any]) => ({
-                    ...data,
-                    driverId: data.driverId || key
-                }));
+                const drivers = Object.entries(snapshot.val())
+                    .filter(([key, data]: [string, any]) => key !== 'lastLogoutTime' && key !== 'status' && data && typeof data === 'object')
+                    .map(([key, data]: [string, any]) => ({
+                        ...data,
+                        driverId: data.driverId || key,
+                        employeeId: data.employeeId || data.driverId || key,
+                        isActive: data.isActive !== undefined ? data.isActive : (data.status !== 'blocked')
+                    }));
                 callback(drivers);
             } else {
                 callback([]);
@@ -421,10 +439,13 @@ export const databaseService = {
         try {
             const snapshot = await get(ref(database, 'admins'));
             if (snapshot.exists()) {
-                const admins = Object.entries(snapshot.val()).map(([key, data]: [string, any]) => ({
-                    ...data,
-                    adminId: data.adminId || key
-                })) as AdminProfile[];
+                const admins = Object.entries(snapshot.val())
+                    .filter(([key, data]: [string, any]) => data && typeof data === 'object')
+                    .map(([key, data]: [string, any]) => ({
+                        ...data,
+                        adminId: data.adminId || key,
+                        employeeId: data.employeeId || data.adminId || key
+                    })) as AdminProfile[];
                 await offlineManager.setCache('admins', admins);
                 return admins;
             }
@@ -590,16 +611,77 @@ export const databaseService = {
             const snapshot = await get(usersRef);
             if (snapshot.exists()) {
                 const users = snapshot.val();
-                return Object.values(users).find((u: any) => u.email === email) || null;
+                const found = Object.values(users).find((u: any) => (u?.email || '').toLowerCase() === email.toLowerCase());
+                if (found) return found;
             }
         } catch (err) {
             console.error("❌ getUserByEmail fallback failed:", err);
         }
+
+        // Secondary fallback: search admins and drivers nodes
+        try {
+            const admins = await this.getAllAdmins();
+            const foundAdmin = admins.find(a => (a.email || '').toLowerCase() === email.toLowerCase());
+            if (foundAdmin) {
+                return {
+                    uid: (foundAdmin as any).uid || foundAdmin.adminId,
+                    username: foundAdmin.username,
+                    email: foundAdmin.email,
+                    phone: foundAdmin.phone || '',
+                    employeeId: foundAdmin.adminId,
+                    role: 'admin',
+                    location: foundAdmin.location || 'Kandigai',
+                    isProfileComplete: foundAdmin.isProfileComplete ?? true
+                };
+            }
+
+            const drivers = await this.getAllDrivers();
+            const foundDriver = drivers.find(d => (d.email || '').toLowerCase() === email.toLowerCase());
+            if (foundDriver) {
+                return {
+                    uid: (foundDriver as any).uid || foundDriver.driverId,
+                    username: foundDriver.username,
+                    email: foundDriver.email,
+                    phone: foundDriver.phone || '',
+                    employeeId: foundDriver.driverId,
+                    role: 'driver',
+                    location: foundDriver.location || 'Kandigai',
+                    isProfileComplete: true
+                };
+            }
+        } catch (fbErr) {
+            console.warn("Fallback to admins/drivers warning:", fbErr);
+        }
+
         return null;
     },
 
     async updateUser(userId: string, updates: Partial<any>): Promise<void> {
         await update(ref(database, `users/${userId}`), updates);
+    },
+
+    async updateDriver(driverId: string, updates: Partial<DriverProfile>): Promise<void> {
+        console.log(`📝 DB: Attempting updateDriver at /drivers/${driverId} with`, updates);
+        await update(ref(database, `drivers/${driverId}`), updates);
+
+        // Sync to DriversHub if necessary fields changed
+        if (updates.username !== undefined || updates.location !== undefined || updates.profilePhoto !== undefined) {
+            const hubUpdates: any = {};
+            if (updates.username !== undefined) hubUpdates['personnelIdentity/name'] = updates.username;
+            if (updates.location !== undefined) hubUpdates['personnelIdentity/location'] = updates.location;
+            if (updates.profilePhoto !== undefined) hubUpdates['personnelIdentity/profilePhoto'] = updates.profilePhoto;
+            await update(ref(database, `DriversHub/${driverId}`), hubUpdates);
+        }
+
+        // Sync status & location to LiveDriverStatus
+        if (updates.status !== undefined || updates.location !== undefined || updates.username !== undefined || updates.availability) {
+            const liveUpdates: any = { lastActive: new Date().toISOString() };
+            if (updates.status !== undefined) liveUpdates.status = updates.status;
+            if (updates.availability) liveUpdates.status = updates.availability === 'On Duty' || updates.availability === 'Online' || updates.availability === 'online' ? 'online' : 'offline';
+            if (updates.location !== undefined) liveUpdates.location = updates.location;
+            if (updates.username !== undefined) liveUpdates.driverName = updates.username;
+            await update(ref(database, `LiveDriverStatus/${driverId}`), liveUpdates);
+        }
     },
 
     // ============ BINS ============
@@ -688,18 +770,6 @@ export const databaseService = {
         return cachedUsers || [];
     },
 
-    // ============ GENERIC DRIVER UPDATE (Compatibility) ============
-    async updateDriver(driverId: string, updates: Partial<any>): Promise<void> {
-        // This is a comprehensive update that might touch multiple nodes depending on what's properly passed
-        // For now, we update 'drivers' node primarily
-        await update(ref(database, `drivers/${driverId}`), updates);
-
-        // If 'availability' is in updates, sync it to Hub and LiveStatus
-        if (updates.availability) {
-            const status = updates.availability === 'On Duty' || updates.availability === 'Online' || updates.availability === 'online' ? 'online' : 'offline';
-            await this.updateDriverStatus(driverId, status);
-        }
-    },
 
     async recordLogout(driverId: string, skipQueue = false): Promise<void> {
         if (!navigator.onLine && !skipQueue) {
@@ -1407,90 +1477,101 @@ export const databaseService = {
 
 
     async distributeKandigaiBinsSpatially(): Promise<void> {
-        console.log("📍 Starting Spatial Split for Kandigai...");
+        try {
+            console.log("📍 Starting Spatial Split for Kandigai...");
 
-        // 1. Get Kandigai Drivers
-        const drivers = await this.getAllDrivers();
-        const kandigaiDrivers = drivers
-            .filter(d => (d.location || '').toLowerCase() === 'kandigai')
-            .sort((a, b) => (a.createdAt || '').localeCompare(b.createdAt || ''));
+            // 1. Get Kandigai Drivers
+            const drivers = await this.getAllDrivers();
+            const kandigaiDrivers = drivers
+                .filter(d => d && (d.location || '').toLowerCase() === 'kandigai')
+                .sort((a, b) => (a.createdAt || '').localeCompare(b.createdAt || ''));
 
-        if (kandigaiDrivers.length === 0) {
-            console.warn("⚠️ No drivers in Kandigai to distribute tasks to.");
-            return;
-        }
-
-        // 2. Get Kandigai Bins
-        const binsSnap = await get(ref(database, 'bins'));
-        if (!binsSnap.exists()) return;
-        const allBins = binsSnap.val();
-        const kBins = Object.entries(allBins)
-            .filter(([id, b]: [string, any]) => (b.areaName || '').toLowerCase() === 'kandigai')
-            .map(([id, b]: [string, any]) => ({ ...b, id }));
-
-        if (kBins.length === 0) return;
-
-        const updates: any = {};
-
-        if (kandigaiDrivers.length === 1) {
-            // Case 1: Only one driver - assign all bins to them
-            const d1 = kandigaiDrivers[0].employeeId;
-            kBins.forEach(bin => {
-                updates[`bins/${bin.id}/assignedDriverId`] = d1;
-            });
-            await update(ref(database), updates);
-            console.log(`✅ Single Driver Assignment: All bins to ${d1}`);
-            return;
-        }
-
-        // Case 2: 2+ drivers - Spatial Split
-        const d1 = kandigaiDrivers[0].employeeId;
-        const d2 = kandigaiDrivers[1].employeeId;
-
-        // 3. Simple K-Means (K=2)
-        // Initial Centroids (Min/Max Lat/Lng for diversity)
-        let c1 = kBins[0].coordinates;
-        let c2 = kBins[kBins.length - 1].coordinates;
-
-        const getDist = (p1: any, p2: any) => Math.pow(p1.lat - p2.lat, 2) + Math.pow(p1.lng - p2.lng, 2);
-
-        let clusters: any[][] = [[], []];
-
-        // Run 5 iterations for stability
-        for (let iter = 0; iter < 5; iter++) {
-            clusters = [[], []];
-            kBins.forEach(bin => {
-                const d1Arr = getDist(bin.coordinates, c1);
-                const d2Arr = getDist(bin.coordinates, c2);
-                if (d1Arr < d2Arr) clusters[0].push(bin);
-                else clusters[1].push(bin);
-            });
-
-            // Update Centroids
-            if (clusters[0].length > 0) {
-                c1 = {
-                    lat: clusters[0].reduce((s, b) => s + b.coordinates.lat, 0) / clusters[0].length,
-                    lng: clusters[0].reduce((s, b) => s + b.coordinates.lng, 0) / clusters[0].length
-                };
+            if (kandigaiDrivers.length === 0) {
+                console.warn("⚠️ No drivers in Kandigai to distribute tasks to.");
+                return;
             }
-            if (clusters[1].length > 0) {
-                c2 = {
-                    lat: clusters[1].reduce((s, b) => s + b.coordinates.lat, 0) / clusters[1].length,
-                    lng: clusters[1].reduce((s, b) => s + b.coordinates.lng, 0) / clusters[1].length
-                };
+
+            // 2. Get Kandigai Bins
+            const binsSnap = await get(ref(database, 'bins'));
+            if (!binsSnap.exists()) return;
+            const allBins = binsSnap.val();
+            const kBins = Object.entries(allBins)
+                .filter(([id, b]: [string, any]) => b && (b.areaName || '').toLowerCase() === 'kandigai')
+                .map(([id, b]: [string, any]) => ({ ...b, id }));
+
+            if (kBins.length === 0) return;
+
+            const updates: any = {};
+
+            if (kandigaiDrivers.length === 1) {
+                // Case 1: Only one driver - assign all bins to them
+                const d1 = kandigaiDrivers[0].employeeId || kandigaiDrivers[0].driverId;
+                if (d1) {
+                    kBins.forEach(bin => {
+                        if (bin?.id) updates[`bins/${bin.id}/assignedDriverId`] = d1;
+                    });
+                    await update(ref(database), updates);
+                    console.log(`✅ Single Driver Assignment: All bins to ${d1}`);
+                }
+                return;
             }
+
+            // Case 2: 2+ drivers - Spatial Split
+            const d1 = kandigaiDrivers[0].employeeId || kandigaiDrivers[0].driverId || 'DRV001';
+            const d2 = kandigaiDrivers[1].employeeId || kandigaiDrivers[1].driverId || 'DRV002';
+
+            // 3. Simple K-Means (K=2)
+            let c1 = kBins[0]?.coordinates || { lat: 12.84, lng: 80.15 };
+            let c2 = kBins[kBins.length - 1]?.coordinates || { lat: 12.85, lng: 80.16 };
+
+            const getDist = (p1: any, p2: any) => {
+                if (!p1 || !p2) return 0;
+                return Math.pow((p1.lat || 0) - (p2.lat || 0), 2) + Math.pow((p1.lng || 0) - (p2.lng || 0), 2);
+            };
+
+            let clusters: any[][] = [[], []];
+
+            // Run 5 iterations for stability
+            for (let iter = 0; iter < 5; iter++) {
+                clusters = [[], []];
+                kBins.forEach(bin => {
+                    if (!bin.coordinates) return;
+                    const d1Arr = getDist(bin.coordinates, c1);
+                    const d2Arr = getDist(bin.coordinates, c2);
+                    if (d1Arr < d2Arr) clusters[0].push(bin);
+                    else clusters[1].push(bin);
+                });
+
+                // Update Centroids
+                if (clusters[0].length > 0) {
+                    c1 = {
+                        lat: clusters[0].reduce((s, b) => s + (b.coordinates?.lat || 0), 0) / clusters[0].length,
+                        lng: clusters[0].reduce((s, b) => s + (b.coordinates?.lng || 0), 0) / clusters[0].length
+                    };
+                }
+                if (clusters[1].length > 0) {
+                    c2 = {
+                        lat: clusters[1].reduce((s, b) => s + (b.coordinates?.lat || 0), 0) / clusters[1].length,
+                        lng: clusters[1].reduce((s, b) => s + (b.coordinates?.lng || 0), 0) / clusters[1].length
+                    };
+                }
+            }
+
+            // 4. Update Firebase
+            clusters[0].forEach(bin => {
+                if (bin?.id && d1) updates[`bins/${bin.id}/assignedDriverId`] = d1;
+            });
+            clusters[1].forEach(bin => {
+                if (bin?.id && d2) updates[`bins/${bin.id}/assignedDriverId`] = d2;
+            });
+
+            if (Object.keys(updates).length > 0) {
+                await update(ref(database), updates);
+            }
+            console.log(`✅ Spatial Split Complete: ${clusters[0].length} to ${d1}, ${clusters[1].length} to ${d2}`);
+        } catch (splitErr) {
+            console.warn("⚠️ distributeKandigaiBinsSpatially non-fatal error:", splitErr);
         }
-
-        // 4. Update Firebase
-        clusters[0].forEach(bin => {
-            updates[`bins/${bin.id}/assignedDriverId`] = d1;
-        });
-        clusters[1].forEach(bin => {
-            updates[`bins/${bin.id}/assignedDriverId`] = d2;
-        });
-
-        await update(ref(database), updates);
-        console.log(`✅ Spatial Split Complete: ${clusters[0].length} to ${d1}, ${clusters[1].length} to ${d2}`);
     },
 
     async purgeUserAllData(role: string, employeeId: string, uid: string, email: string): Promise<void> {

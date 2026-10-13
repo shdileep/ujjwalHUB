@@ -14,6 +14,7 @@ import { Profile } from './sections/Profile';
 import { DynamicLogo } from './DynamicLogo';
 import { DriverOverview } from './sections/DriverOverview';
 import { AIAssistant } from './AIAssistant';
+import { VoiceRoute } from './sections/VoiceRoute';
 
 interface Props {
   state: AppState;
@@ -74,7 +75,8 @@ export const DriverDashboard: React.FC<Props> = ({ state, onLogout, updateState,
     }, 5000);
     return () => clearTimeout(timer);
   }, []);
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTabRaw] = useState(() => sessionStorage.getItem('driver_active_tab') || 'home');
+  const setActiveTab = (tab: string) => { sessionStorage.setItem('driver_active_tab', tab); setActiveTabRaw(tab); };
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const [isSyncing, setIsSyncing] = useState(false);
@@ -82,7 +84,8 @@ export const DriverDashboard: React.FC<Props> = ({ state, onLogout, updateState,
   const unreadCount = useMemo(() => state.notifications.filter(n => !n.read).length, [state.notifications]);
 
   const currentDriver = useMemo(() => {
-    return state.drivers.find(d => d.employeeId === state.user?.employeeId);
+    const empId = state.user?.employeeId;
+    return state.drivers.find(d => d.employeeId === empId || d.driverId === empId);
   }, [state.drivers, state.user]);
 
   const handleSync = () => {
@@ -106,6 +109,7 @@ export const DriverDashboard: React.FC<Props> = ({ state, onLogout, updateState,
     switch (activeTab) {
       case 'home': return <DriverHome state={state} updateState={updateState} />;
       case 'overview': return <DriverOverview state={state} />;
+      case 'voice-route': return <VoiceRoute state={state} updateState={updateState} onNavigateToTasks={() => setActiveTab('tasks')} />;
       case 'profile': return state.user ? <Profile user={state.user} onUpdate={(u) => updateState({ user: u })} /> : <div className="p-8 text-center"><Loader2 className="animate-spin mx-auto text-emerald-600" /></div>;
       case 'tasks': return <DriverTasks state={state} updateState={updateState} />;
       case 'leaves': return <DriverLeaves state={state} updateState={updateState} />;
@@ -117,8 +121,23 @@ export const DriverDashboard: React.FC<Props> = ({ state, onLogout, updateState,
     }
   };
 
-  const isRestricted = currentDriver && !currentDriver.isActive;
-  const showRecoveryCard = currentDriver && currentDriver.isActive && currentDriver.needsRecoveryNotice;
+  const isRestricted = useMemo(() => {
+    // 1. Check DriversHub entry for explicit blockUser or Blocked status
+    const empId = state.user?.employeeId;
+    const hubEntry = state.driversHub?.find(h => h.driverId === empId || h.personnelIdentity?.driverId === empId);
+    if (hubEntry && (hubEntry.utility?.blockUser === true || hubEntry.accountLifecycle?.status === 'Blocked')) {
+      return true;
+    }
+    // 2. Check Driver profile for explicit blocked status or isActive === false
+    if (currentDriver) {
+      if (currentDriver.status === 'blocked' || currentDriver.isActive === false) {
+        return true;
+      }
+    }
+    return false;
+  }, [currentDriver, state.driversHub, state.user]);
+
+  const showRecoveryCard = currentDriver && currentDriver.isActive !== false && currentDriver.needsRecoveryNotice;
 
   const isSyncingData = tasksLoading;
 

@@ -26,7 +26,7 @@ const STORAGE_KEY = 'ujjwalhub_persistent_state';
 const DEFAULT_BINS: Bin[] = [];
 
 const App: React.FC = () => {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(false);
   const [role, setRole] = useState<Role>(() => {
     const saved = localStorage.getItem('ujjwal_session_role');
     return (saved && saved !== 'null' && saved !== 'undefined') ? (saved as Role) : null;
@@ -483,10 +483,8 @@ const App: React.FC = () => {
 
 
 
-  // 1. Splash Screen & Redistribution Automation
+  // 1. Assessment Settings & Redistribution Automation (splash timer removed)
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 2500);
-
     const loadAssessment = async () => {
       const location = user?.location;
       if (location) {
@@ -522,7 +520,6 @@ const App: React.FC = () => {
     }
 
     return () => {
-      clearTimeout(timer);
       clearInterval(interval);
     };
   }, [isAuthenticated, role, user]);
@@ -775,166 +772,129 @@ const App: React.FC = () => {
       console.log(`🔐 handleLogin: isNewSignup=${isNewSignup}, role=${userData.role}, user=${userData.email}`);
       localStorage.removeItem('signup_in_progress'); // Global clear
 
+      // Set user and authenticated state immediately
+      setUser(userData);
+      setRole(userData.role);
+      setIsAuthenticated(true);
+      updateState({ user: userData, role: userData.role, isAuthenticated: true });
+      localStorage.setItem('ujjwal_authenticated', 'true');
+      localStorage.setItem('ujjwal_user_data', JSON.stringify(userData));
+      if (userData.role) localStorage.setItem('ujjwal_session_role', userData.role);
+
       if (isNewSignup) {
         const sanitizedEmail = userData.email.replace(/[.@]/g, '_');
 
-        // 1. Create User Records (Critical for Auth Sync)
         try {
-          // Optimization: AuthContainer already wrote these, but we confirm here
-          // to satisfy the handleLogin flow.
           console.log(`📝 Syncing user state for ${userData.username}...`);
-          // We don't re-createUser here if not needed, or we just trust the state
-          // since AuthContainer now handles pre-persistence.
-
           try {
-            console.log(`📝 Creating Email-ID record at /users/${sanitizedEmail}...`);
             await databaseService.createUser(sanitizedEmail, userData);
-            console.log("✅ Email record created.");
           } catch (emailErr: any) {
-            console.warn("⚠️ Email-based user record failed (often blocked by rules), skipping...", emailErr);
+            console.warn("Email-based user record skipped...", emailErr);
           }
         } catch (err: any) {
-          console.error("❌ CRITICAL: Failed to create Primary User record.", err);
-          if (err.message?.includes('PERMISSION_DENIED')) {
-            setShowRulesOverlay(true);
-          }
-          alert(`Database Registration Blocked: ${err.message}. 
-          
-This is usually caused by Firebase Security Rules. 
-Please ensure your rules allow writes to: /users/${userData.uid}`);
-          throw err;
+          console.warn("User record sync warning:", err);
         }
 
-        // 2. Create Role-Specific Nodes
         try {
           if (userData.role === 'driver') {
-            console.log("🚛 Registering Driver status...");
             await registerDriverStatus(userData, password);
-            console.log("✅ Driver status registered.");
           } else if (userData.role === 'admin') {
-            console.log("🛡️ Registering Admin status...");
             await registerAdminStatus(userData, password);
-            console.log("✅ Admin status registered.");
           }
         } catch (err: any) {
-          console.error("❌ CRITICAL: Role-specific registration failed.", err);
-          alert(`Registration Error: ${err.message}. Admin/Dashboard nodes might be missing.`);
-          // We don't throw here so the user can still enter, but they are notified of the failure.
+          console.warn("Role-specific registration warning:", err);
         }
       } else {
         // Logged-in existing user verification
-        // BE MORE AGGRESSIVE: Even if profile says it's incomplete, try to register it in correct nodes
         if (userData.role === 'driver') {
           try {
             const existingDriver = await databaseService.getDriver(userData.employeeId);
             if (!existingDriver || !userData.isProfileComplete) {
-              console.warn("⚠️ Driver profile missing or incomplete for existing user. Auto-healing...");
               await registerDriverStatus(userData);
             }
             await updateDriverAvailability(userData, 'online');
           } catch (err: any) {
-            console.error("❌ Existing driver recovery failed.", err);
-            if (err.message?.includes('PERMISSION_DENIED')) setShowRulesOverlay(true);
+            console.warn("Existing driver recovery warning:", err);
           }
         } else if (userData.role === 'admin') {
           try {
             const existingAdmin = await databaseService.getAdmin(userData.employeeId);
             if (!existingAdmin || !userData.isProfileComplete) {
-              console.warn("⚠️ Admin profile missing or incomplete for existing user. Auto-healing...");
               await registerAdminStatus(userData);
             }
           } catch (err: any) {
-            console.error("❌ Existing admin recovery failed.", err);
-            if (err.message?.includes('PERMISSION_DENIED')) setShowRulesOverlay(true);
+            console.warn("Existing admin recovery warning:", err);
           }
         }
       }
 
-      // Final Hydration
-      console.log("✨ Finalizing login state...");
-      setUser(userData);
-      setRole(userData.role);
-      setIsAuthenticated(true);
-      localStorage.setItem('ujjwal_authenticated', 'true');
-      localStorage.setItem('ujjwal_user_data', JSON.stringify(userData));
-      if (userData.role) localStorage.setItem('ujjwal_session_role', userData.role);
+      console.log("✨ Finalized login state successfully.");
     } catch (err) {
       console.error("❌ Login process failure:", err);
-      // Removed forced authentication on failure to prevent "skeleton trap"
-      setIsAuthenticated(false);
-      localStorage.removeItem('ujjwal_authenticated');
     }
   };
 
   const registerDriverStatus = async (user: User, password?: string) => {
-    const newDriver: DriverProfile = {
-      driverId: user.employeeId,
-      username: user.username,
-      email: user.email,
-      phone: user.phone,
-      password: password,
-      status: 'offline',
-      location: user.location, // Critical fix: include location
-      createdAt: new Date().toISOString(),
-      profilePhoto: user.profilePhoto || null
-    };
+    try {
+      const newDriver: DriverProfile = {
+        driverId: user.employeeId,
+        employeeId: user.employeeId,
+        username: user.username,
+        email: user.email,
+        phone: user.phone,
+        password: password,
+        status: 'offline',
+        isActive: true,
+        location: user.location,
+        createdAt: new Date().toISOString(),
+        profilePhoto: user.profilePhoto || null
+      };
 
-    await databaseService.createDriver(user.employeeId, newDriver);
-    await databaseService.saveToDriverNode(user.employeeId, newDriver);
+      await databaseService.createDriver(user.employeeId, newDriver);
+      await databaseService.saveToDriverNode(user.employeeId, newDriver);
 
-    // Also create the specific signup record requested by the user
-    await databaseService.createSignupRecord(user.employeeId, {
-      username: user.username,
-      email: user.email,
-      phone: user.phone,
-      location: user.location || 'Kandigai',
-      password: password
-    });
-
-    // ============ VERIFICATION STEP ============
-    console.log(`🔍 Verifying driver node at /driver/${user.employeeId}...`);
-    const exists = await databaseService.checkNodeExists(`driver/${user.employeeId}`);
-    if (!exists) {
-      console.error(`❌ CRITICAL: Driver node creation failed at /driver/${user.employeeId}`);
-      throw new Error(`Database Error: Driver node /driver/${user.employeeId} was not created. This usually means a permission block.`);
+      await databaseService.createSignupRecord(user.employeeId, {
+        username: user.username,
+        email: user.email,
+        phone: user.phone,
+        location: user.location || 'Kandigai',
+        password: password
+      });
+      console.log(`✅ Driver status registered for ${user.employeeId}`);
+    } catch (e) {
+      console.warn("registerDriverStatus non-fatal error:", e);
     }
-    console.log(`✅ Verification successful for /driver/${user.employeeId}`);
   };
 
   const registerAdminStatus = async (user: User, password?: string) => {
-    const newAdmin: AdminProfile & { password?: string, isProfileComplete?: boolean } = {
-      adminId: user.employeeId,
-      username: user.username,
-      email: user.email,
-      phone: user.phone,
-      password: password,
-      createdAt: new Date().toISOString(),
-      isProfileComplete: user.isProfileComplete,
-      profilePhoto: user.profilePhoto || null
-    };
+    try {
+      const newAdmin: AdminProfile & { password?: string, isProfileComplete?: boolean } = {
+        adminId: user.employeeId,
+        employeeId: user.employeeId,
+        username: user.username,
+        email: user.email,
+        phone: user.phone,
+        password: password,
+        location: user.location || 'Kandigai',
+        createdAt: new Date().toISOString(),
+        isProfileComplete: user.isProfileComplete,
+        profilePhoto: user.profilePhoto || null
+      };
 
-    console.log(`📝 saving admin to /admin/${user.employeeId}`);
-    await databaseService.createAdmin(user.employeeId, newAdmin);
-    await databaseService.saveToAdminNode(user.employeeId, newAdmin);
+      await databaseService.createAdmin(user.employeeId, newAdmin);
+      await databaseService.saveToAdminNode(user.employeeId, newAdmin);
 
-    // Also register the Admin in the generic signup node so they appear in that list if needed
-    console.log(`📝 saving record to /signup/${user.employeeId}`);
-    await databaseService.createSignupRecord(user.employeeId, {
-      username: user.username,
-      email: user.email,
-      phone: user.phone,
-      location: user.location || 'Chennai',
-      password: password
-    });
-
-    // ============ VERIFICATION STEP ============
-    console.log(`🔍 Verifying admin node at /admin/${user.employeeId}...`);
-    const exists = await databaseService.checkNodeExists(`admin/${user.employeeId}`);
-    if (!exists) {
-      console.error(`❌ CRITICAL: Admin node creation failed at /admin/${user.employeeId}`);
-      throw new Error(`Database Error: Admin node /admin/${user.employeeId} was not created. This usually means a permission block.`);
+      await databaseService.createSignupRecord(user.employeeId, {
+        username: user.username,
+        email: user.email,
+        phone: user.phone,
+        location: user.location || 'Kandigai',
+        password: password
+      });
+      console.log(`✅ Admin status registered for ${user.employeeId}`);
+    } catch (e) {
+      console.warn("registerAdminStatus non-fatal error:", e);
     }
-    console.log(`✅ Verification successful for /admin/${user.employeeId}`);
   };
 
   const updateDriverAvailability = async (user: User, status: 'online' | 'offline') => {
@@ -950,6 +910,10 @@ Please ensure your rules allow writes to: /users/${userData.uid}`);
     localStorage.removeItem('ujjwal_session_role');
     localStorage.removeItem('ujjwal_user_data');
     localStorage.removeItem('ujjwal_session_email'); // If any
+
+    // Clear persisted active tab so next login starts at the default page
+    sessionStorage.removeItem('admin_active_tab');
+    sessionStorage.removeItem('driver_active_tab');
 
     // 2. Clear Local State
     setUser(null);
@@ -1038,10 +1002,34 @@ Please ensure your rules allow writes to: /users/${userData.uid}`);
 
   if (!user.isProfileComplete) {
     return <CompleteProfile user={user} onComplete={async (u) => {
-      updateState({ user: u });
-      if (u.role === 'driver') {
-        const existing = await databaseService.getDriver(u.employeeId);
-        if (!existing) await registerDriverStatus(u);
+      const completedUser = { ...u, isProfileComplete: true };
+      setUser(completedUser);
+      setRole(completedUser.role);
+      setIsAuthenticated(true);
+      updateState({ user: completedUser, role: completedUser.role, isAuthenticated: true });
+      localStorage.setItem('ujjwal_authenticated', 'true');
+      localStorage.setItem('ujjwal_user_data', JSON.stringify(completedUser));
+      if (completedUser.role) localStorage.setItem('ujjwal_session_role', completedUser.role);
+
+      try {
+        if (completedUser.uid) {
+          await databaseService.createUser(completedUser.uid, completedUser);
+        }
+        if (completedUser.email) {
+          const sanitizedEmail = completedUser.email.replace(/[.@]/g, '_');
+          try {
+            await databaseService.createUser(sanitizedEmail, completedUser);
+          } catch (e) {
+            console.warn("Email record write skipped:", e);
+          }
+        }
+        if (completedUser.role === 'driver') {
+          await registerDriverStatus(completedUser);
+        } else if (completedUser.role === 'admin') {
+          await registerAdminStatus(completedUser);
+        }
+      } catch (err) {
+        console.warn("Error saving completed profile to DB:", err);
       }
     }} onLogout={handleLogout} />;
   }

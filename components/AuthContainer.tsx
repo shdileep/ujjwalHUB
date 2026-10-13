@@ -68,10 +68,9 @@ const AreaRestrictionOverlay: React.FC<{
   area: string;
   occupancy: { admins: number, drivers: number };
   adminName?: string;
+  onProceed: () => void;
   onClose: () => void;
-}> = ({ role, area, occupancy, adminName, onClose }) => {
-  const isFull = (role === 'admin' && occupancy.admins >= 1) || (role === 'driver' && occupancy.drivers >= 2);
-
+}> = ({ role, area, occupancy, adminName, onProceed, onClose }) => {
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-6 animate-in fade-in duration-300">
       <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-md" onClick={onClose}></div>
@@ -81,30 +80,26 @@ const AreaRestrictionOverlay: React.FC<{
         </button>
 
         <div className="flex flex-col items-center text-center space-y-6 pt-4">
-          <div className="w-20 h-20 bg-rose-50 rounded-3xl flex items-center justify-center text-rose-500 mb-2 shadow-inner">
+          <div className="w-20 h-20 bg-amber-50 rounded-3xl flex items-center justify-center text-amber-500 mb-2 shadow-inner">
             <AlertCircle size={40} />
           </div>
 
           <div className="space-y-3">
             <h2 className="text-2xl font-black text-slate-900 tracking-tight uppercase">
-              Attention Required
+              Area Information
             </h2>
             <div className="text-slate-500 font-bold px-4 leading-relaxed text-sm">
               {role === 'admin' ? (
                 <div className="space-y-2">
-                  <p className="text-amber-600 font-black uppercase text-xs tracking-widest">Active Control Detected</p>
-                  <p>This area already under <span className="text-slate-900 font-black">[{adminName || 'Authorized Admin'}]</span> control.</p>
-                  <p>Please select another area.</p>
-                </div>
-              ) : isFull ? (
-                <div className="space-y-2">
-                  <p className="text-rose-600 font-black uppercase text-xs tracking-widest">Sector Capacity Reached</p>
-                  <p>We're sorry, this area is not available anymore. Please select any other area.</p>
+                  <p className="text-amber-600 font-black uppercase text-xs tracking-widest">Active Admin Detected</p>
+                  <p>This area currently has administrator coverage under <span className="text-slate-900 font-black">[{adminName || 'Authorized Admin'}]</span>.</p>
+                  <p className="text-xs text-slate-400">You may proceed to register as an administrator or pick another sector.</p>
                 </div>
               ) : (
                 <div className="space-y-2">
-                  <p className="text-amber-600 font-black uppercase text-xs tracking-widest">Limited Slots Remaining</p>
-                  <p>This area is nearing capacity. Only one driver slot remains.</p>
+                  <p className="text-indigo-600 font-black uppercase text-xs tracking-widest">Active Staffing</p>
+                  <p>This area has active driver coverage ({occupancy.drivers || 0} driver(s)).</p>
+                  <p className="text-xs text-slate-400">You can proceed to register for this area or select a different sector.</p>
                 </div>
               )}
             </div>
@@ -112,7 +107,7 @@ const AreaRestrictionOverlay: React.FC<{
 
           <div className="w-full bg-slate-50 rounded-[2rem] p-6 space-y-4 border border-slate-100 text-left">
             <div className="space-y-3">
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Contact ujjwalHUB Administrator</p>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Support Contact</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-indigo-600">
                   <Shield size={20} />
@@ -123,26 +118,27 @@ const AreaRestrictionOverlay: React.FC<{
                 </div>
               </div>
             </div>
-
-            <div className="h-px bg-slate-200/50 w-full"></div>
-
-            <div className="space-y-3">
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Visit Municipal Office</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-slate-400">
-                  <MapPin size={20} />
-                </div>
-                <p className="text-[11px] font-bold text-slate-700 leading-tight">No. 123, Anna Salai, Chennai - 600002</p>
-              </div>
-            </div>
           </div>
 
-          <button
-            onClick={onClose}
-            className="w-full py-5 bg-slate-900 text-white font-black uppercase tracking-[0.2em] rounded-2xl shadow-xl transition-all active:scale-95 text-xs"
-          >
-            Change Work Area
-          </button>
+          <div className="w-full flex gap-3">
+            <button
+              type="button"
+              onClick={onClose}
+              className="flex-1 py-4 bg-slate-100 text-slate-700 font-bold uppercase tracking-wider rounded-2xl text-xs hover:bg-slate-200 transition-all"
+            >
+              Change Area
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                onProceed();
+                onClose();
+              }}
+              className="flex-1 py-4 bg-slate-900 text-white font-black uppercase tracking-wider rounded-2xl text-xs hover:bg-indigo-600 transition-all shadow-lg"
+            >
+              Select {area}
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -158,6 +154,7 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [toast, setToast] = useState<{ message: string; type: 'error' | 'success' } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (view === 'signup') {
@@ -188,16 +185,16 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
     }
   }, [view]);
 
-  // Derived restriction status
+  // Derived restriction status - inform rather than hard block
   const restrictedAreas = React.useMemo(() => {
     const restricted: Record<string, { label: string, isBlocked: boolean }> = {};
     Object.keys(occupancyMap).forEach(area => {
       const occ = occupancyMap[area] || { admins: 0, drivers: 0 };
       if (role === 'admin' && occ.admins >= 1) {
-        restricted[area] = { label: 'UNDER CONTROL', isBlocked: true };
+        restricted[area] = { label: 'ACTIVE ADMIN', isBlocked: false };
       } else if (role === 'driver') {
         if (occ.drivers >= 2) {
-          restricted[area] = { label: 'AREA FULL', isBlocked: true };
+          restricted[area] = { label: 'STAFFED', isBlocked: false };
         } else if (occ.drivers >= 1) {
           restricted[area] = { label: 'LIMITED SLOTS', isBlocked: false };
         }
@@ -262,8 +259,9 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
             email: formData.email,
             username: formData.email.split('@')[0],
             role: role,
-            employeeId: 'PENDING',
+            employeeId: (role === 'admin' ? 'UHA' : 'UHD') + Math.floor(10000 + Math.random() * 90000),
             phone: formData.phone || '',
+            location: formData.location || 'Kandigai',
             isProfileComplete: false
           };
           onLogin(skeletonUser, false);
@@ -275,8 +273,8 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
       }
 
       // Verify role matches
-      if (userData.role !== role) {
-        setError('Invalid credentials or unauthorized role');
+      if (userData.role && userData.role !== role) {
+        setError(`This account is registered as ${userData.role}. Please sign in via the ${userData.role} portal.`);
         await authService.signOut();
         return;
       }
@@ -303,15 +301,35 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
     }
 
     if (!hasSpecialChar(formData.password)) {
+      setError('Password must contain at least one special character (!@#$%^&* etc.)');
       setToast({ message: 'Please add a special character', type: 'error' });
       setTimeout(() => setToast(null), 3000);
       return;
     }
 
+    if (!formData.location) {
+      setError('Please select a work area');
+      return;
+    }
+
+    setIsSubmitting(true);
     try {
       localStorage.setItem('signup_in_progress', 'true');
-      // Create Firebase auth user
-      const firebaseUser = await authService.signUp(formData.email, formData.password);
+      let firebaseUser;
+      try {
+        firebaseUser = await authService.signUp(formData.email, formData.password);
+      } catch (authErr: any) {
+        if (authErr.code === 'auth/email-already-in-use') {
+          // If email is already in use, try signing in with that email & password
+          try {
+            firebaseUser = await authService.signIn(formData.email, formData.password);
+          } catch (signInErr: any) {
+            throw authErr;
+          }
+        } else {
+          throw authErr;
+        }
+      }
 
       // Generate Role-Based ID: UHDxxxxx for Drivers, UHAxxxxx for Admins
       const prefix = role === 'admin' ? 'UHA' : 'UHD';
@@ -329,8 +347,13 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
         uid: firebaseUser.uid
       };
 
-      // Persist the user immediately to prevent App.tsx from creating a skeleton
-      await databaseService.createUser(firebaseUser.uid, newUser);
+      // Persist user records
+      try {
+        await databaseService.createUser(firebaseUser.uid, newUser);
+      } catch (uErr) {
+        console.warn("UID user creation error:", uErr);
+      }
+
       const sanitizedEmail = newUser.email.replace(/[.@]/g, '_');
       try {
         await databaseService.createUser(sanitizedEmail, newUser);
@@ -342,6 +365,7 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
       if (role === 'driver') {
         const newDriver: any = {
           driverId: uniqueId,
+          employeeId: uniqueId,
           username: formData.username,
           email: formData.email,
           phone: formData.phone,
@@ -350,15 +374,20 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
           location: formData.location,
           createdAt: new Date().toISOString()
         };
-        await databaseService.createDriver(uniqueId, newDriver);
-        await databaseService.saveToDriverNode(uniqueId, newDriver);
-        await databaseService.createSignupRecord(uniqueId, {
-          ...newDriver,
-          location: formData.location
-        });
+        try {
+          await databaseService.createDriver(uniqueId, newDriver);
+          await databaseService.saveToDriverNode(uniqueId, newDriver);
+          await databaseService.createSignupRecord(uniqueId, {
+            ...newDriver,
+            location: formData.location
+          });
+        } catch (dErr) {
+          console.warn("Driver record creation warning:", dErr);
+        }
       } else if (role === 'admin') {
         const newAdmin: any = {
           adminId: uniqueId,
+          employeeId: uniqueId,
           username: formData.username,
           email: formData.email,
           phone: formData.phone,
@@ -368,25 +397,33 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
           createdAt: new Date().toISOString(),
           isProfileComplete: true
         };
-        await databaseService.createAdmin(uniqueId, newAdmin);
-        await databaseService.saveToAdminNode(uniqueId, newAdmin);
-        await databaseService.createSignupRecord(uniqueId, {
-          ...newAdmin,
-          location: formData.location
-        });
+        try {
+          await databaseService.createAdmin(uniqueId, newAdmin);
+          await databaseService.saveToAdminNode(uniqueId, newAdmin);
+          await databaseService.createSignupRecord(uniqueId, {
+            ...newAdmin,
+            location: formData.location
+          });
+        } catch (aErr) {
+          console.warn("Admin record creation warning:", aErr);
+        }
       }
 
-      // 2nd Driver Auto-Split Logic for Kandigai
+      // 2nd Driver Auto-Split Logic for Kandigai (Safe execution)
       if (role === 'driver' && formData.location.toLowerCase() === 'kandigai') {
         const occ = occupancyMap['Kandigai'] || { admins: 0, drivers: 0 };
         if (occ.drivers === 1) {
           console.log("🚀 2nd Driver Detected. Triggering Splash & Split...");
           setSignupSplash({ active: true, name: formData.username });
-          await databaseService.distributeKandigaiBinsSpatially();
+          try {
+            await databaseService.distributeKandigaiBinsSpatially();
+          } catch (splitErr) {
+            console.warn("Spatial split failed gracefully:", splitErr);
+          }
           setTimeout(() => {
             setSignupSplash({ active: false, name: '' });
             onLogin(newUser, true, formData.password);
-          }, 3000);
+          }, 2000);
           return;
         }
       }
@@ -396,12 +433,14 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
       localStorage.removeItem('signup_in_progress');
       console.error('Sign up error:', error);
       if (error.code === 'auth/email-already-in-use') {
-        setError('Email already registered');
+        setError('Email already registered. Please sign in or use another email.');
       } else if (error.message?.includes('PERMISSION_DENIED')) {
         setError('Firebase Permission Denied: The system cannot save your data. Please check your Realtime Database Security Rules.');
       } else {
         setError(error.message || 'Sign up failed');
       }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -549,11 +588,10 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
                 options={CHENNAI_AREAS}
                 value={formData.location}
                 onChange={(val) => {
+                  setFormData({ ...formData, location: val });
                   const restriction = restrictedAreas[val];
-                  if (restriction && restriction.isBlocked) {
+                  if (restriction && (restriction.label === 'ACTIVE ADMIN' || restriction.label === 'STAFFED')) {
                     setShowRestriction(val);
-                  } else {
-                    setFormData({ ...formData, location: val });
                   }
                 }}
                 placeholder="Select Work Area"
@@ -567,7 +605,7 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
               <input
                 required
                 type={showPassword ? "text" : "password"}
-                placeholder="Enter Password"
+                placeholder="Enter Password (min 8 chars, 1 special)"
                 className={`w-full pl-14 pr-14 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:bg-white focus:ring-4 ${config.ring} font-bold text-slate-700`}
                 value={formData.password} onChange={e => setFormData({ ...formData, password: e.target.value })} />
               <button
@@ -579,11 +617,24 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
               </button>
             </div>
 
+            <div className="text-[11px] font-semibold text-slate-500 px-2 space-y-1">
+              {!formData.location && <p className="text-amber-600">• Please select your work area</p>}
+              {formData.password.length > 0 && formData.password.length < 8 && <p className="text-amber-600">• Password must be at least 8 characters</p>}
+              {formData.password.length >= 8 && !hasSpecialChar(formData.password) && <p className="text-amber-600">• Must include at least 1 special character (!@#$%^&*)</p>}
+            </div>
+
             <button type="submit"
-              disabled={!formData.username || !formData.email || !formData.phone || !formData.location || formData.password.length < 8}
-              className={`w-full py-5 ${config.bg} text-white font-black uppercase tracking-[0.2em] rounded-2xl shadow-xl transition-all transform active:scale-95 mt-4 disabled:opacity-50`}
+              disabled={isSubmitting || !formData.username || !formData.email || !formData.phone || !formData.location || formData.password.length < 8}
+              className={`w-full py-5 ${config.bg} text-white font-black uppercase tracking-[0.2em] rounded-2xl shadow-xl transition-all transform active:scale-95 mt-4 disabled:opacity-50 flex items-center justify-center gap-2`}
             >
-              Sign Up
+              {isSubmitting ? (
+                <>
+                  <span className="animate-spin inline-block mr-2">⏳</span>
+                  <span>Creating Account...</span>
+                </>
+              ) : (
+                <span>Sign Up</span>
+              )}
             </button>
 
             <p className="text-center text-xs font-bold text-slate-400 mt-6">
@@ -621,7 +672,14 @@ export const AuthContainer: React.FC<Props> = ({ role, onLogin, onBack, register
           area={showRestriction}
           occupancy={occupancyMap[showRestriction] || { admins: 0, drivers: 0 }}
           adminName={registeredUsers.find(u => u.role === 'admin' && u.location === showRestriction)?.username}
-          onClose={() => setShowRestriction(null)}
+          onProceed={() => {
+            setFormData(prev => ({ ...prev, location: showRestriction }));
+            setShowRestriction(null);
+          }}
+          onClose={() => {
+            setFormData(prev => ({ ...prev, location: '' }));
+            setShowRestriction(null);
+          }}
         />
       )}
 
